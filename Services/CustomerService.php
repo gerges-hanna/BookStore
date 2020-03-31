@@ -1,5 +1,6 @@
 <?php
 include 'DBMangement.php';
+include '../NormalClasses/Customer.php';
 class CustomerService {
   
     public function getCustomers(){
@@ -44,5 +45,30 @@ class CustomerService {
       return $res;//this return bool 
    }
    
+   function updateCustomer(Customer $customer){
+       $uc= new DBMangement();
+       $uc->ConnectStart();
+       $query='UPDATE `customer` SET `phone`= "'.$customer->getPhone().'" WHERE `person_id`= "'.$customer->getID().'" ';
+       $res= $uc->executequery($query);
+       $uc->CloseConnect();
+       if($res!=1)
+        {
+            $this->function_alert("Error");
+        }
+   }
    
+   
+    function createCustomer(Customer $customer)
+   {
+       $uc= new DBMangement();
+       $uc->ConnectStart();
+       $query= 'INSERT INTO customer(person_id, phone) VALUES ('.$customer->getID().','.$customer->getPhone().')';
+       $res= $uc->executequery($query);
+       $uc->CloseConnect();
+       if($res!=1)
+        {
+            $this->function_alert("Error");
+        }
+
+   }
 }
