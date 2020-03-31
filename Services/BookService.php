@@ -39,7 +39,19 @@ class BookService {
     
     Function UpdateBook(Book $book)
     {
-        $this->query='UPDATE book SET name="'.$book->getName().'",description="'.$book->getDescription().'",price='.$book->getPrice().',quantity='.$book->getStock().',isbn="'.$book->getIsbn().'",image_url="'.$book->getImage().'",author_name="'.$book->getAuthor().'",condition_id='.$book->getCondition().',customer_id='.$book->getCustomer_id().',status_id='.$book->getStatus().',category_id='.$book->getCategory().' WHERE id = '.$book->getId().';';
+        $this->query='UPDATE book SET '
+                . 'name="'.$book->getName().'",'
+                . 'description="'.$book->getDescription().'",'
+                . 'price='.$book->getPrice().','
+                . 'quantity='.$book->getStock().','
+                . 'isbn='.$book->getIsbn().','
+                . 'image_url="'.$book->getImage().'",'
+                . 'autho_name="'.$book->getAuthor().'",'
+                . 'book_condition="'.$book->getCondition().'",'
+                . 'customer_id='.$book->getCustomer_id().','
+                . 'status="'.$book->getStatus().'",'
+                . 'category_id='.$book->getCategory().''
+                . ' WHERE id = '.$book->getId().';';
 //'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
         $connect=new DBMangement();
         $connect->ConnectStart();
@@ -48,12 +60,15 @@ class BookService {
         if($res!=1)
         {
             $this->function_alert("Error");
-        }  
+        }
+ else {
+            echo 'Done';
+ }
     }
     Function CreateBook(Book $book)
     {
-        $this->query='INSERT INTO  book (id, name, description,price, quantity, isbn, image_url, author_name, condition_id, customer_id, status_id, category_id) '
-                . 'VALUES ('.$book->getId().',"'.$book->getName().'","'.$book->getDescription().'",'.$book->getPrice().','.$book->getStock().',"'.$book->getIsbn().'","'.$book->getImage().'","'.$book->getAuthor().'",'.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().')';
+        $this->query='INSERT INTO book (name, description, price, quantity, isbn, autho_name, status, category_id, customer_id, image_url, book_condition) '
+                . 'VALUES ("'.$book->getName().'","'.$book->getDescription().'",'.$book->getPrice().','.$book->getStock().','.$book->getIsbn().',"'.$book->getAuthor().'","'.$book->getStatus().'",'.$book->getCustomer_id().','.$book->getCategory().',"'.$book->getImage().'","'.$book->getCondition().'")';
         //'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
         $connect=new DBMangement();
         $connect->ConnectStart();
@@ -62,6 +77,8 @@ class BookService {
         if($res!=1)
         {
             $this->function_alert("Error");
+        }  else {
+            echo 'Done';
         }
         
     }
@@ -81,17 +98,17 @@ $tes=new BookService();
 UPDATE `book` SET `name`="ss",`description`="wqd",`price`=84,`quantity`=5,`isbn`="ww",`image_url`="wdqw",`author_name`="ewf",`condition_id`=1,`customer_id`=1,`status_id`=1,`category_id`=1 WHERE id = 7;
  *  */
     $tw=new Book();
-    $tw->setId(7);
-    $tw->setName("php5");
-    $tw->setDescription("php");
-    $tw->setPrice(99);
-    $tw->setStock(99);
-    $tw->setIsbn("php");
-    $tw->setImage("php");
-    $tw->setAuthor("php");
-    $tw->setCondition(1);
+    $tw->setId(1);
+    $tw->setName("phpn12");
+    $tw->setDescription("1phpp2");
+    $tw->setPrice(9912);
+    $tw->setStock(912);
+    $tw->setIsbn(1256221);
+    $tw->setImage("phpI21");
+    $tw->setAuthor("phpA21");
+    $tw->setCondition("C1");
     $tw->setCustomer_id(1);
-    $tw->setStatus(1);
+    $tw->setStatus("S1");
     $tw->setCategory(1);
 
-    $tes->UpdateBook($tw);
+    $tes->DeleteBook($tw->getId());
