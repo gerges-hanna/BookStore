@@ -1,6 +1,6 @@
 <?php
-include 'DBMangement.php';
-include 'NormalClasses/User.php';
+include './DBMangement.php';
+include '../NormalClasses/User.php';
 class CustomerService {
   
     public function getCustomers(){
@@ -73,30 +73,32 @@ class CustomerService {
       return $res;//this return bool 
    }
    
-   function updateCustomer(Customer $customer){
-       $uc= new DBMangement();
-       $uc->ConnectStart();
-       $query='UPDATE `customer` SET `phone`= "'.$customer->getPhone().'" WHERE `person_id`= "'.$customer->getID().'" ';
-       $res= $uc->executequery($query);
-       $uc->CloseConnect();
+   
+   
+   
+   function updateCustomer(User $user){
+       $con= new DBMangement();
+       $con->ConnectStart();
+       $query='UPDATE user SET name= "'.$user->getName().'" ,email= "'.$user->getEmail().'" ,password= "'.$user->getPassword().'" ,phone= "'.$user->getPhone().'" ,user_type= "'.$user->getUserType().'" ,can_read= "'.$user->getCan_read().'" ,can_write= "'.$user->getCan_write().'" ,can_update= "'.$user->getCan_update().'" ,can_delete= "'.$user->getCan_delete().'" where id= "'.$user->getID().'" ';
+       $res= $con->executequery($query);
+       $con->CloseConnect();
        if($res!=1)
         {
             $this->function_alert("Error");
         }
    }
    
-   
-    function createCustomer(Customer $customer)
+    function createCustomer(User $user)
    {
-       $uc= new DBMangement();
-       $uc->ConnectStart();
-       $query= 'INSERT INTO customer(person_id, phone) VALUES ('.$customer->getID().','.$customer->getPhone().')';
-       $res= $uc->executequery($query);
-       $uc->CloseConnect();
+       $con= new DBMangement();
+       $con->ConnectStart();
+       $query='INSERT INTO user(id, name, email, password, phone, user_type, can_read, can_write, can_update, can_delete) VALUES( "'.$user->getID().'", "'.$user->getName().'","'.$user->getEmail().'","'.$user->getPassword().'","'.$user->getPhone().'" ,"'.$user->getUserType().'","'.$user->getCan_read().'", "'.$user->getCan_write().'" ,"'.$user->getCan_update().'" ,"'.$user->getCan_delete().'")';
+       $res= $con->executequery($query);
+       $con->CloseConnect();
        if($res!=1)
         {
             $this->function_alert("Error");
         }
-
    }
 }
+
