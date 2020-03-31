@@ -11,20 +11,20 @@ class CustomerService {
       $res = $db->executequery($query);
       $arr = array() ;
       
-      while ($row=  mysqli_fetch_assoc($res))
+     while ($row=  mysqli_fetch_assoc($res))
             {
          
                 $cu=new User();
-                $cu->id=$row['id'];
-                $cu->name=$row['name'];
-                $cu->email=$row['email'];
-                $cu->password=$row['password'];
-                $cu->phonr=$row['phone'];
-                $cu->user_type=$row['user_type'];
-                $cu->can_read=$row['can_read'];
-                $cu->can_write=$row['can_write'];
-                $cu->can_update=$row['can_update'];
-                $cu->can_delet=$row['can_delet'];
+                $cu->setID($row['id']);
+                $cu->setName($row['name']);
+                $cu->setEmail($row['email']);
+                $cu->setPassword($row['password']);
+                $cu->setPhone($row['phone']);
+                $cu->setUserType($row['user_type']);
+                $cu->setCan_read($row['can_read']);
+                $cu->setCan_write($row['can_write']);
+                $cu->setCan_update($row['can_update']);
+                $cu->setCan_delete($row['can_delet']);
                 $arr[] = $cu ;
         
             }
@@ -45,20 +45,19 @@ class CustomerService {
             {
          
                 $cu=new User();
-                $cu->id=$row['id'];
-                $cu->name=$row['name'];
-                $cu->email=$row['email'];
-                $cu->password=$row['password'];
-                $cu->phonr=$row['phone'];
-                $cu->user_type=$row['user_type'];
-                $cu->can_read=$row['can_read'];
-                $cu->can_write=$row['can_write'];
-                $cu->can_update=$row['can_update'];
-                $cu->can_delet=$row['can_delet'];
+                $cu->setID($row['id']);
+                $cu->setName($row['name']);
+                $cu->setEmail($row['email']);
+                $cu->setPassword($row['password']);
+                $cu->setPhone($row['phone']);
+                $cu->setUserType($row['user_type']);
+                $cu->setCan_read($row['can_read']);
+                $cu->setCan_write($row['can_write']);
+                $cu->setCan_update($row['can_update']);
+                $cu->setCan_delete($row['can_delet']);
                 $arr[] = $cu ;
         
             }
-      
       $db->CloseConnect();
       return $arr;//return data of one customer  
    }
