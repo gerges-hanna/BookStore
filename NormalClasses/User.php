@@ -19,7 +19,12 @@ class User {
     private $email;
     private $password;
     private $userType;
-   
+    private $phone;
+    private $can_read;
+    private $can_write;
+    private $can_update;
+    private $can_delete;
+            
     
     function getID() {
         return $this->ID;
@@ -41,6 +46,26 @@ class User {
         return $this->userType;
     }
 
+    function getPhone() {
+        return $this->phone;
+    }
+
+    function getCan_read() {
+        return $this->can_read;
+    }
+
+    function getCan_write() {
+        return $this->can_write;
+    }
+
+    function getCan_update() {
+        return $this->can_update;
+    }
+
+    function getCan_delete() {
+        return $this->can_delete;
+    }
+
     function setID($ID) {
         $this->ID = $ID;
     }
@@ -60,6 +85,27 @@ class User {
     function setUserType($userType) {
         $this->userType = $userType;
     }
+
+    function setPhone($phone) {
+        $this->phone = $phone;
+    }
+
+    function setCan_read($can_read) {
+        $this->can_read = $can_read;
+    }
+
+    function setCan_write($can_write) {
+        $this->can_write = $can_write;
+    }
+
+    function setCan_update($can_update) {
+        $this->can_update = $can_update;
+    }
+
+    function setCan_delete($can_delete) {
+        $this->can_delete = $can_delete;
+    }
+
 
 
 
