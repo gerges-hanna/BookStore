@@ -11,13 +11,13 @@ class DBMangement
         $host="127.0.0.1";
         $user="root";
         $password="";
-        $database="book_shop";
+        $database="book_db";
         $this->connect =  mysqli_connect($host, $user, $password, $database);
         
         if(mysqli_connect_errno())
         {
             die("Cannot Connect To DataBase:".  mysqli_connect_error());
-        } 
+        }   
         
         
         
