@@ -24,7 +24,7 @@ class CustomerService {
                 $cu->setCan_read($row['can_read']);
                 $cu->setCan_write($row['can_write']);
                 $cu->setCan_update($row['can_update']);
-                $cu->setCan_delete($row['can_delet']);
+                $cu->setCan_delete($row['can_delete']);
                 $arr[] = $cu ;
         
             }
@@ -54,7 +54,7 @@ class CustomerService {
                 $cu->setCan_read($row['can_read']);
                 $cu->setCan_write($row['can_write']);
                 $cu->setCan_update($row['can_update']);
-                $cu->setCan_delete($row['can_delet']);
+                $cu->setCan_delete($row['can_delete']);
                 $arr[] = $cu ;
         
             }
