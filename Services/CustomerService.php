@@ -1,22 +1,30 @@
 <?php
 include 'DBMangement.php';
-include '../NormalClasses/Customer.php';
+include 'NormalClasses/User.php';
 class CustomerService {
   
     public function getCustomers(){
 
       $db = new  DBMangement();
       $db->ConnectStart();
-      $query = "SELECT * FROM customer";
+      $query = "SELECT * FROM user";
       $res = $db->executequery($query);
       $arr = array() ;
       
       while ($row=  mysqli_fetch_assoc($res))
             {
          
-                $cu=new Customer();
-                $cu->id=$row['person_id'];
+                $cu=new User();
+                $cu->id=$row['id'];
+                $cu->name=$row['name'];
+                $cu->email=$row['email'];
+                $cu->password=$row['password'];
                 $cu->phonr=$row['phone'];
+                $cu->user_type=$row['user_type'];
+                $cu->can_read=$row['can_read'];
+                $cu->can_write=$row['can_write'];
+                $cu->can_update=$row['can_update'];
+                $cu->can_delet=$row['can_delet'];
                 $arr[] = $cu ;
         
             }
@@ -25,21 +33,41 @@ class CustomerService {
       return $arr;//return all data of all customers
    }
    
-    public function getCustomer($id){
+    public function getCustomerById($id){
 
       $db = new  DBMangement();
       $db->ConnectStart();
-      $query = "SELECT * FROM customer WHERE id = $id ";
+      $query = "SELECT * FROM user WHERE id = $id ";
       $res = $db->executequery($query);
+       $arr = array() ;
+      
+         while ($row=  mysqli_fetch_assoc($res))
+            {
+         
+                $cu=new User();
+                $cu->id=$row['id'];
+                $cu->name=$row['name'];
+                $cu->email=$row['email'];
+                $cu->password=$row['password'];
+                $cu->phonr=$row['phone'];
+                $cu->user_type=$row['user_type'];
+                $cu->can_read=$row['can_read'];
+                $cu->can_write=$row['can_write'];
+                $cu->can_update=$row['can_update'];
+                $cu->can_delet=$row['can_delet'];
+                $arr[] = $cu ;
+        
+            }
+      
       $db->CloseConnect();
-      return $res;//return data of one customer  
+      return $arr;//return data of one customer  
    }
    
     public function deletCustomer($id){
 
       $db = new  DBMangement();
       $db->ConnectStart();
-      $query = "DELETE FROM customer WHERE id = $id ";
+      $query = "DELETE FROM user WHERE id = $id ";
       $res = $db->executequery($query);
       $db->CloseConnect();
       return $res;//this return bool 
