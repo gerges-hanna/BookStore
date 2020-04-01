@@ -57,21 +57,12 @@
 <div class="Supp" style="bottom: 150px">
     <ul style="list-style-type: none;text-align: center;">
         <li>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C1.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C2.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C3.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C4.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C5.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C6.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C7.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C8.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C9.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C10.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C11.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C12.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C13.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C14.png" style="width:200px;height:250px" class="zoom"></a>
-            <a href="Supp/Category1.php" > <img title="Gainers" src="img/C15.png" style="width:200px;height:250px" class="zoom"></a>
+
+            <?php
+                include_once 'C:/xampp/htdocs/BookStore/PagesController/CategoryController.php';
+                $t=new CategoryController();
+                $t->ShowCategory();
+            ?>
         </li>
     </ul> 
 </div>            

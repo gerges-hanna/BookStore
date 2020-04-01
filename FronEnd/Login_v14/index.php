@@ -1,4 +1,6 @@
-
+<?php 
+require_once 'C:/xampp/htdocs/BookStore/PagesController/LoginController.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,8 @@
     <div class="limiter">
             <div class="container-login100">
                     <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-                        <form class="login100-form validate-form flex-sb flex-w" method="POST" action="../../Services/LoginService.php">
+                        <form class="login100-form validate-form flex-sb flex-w" method="POST" action=""> 
+<!--                            ../../Services/LoginService.php-->
                                     <span class="login100-form-title p-b-32">
                                             E-Book Store
                                     </span>

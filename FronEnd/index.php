@@ -1,3 +1,7 @@
+<?php 
+    require_once 'C:/xampp/htdocs/BookStore/PagesController/LoginCheck.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +23,7 @@
 	        <div class="row">
 		      <div class="col-sm">
 			   <i class="fas fa-phone"></i> <span>01282692682</span>, 
-			   <i class="fas fa-envelope"></i> <span>bebo_dragon99@yahoo.com</span> 
+                           <i class="fas fa-envelope"></i> <span><?php  echo $_SESSION['usName'];?></span> 
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>

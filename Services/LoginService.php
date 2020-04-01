@@ -12,7 +12,7 @@
  * @author Gerges hanna FCI-H
  */
 
-include_once  '../Services/CustomerService.php';
+include_once  'C:/xampp/htdocs/BookStore/Services/CustomerService.php';
 
 class LoginService {
     //put your code here
@@ -49,9 +49,10 @@ class LoginService {
 }
 
 
-    $user=$_POST['username'];
-    $pass=$_POST['password'];
-    echo 'href="#"';
+//    $user=$_POST['username'];
+//    $pass=$_POST['password'];
+//    echo $user;
+    //header('Location:http://localhost/BookStore/Services/CustomerService.php');
     /*
     $obj=new User();
     $Tes=new LoginService();

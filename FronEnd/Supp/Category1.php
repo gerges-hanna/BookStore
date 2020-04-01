@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Science Fiction</title>
+    <title><?php echo $_GET['cat'];?></title>
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,7 +54,7 @@
          <br>
          <br>
      
-         <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 30px;">Fiction</h1>
+         <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 30px;"><?php echo $_GET['cat'];?></h1>
          <br>         
 <div class="products" style="margin-bottom: 70px; font-family: verdana;">
         <div class="container">

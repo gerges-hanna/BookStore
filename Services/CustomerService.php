@@ -1,6 +1,6 @@
 <?php
-include './DBMangement.php';
-include '../NormalClasses/User.php';
+include 'C:/xampp/htdocs/BookStore/Services/DBMangement.php';
+include 'C:/xampp/htdocs/BookStore/NormalClasses/User.php';
 class CustomerService {
   
     public function getCustomers(){
