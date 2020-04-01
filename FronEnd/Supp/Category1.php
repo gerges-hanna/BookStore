@@ -57,6 +57,7 @@
          <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 30px;"><?php echo $_GET['cat'];?></h1>
          <br>         
 <div class="products" style="margin-bottom: 70px; font-family: verdana;">
+    <a class="fa fa-book" href="../Login_v14/addBook.php" style="margin-left: 55px;font-size: 30px">Add Book</a>
         <div class="container">
         <ul>
                 <li>
