@@ -11,13 +11,39 @@
  *
  * @author Gerges hanna FCI-H
  */
-class Order {
+class Order extends Address {
     
     //put your code here
     private $ID;
     private $orderDate;
     private $customerID;
     private $total;
+    private $sipping_method;
+    private $payment_method;
+    function getSipping_method() {
+        return $this->sipping_method;
+    }
+
+    function getPayment_method() {
+        return $this->payment_method;
+    }
+
+    static function getSalesList() {
+        return self::$SalesList;
+    }
+
+    function setSipping_method($sipping_method) {
+        $this->sipping_method = $sipping_method;
+    }
+
+    function setPayment_method($payment_method) {
+        $this->payment_method = $payment_method;
+    }
+
+    static function setSalesList($SalesList) {
+        self::$SalesList = $SalesList;
+    }
+
     
     public static $SalesList=array(); //Just for sale Objects 
 
