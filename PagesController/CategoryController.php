@@ -11,8 +11,8 @@
  *
  * @author Gerges hanna FCI-H
  */
-require_once 'C:/xampp/htdocs/BookStore/Services/DBMangement.php';
-require_once 'C:/xampp/htdocs/BookStore/NormalClasses/Category.php';
+require_once '../Services/DBMangement.php';
+require_once '../NormalClasses/Category.php';
 class CategoryController {
     //put your code here
    function  getCategorey()

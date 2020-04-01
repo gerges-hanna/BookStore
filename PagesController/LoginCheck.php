@@ -9,5 +9,5 @@
     session_start();
     if($_SESSION['usId']==NULL)
     {
-        header('Location:http://localhost/BookStore/FronEnd/Login_v14/index.php');
+        header('Location:http://localhost/BookStore/FronEnd/Login.php');
     }

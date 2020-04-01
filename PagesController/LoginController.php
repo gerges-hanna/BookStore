@@ -1,7 +1,7 @@
 <?php
 
 
-require_once 'C:/xampp/htdocs/BookStore/Services/LoginService.php';
+require_once '../Services/LoginService.php';
     if(isset($_POST['submit']))
     {
         $user=$_POST['username'];
