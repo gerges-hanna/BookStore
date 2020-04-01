@@ -82,7 +82,115 @@ class BookService {
         }
         
     }
-    
+    Function getBooks()
+    {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book';
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array ;
+    }
+    Function getBookById($id)
+    {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book where id = ' . $id;
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array;
+    }
+    Function getBookByName($name)
+    {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book where name = ' . $name;
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array;
+        
+    }
+    Function getBookByISBN($isbn)
+    {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book where isbn = ' . $isbn;
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array;
+    }
 }
 // just for Test
 $tes=new BookService();
