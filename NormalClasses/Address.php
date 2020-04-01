@@ -2,14 +2,14 @@
 
 
 class Address {
-    private $id;
+    private $address_id;
     private $country;   
     private $city;
     private $state;
     private $street_no;
     
-    function getId() {
-        return $this->id;
+    function getAddressId() {
+        return $this->add_id;
     }
 
     function getCountry() {
@@ -28,8 +28,8 @@ class Address {
         return $this->street_no;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function setAddressId($id) {
+        $this->add_id = $id;
     }
 
     function setCountry($country) {

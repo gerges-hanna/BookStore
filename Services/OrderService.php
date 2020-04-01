@@ -1,5 +1,6 @@
 <?php
-include 'NourmalClasses/Order.php';
+include './DBMangement.php';
+include '../NormalClasses/Order.php';
 
 class OrderService {
    public function getOrders(){
@@ -99,4 +100,46 @@ class OrderService {
       return $arr;
      
    }
+   
+   
+   
+   function getOrderForUser(Order $order){
+       
+       $con =new DBMangement();
+       $con->ConnectStart();
+       $query = 'SELECT * FROM purchase WHERE customer_id= "'.$order->getCustomerID().'" ';
+       $res = $con->executequery($query);
+       $ar=array();
+       
+       while ($row = mysqli_fetch_assoc($res)){
+           
+           $or =new Order();
+           $or->setID($row['id']);
+           $or->setCustomerID($row['customer_id']);
+           $or->setSipping_method($row['shipping_method_id']);
+           $or->setPayment_method($row['payment_method_id']);
+           $or->setAddressId($row['address_id']);
+           $or->setTotal($row['total']);
+           $or->setOrderDate($row['date']);
+           $ar[]=$or;
+           
+           print_r($row);
+       }
+       $con->CloseConnect();
+   }
+   
+   
+   function createOrder(Order $order)
+   {
+       $con =new DBMangement();
+       $con->ConnectStart();
+       $query = ' INSERT INTO purchase( customer_id, shipping_method_id, payment_method_id, address_id, total, date) VALUES( "'.$order->getCustomerID().'", "'.$order->getSipping_method().'", "'.$order->getPayment_method().'", "'.$order->getAddressId().'", "'.$order->getTotal().'", "'.$order->getOrderDate().'") ';
+       $res = $con->executequery($query);
+       $con->CloseConnect();
+       if($res!=1)
+        {
+            $this->function_alert("Error");
+        }
+   }
+   
 }

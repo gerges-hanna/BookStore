@@ -91,7 +91,7 @@ class CustomerService {
    {
        $con= new DBMangement();
        $con->ConnectStart();
-       $query='INSERT INTO user(id, name, email, password, phone, user_type, can_read, can_write, can_update, can_delete) VALUES( "'.$user->getID().'", "'.$user->getName().'","'.$user->getEmail().'","'.$user->getPassword().'","'.$user->getPhone().'" ,"'.$user->getUserType().'","'.$user->getCan_read().'", "'.$user->getCan_write().'" ,"'.$user->getCan_update().'" ,"'.$user->getCan_delete().'")';
+       $query='INSERT INTO user( name, email, password, phone, user_type, can_read, can_write, can_update, can_delete) VALUES(  "'.$user->getName().'","'.$user->getEmail().'","'.$user->getPassword().'","'.$user->getPhone().'" ,"'.$user->getUserType().'","'.$user->getCan_read().'", "'.$user->getCan_write().'" ,"'.$user->getCan_update().'" ,"'.$user->getCan_delete().'")';
        $res= $con->executequery($query);
        $con->CloseConnect();
        if($res!=1)
