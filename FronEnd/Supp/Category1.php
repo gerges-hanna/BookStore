@@ -30,7 +30,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#" style="color: white;">About</a>
@@ -39,7 +39,7 @@
                         <a class="nav-link" href="#" style="color: white;" >Work</a>
                       </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="../Supp.html"  style="color: white;">Books</a>
+                        <a class="nav-link" href="../Supp.php"  style="color: white;">Books</a>
                       </li>	
                        <li class="nav-item">
                         <a class="nav-link" href="#" style="color: white;" >Contact</a>
@@ -61,8 +61,8 @@
         <ul>
                 <li>
                         <div class="Product">
-                        <a href="Bookinfo.html" class="img"><img src="../img/book1.jpg"/></a>
-                        <a href="Bookinfo.html" class="name" >The Loneliest Girl in the Universe</a>
+                        <a href="Bookinfo.php" class="img"><img src="../img/book1.jpg"/></a>
+                        <a href="Bookinfo.php" class="name" >The Loneliest Girl in the Universe</a>
                         <div>$29.9</div>
                         <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -70,8 +70,8 @@
                 </li>
                 <li>
                         <div class="Product" >
-                        <a href="Bookinfo.html" class="img"><img src="../img/book2.jpg"/></a>
-                        <a href="Bookinfo.html" class="name" >Blue Is A Darkness Weakened By Light</a>
+                        <a href="Bookinfo.php" class="img"><img src="../img/book2.jpg"/></a>
+                        <a href="Bookinfo.php" class="name" >Blue Is A Darkness Weakened By Light</a>
                         <div>$99.99</div>
                         <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -80,8 +80,8 @@
                 <li>
 
                         <div class="Product" >
-                                <a href="Bookinfo.html" class="img"><img src="../img/book4.jpg"/></a>
-                                <a href="Bookinfo.html" class="name" >Stephen King’s Cujo horrible psyche</a>
+                                <a href="Bookinfo.php" class="img"><img src="../img/book4.jpg"/></a>
+                                <a href="Bookinfo.php" class="name" >Stephen King’s Cujo horrible psyche</a>
                                 <div>$63.99</div>
                                 <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -107,8 +107,8 @@
                 </li>
                 <li>
                         <div class="Product" >
-                        <a href="Bookinfo.html" class="img"><img src="../img/book2.jpg"/></a>
-                        <a href="Bookinfo.html" class="name" >Blue Is A Darkness Weakened By Light</a>
+                        <a href="Bookinfo.php" class="img"><img src="../img/book2.jpg"/></a>
+                        <a href="Bookinfo.php" class="name" >Blue Is A Darkness Weakened By Light</a>
                         <div>$99.99</div>
                         <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -117,8 +117,8 @@
                 <li>
 
                         <div class="Product" >
-                                <a href="Bookinfo.html" class="img"><img src="../img/book4.jpg"/></a>
-                                <a href="Bookinfo.html" class="name" >Stephen King’s Cujo horrible psyche</a>
+                            <a href="Bookinfo.php" class="img"><img src="../img/book4.jpg"/></a>
+                                <a href="Bookinfo.php" class="name" >Stephen King’s Cujo horrible psyche</a>
                                 <div>$63.99</div>
                                 <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -126,8 +126,8 @@
                 </li>
                 <li>
                         <div class="Product" >
-                                <a href="Bookinfo.html" class="img"><img src="../img/book3.jpg"/></a>
-                                <a href="Bookinfo.html" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
+                                <a href="Bookinfo.php" class="img"><img src="../img/book3.jpg"/></a>
+                                <a href="Bookinfo.php" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
                                 <div>$59.99</div>
                                 <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -135,8 +135,8 @@
                 </li>
                 <li>
                         <div class="Product" >
-                        <a href="Bookinfo.html" class="img"><img src="../img/book1.jpg"/></a>
-                        <a href="Bookinfo.html" class="name" >The Loneliest Girl in the Universe</a>
+                        <a href="Bookinfo.php" class="img"><img src="../img/book1.jpg"/></a>
+                        <a href="Bookinfo.php" class="name" >The Loneliest Girl in the Universe</a>
                         <div>$29.9</div>
                         <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -144,8 +144,8 @@
                 </li>
                 <li>
                         <div class="Product" >
-                        <a href="Bookinfo.html" class="img"><img src="../img/book2.jpg"/></a>
-                        <a href="Bookinfo.html" class="name" >Blue Is A Darkness Weakened By Light</a>
+                        <a href="Bookinfo.php" class="img"><img src="../img/book2.jpg"/></a>
+                        <a href="Bookinfo.php" class="name" >Blue Is A Darkness Weakened By Light</a>
                         <div>$99.99</div>
                         <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -154,8 +154,8 @@
                 <li>
 
                         <div class="Product" >
-                                <a href="Bookinfo.html" class="img"><img src="../img/book4.jpg"/></a>
-                                <a href="Bookinfo.html" class="name" >Stephen King’s Cujo horrible psyche</a>
+                                <a href="Bookinfo.php" class="img"><img src="../img/book4.jpg"/></a>
+                                <a href="Bookinfo.php" class="name" >Stephen King’s Cujo horrible psyche</a>
                                 <div>$63.99</div>
                                 <a href="#" class="cart">Add to cart</a>
                         </div>
@@ -163,8 +163,8 @@
                 </li>
                 <li>
                         <div class="Product" >
-                                <a href="Bookinfo.html" class="img"><img src="../img/book3.jpg"/></a>
-                                <a href="Bookinfo.html" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
+                                <a href="Bookinfo.php" class="img"><img src="../img/book3.jpg"/></a>
+                                <a href="Bookinfo.php" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
                                 <div>$59.99</div>
                                 <a href="#" class="cart">Add to cart</a>
                         </div>

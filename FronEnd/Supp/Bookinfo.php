@@ -29,7 +29,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#" style="color: white;">About</a>
@@ -38,7 +38,7 @@
                         <a class="nav-link" href="#" style="color: white;" >Work</a>
                       </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="../Supp.html"  style="color: white;">Books</a>
+                        <a class="nav-link" href="../Supp.php"  style="color: white;">Books</a>
                       </li>	
                        <li class="nav-item">
                         <a class="nav-link" href="#" style="color: white;" >Contact</a>
@@ -76,7 +76,7 @@
                         
                         Now nominated as a YALSA Quick Pick!
                     </p>
-                    <a href="Category1.html">View Other Books</a>
+                    <a href="Category1.php">View Other Books</a>
         
                 </div>
             </div>

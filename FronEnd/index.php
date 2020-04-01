@@ -23,7 +23,7 @@
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login_v14/index.html">Sign Out</a>
+				<a class="get-quote" href="Login_v14/index.php">Sign Out</a>
 			  </div>
 		    </div>
 	    </div>
@@ -53,7 +53,7 @@
 			<a class="nav-link" href="#" style="color: white;" >Work</a>
 		  </li>
 			<li class="nav-item">
-			<a class="nav-link" href="Supp.html"  style="color: white;">Books</a>
+			<a class="nav-link" href="Supp.php"  style="color: white;">Books</a>
 		  </li>	
 		   <li class="nav-item">
 			<a class="nav-link" href="#" style="color: white;" >Contact</a>

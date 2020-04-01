@@ -33,7 +33,7 @@
     <div class="limiter">
             <div class="container-login100">
                     <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-                        <form class="login100-form validate-form flex-sb flex-w" method="POST" action="../Services/LoginService.php">
+                        <form class="login100-form validate-form flex-sb flex-w" method="POST" action="../../Services/LoginService.php">
                                     <span class="login100-form-title p-b-32">
                                             E-Book Store
                                     </span>
@@ -80,7 +80,7 @@
 
                             </form>
                             <div class="Reg-btn" >
-                                    <a class="Register-form-btn" href="../Register_f/index.html">
+                                    <a class="Register-form-btn" href="../Register_f/index.php">
                                             Register
                                             <i class="fa fa-long-arrow-left m-l-5"></i>
                                     </a>
