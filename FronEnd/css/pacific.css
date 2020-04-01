@@ -1,0 +1,41 @@
+body{
+    background: black ;
+    
+}
+h1{
+    text-align: center;
+}
+.wrapper{
+    width: 400px;
+    padding: 30px;
+    background-color: #294155;
+    margin: 0 auto ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.wrapper h2{ 
+    text-transform: uppercase;
+    color: gray ;
+}
+.wrapper p{
+    color: gray;
+    font-weight: bold;
+}
+
+.wrapper a{
+    text-decoration: none;
+    background: gray;
+    color: white;
+    display: block;
+    width: 50px 
+}
+  .wrapper input[type=text],
+            .wrapper input[type=email],
+               .wrapper input[type=text],
+            textarea {
+                 width: 100%;
+                margin-bottom: 15px;
+                padding: 5px;
+            }
+            

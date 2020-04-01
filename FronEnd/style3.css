@@ -1,0 +1,31 @@
+body{
+    background-image: url('form.jpg') ;
+ }
+ form {
+     margin-top: 100px;
+ }
+input
+{
+    font-size: 25px ;
+    margin-bottom: 20px;
+}
+label{
+color: rgb(230, 182, 119);
+font-size: 40px ;
+ }
+ iframe {
+     margin-top: 50px;
+     margin-left: 425px;
+     width: 600px;
+     height: 500px;
+ }
+ table 
+ {
+     background-color: white;
+ }
+ table, th, td {
+    border: 1px solid rgb(0, 0, 0);
+}
+table, th, td {
+    color: rgb(0, 0, 0);
+}

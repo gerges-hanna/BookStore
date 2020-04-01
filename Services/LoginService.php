@@ -47,6 +47,21 @@ class LoginService {
     }
     
 }
+
+
+    $user=$_POST['username'];
+    $pass=$_POST['password'];
+    echo 'href="#"';
+    /*
+    $obj=new User();
+    $Tes=new LoginService();
+    $obj=$Tes->Login($user, $pass);
+    if($obj!=NULL)
+    {
+        echo "Welcome".$obj->getName();
+    }  else {
+        echo 'User Or Pass InCorrect';
+    }*/
 // Just for test
         /*$obj=new User();
         $Tes=new LoginService();

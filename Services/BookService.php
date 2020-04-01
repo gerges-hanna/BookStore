@@ -205,18 +205,23 @@ $tes=new BookService();
 /*
 UPDATE `book` SET `name`="ss",`description`="wqd",`price`=84,`quantity`=5,`isbn`="ww",`image_url`="wdqw",`author_name`="ewf",`condition_id`=1,`customer_id`=1,`status_id`=1,`category_id`=1 WHERE id = 7;
  *  */
-    $tw=new Book();
-    $tw->setId(1);
-    $tw->setName("phpn12");
-    $tw->setDescription("1phpp2");
-    $tw->setPrice(9912);
-    $tw->setStock(912);
-    $tw->setIsbn(1256221);
-    $tw->setImage("phpI21");
-    $tw->setAuthor("phpA21");
-    $tw->setCondition("C1");
-    $tw->setCustomer_id(1);
-    $tw->setStatus("S1");
-    $tw->setCategory(1);
-
-    $tes->DeleteBook($tw->getId());
+//    $tw=new Book();
+//    $tw->setId(1);
+//    $tw->setName("phpn12");
+//    $tw->setDescription("1phpp2");
+//    $tw->setPrice(9912);
+//    $tw->setStock(912);
+//    $tw->setIsbn(1256221);
+//    $tw->setImage("phpI21");
+//    $tw->setAuthor("phpA21");
+//    $tw->setCondition("C1");
+//    $tw->setCustomer_id(1);
+//    $tw->setStatus("S1");
+//    $tw->setCategory(1);
+//
+//    $tes->DeleteBook($tw->getId());
+    
+    //Tawfiq Test
+    
+    $tq=new BookService();
+    print_r($tq->getBooks());

@@ -1,0 +1,19 @@
+body     {
+    
+        color:#666666;
+        background-color:#FFFFFF;
+        
+        }
+
+
+h1  {
+        background-color:#B9B9B9;
+        color:#FFFFFF;
+        margin-bottom: 0;
+        margin-top: 0;
+        background-image: url(lastlogo.jpg);
+        background-repeat: no-repeat;
+        background-position: left;   
+        padding:40px;
+        
+        }
