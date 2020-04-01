@@ -1,0 +1,77 @@
+   
+    body{
+    background-color: #efefef;
+    font-family: Arial;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    font-family: verdana;
+
+}
+div.Product{
+    float: left;
+    width: 240px;
+    background-color: rgb(238, 238, 238);
+    margin-bottom: 30px;
+}
+div.Product a{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+div.Product a.img{
+    text-align: center;
+    margin-top: 5px;
+}
+div.Product a.img img{
+    height: 300px;
+    width: 250px;
+}
+div.Product a.name {
+    font-weight: bolder;
+    color: black;
+    font-size: 13px;
+    text-decoration: none;
+}
+div.Product a.name:hover{
+    color: crimson;
+}
+div.Product div{
+    font-size: 18px;
+    font-weight: bold;
+    color: crimson;
+    margin: 10px 10px ;
+    float: left;
+    width: 100%;
+}
+div.Product a.cart{
+    border: black 1px solid;
+    background: black;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    
+}
+div.Product a.cart:hover{
+    background-color:crimson;
+    color: black;
+}
+
+div.products{
+    width: 1100px;
+    display: table;
+    margin: auto;
+}
+
+div.products ul li{
+    
+    width: 25%;
+    margin-bottom: 10px;
+    float: left;
+    list-style: none;
+}
+div.products img {
+    padding: 40px;
+    background-color: transparent;
+}
