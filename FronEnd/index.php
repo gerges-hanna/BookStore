@@ -1,5 +1,5 @@
 <?php 
-    require_once 'C:/xampp/htdocs/BookStore/PagesController/LoginCheck.php';
+    require_once '../PagesController/LoginCheck.php';
 ?>
 
 <!DOCTYPE html>

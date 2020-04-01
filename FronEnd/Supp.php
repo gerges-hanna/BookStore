@@ -59,7 +59,7 @@
         <li>
 
             <?php
-                include_once 'C:/xampp/htdocs/BookStore/PagesController/CategoryController.php';
+                include_once '../PagesController/CategoryController.php';
                 $t=new CategoryController();
                 $t->ShowCategory();
             ?>
