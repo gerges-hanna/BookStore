@@ -34,6 +34,32 @@ class CartService {
             echo 'Done';
         }
     }
-    
-}
-
+    function remove($bookId,$custId,$buyerId){
+        $connection = new DBMangement();
+        $connection ->ConnectStart();
+        $query = "Delete from cart where customer_id = '$custId' && book_id = '$bookId' && Salesman_id = '$buyerId' ";
+        $result = $connection ->executequery($query);
+        $connection ->CloseConnect();
+        if($result !=1){
+            $this->function_alert("Not Deleted");
+        }
+        else{
+            echo 'deleted successfully';
+        }
+            
+    }
+    function removeAll($custId){
+        $connection = new DBMangement();
+        $connection ->ConnectStart();
+        $query = "Delete from cart where customer_id = '$custId' ";
+        $result = $connection ->executequery($query);
+        $connection ->CloseConnect();
+        if($result !=1){
+            $this->function_alert("Not Deleted");
+        }
+        else{
+            echo 'deleted successfully';
+        }
+            
+    }        
+ }
