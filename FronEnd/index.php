@@ -27,7 +27,7 @@
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login_v14/index.php">Sign Out</a>
+				<a class="get-quote" href="Login.php">Sign Out</a>
 			  </div>
 		    </div>
 	    </div>
