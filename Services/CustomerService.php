@@ -1,5 +1,5 @@
 <?php
-include '../Services/DBMangement.php';
+include 'DBMangement.php';
 include '../NormalClasses/User.php';
 class CustomerService {
   

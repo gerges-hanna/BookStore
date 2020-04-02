@@ -2,32 +2,40 @@
 
 
 class Cart {
-    private $id;
-    private $cartDetails;
-    private $total;
-    
-    function getId() {
-        return $this->id;
+    private $customer_id;
+    private $salesman_id;
+    private $book_id;
+    private $quantity;
+    function getCustomer_id() {
+        return $this->customer_id;
     }
 
-    function getCartDetails() {
-        return $this->cartDetails;
+    function getSalesman_id() {
+        return $this->salesman_id;
     }
 
-    function getTotal() {
-        return $this->total;
+    function getBook_id() {
+        return $this->book_id;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function getQuantity() {
+        return $this->quantity;
     }
 
-    function setCartDetails($cartDetails) {
-        $this->cartDetails = $cartDetails;
+    function setCustomer_id($customer_id) {
+        $this->customer_id = $customer_id;
     }
 
-    function setTotal($total) {
-        $this->total = $total;
+    function setSalesman_id($salesman_id) {
+        $this->salesman_id = $salesman_id;
+    }
+
+    function setBook_id($book_id) {
+        $this->book_id = $book_id;
+    }
+
+    function setQuantity($quantity) {
+        $this->quantity = $quantity;
     }
 
 
