@@ -1,5 +1,5 @@
 <?php
-include 'DBmanagement.php';
+include './DBMangement.php';
 include '../NormalClasses/Cart.php';
 
 class CartService {
@@ -20,4 +20,20 @@ class CartService {
         $db->CloseConnect();
         return $arr ;
     }
+    
+    function createCart(Cart $cart){
+        $con =new DBMangement();
+        $con->ConnectStart();
+        $query = 'INSERT INTO cart(book_id, customer_id, Salesman_id, quantity) VALUES( "'.$cart->getBook_id().'" , "'.$cart->getCustomer_id().'" , "'.$cart->getSalesman_id().'" ,"'.$cart->getQuantity().'" )';
+        $res = $con->executequery($query);
+        $con->CloseConnect();
+        if($res!=1)
+        {
+            $this->function_alert("Error");
+        }  else {
+            echo 'Done';
+        }
+    }
+    
 }
+
