@@ -41,7 +41,7 @@ class CategoryController {
         for($i=0;$i<count($arr);$i++)
         {
             $img=$i+1;
-             echo '<a href="Supp/Category1.php?cat='.$arr[$i]->getName().'" > '
+             echo '<a href="Category1.php?cat='.$arr[$i]->getName().'" > '
             . '<img title="Gainers" src="img/C'.$img.'.png" style="width:200px;'
                      . 'height:250px" class="zoom">'.$arr[$i]->getName().'</a>';
         }

@@ -1,6 +1,6 @@
 <?php
 
-include_once  './DBMangement.php';
+include_once  '../Services/DBMangement.php';
 include_once  '../NormalClasses/Book.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -67,8 +67,13 @@ class BookService {
     }
     Function CreateBook(Book $book)
     {
+        if($book->getImage()==NULL || $book->getImage()=="")
+        {
+            $book->setImage("def.png");
+        }
+        $ret="Thers is some Thing Wrong Please Try Agian";
         $this->query='INSERT INTO book (name, description, price, quantity, isbn, autho_name, status, category_id, customer_id, image_url, book_condition) '
-                . 'VALUES ("'.$book->getName().'","'.$book->getDescription().'",'.$book->getPrice().','.$book->getStock().','.$book->getIsbn().',"'.$book->getAuthor().'","'.$book->getStatus().'",'.$book->getCustomer_id().','.$book->getCategory().',"'.$book->getImage().'","'.$book->getCondition().'")';
+                . 'VALUES ("'.$book->getName().'","'.$book->getDescription().'",'.$book->getPrice().','.$book->getStock().','.$book->getIsbn().',"'.$book->getAuthor().'","'.$book->getStatus().'",'.$book->getCategory().','.$book->getCustomer_id().',"'.$book->getImage().'","'.$book->getCondition().'")';
         //'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
         $connect=new DBMangement();
         $connect->ConnectStart();
@@ -78,8 +83,9 @@ class BookService {
         {
             $this->function_alert("Error");
         }  else {
-            echo 'Done';
+            $ret="Done";
         }
+        return $ret;
         
     }
     Function getBooks()
@@ -193,7 +199,7 @@ class BookService {
     }
 }
 // just for Test
-$tes=new BookService();
+//$tes=new BookService();
 //$tes->DeleteBook("asc");
 
 /*
@@ -223,5 +229,5 @@ UPDATE `book` SET `name`="ss",`description`="wqd",`price`=84,`quantity`=5,`isbn`
     
     //Tawfiq Test
     
-    $tq=new BookService();
-    print_r($tq->getBooks());
+//    $tq=new BookService();
+//    print_r($tq->getBooks());

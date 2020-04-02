@@ -41,7 +41,7 @@
 						Name
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Name is required">
-						<input type="text" id="textInput" class="input100" >
+                                            <input type="text" id="textInput" class="input100" name="name" >
 						<span class="focus-input100"></span>
 					</div>
 

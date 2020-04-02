@@ -1,9 +1,5 @@
 <?php
-
-if(isset($_GET['submit']))
-{
-    echo $_GET['name'];
-}
+include '../PagesController/AddBookCont.php';
 ?>
 
 
@@ -41,7 +37,7 @@ if(isset($_GET['submit']))
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-                            <form class="login100-form validate-form flex-sb flex-w" method="GET" action="">
+                            <form class="login100-form validate-form flex-sb flex-w" method="Get" action="">
 					<span class="login100-form-title p-b-32">
 						E-Book Store
 					</span>
@@ -59,11 +55,17 @@ if(isset($_GET['submit']))
 						Category
 					</span>
                     <div class="wrap-input100 m-b-36" >
-                        <select class="browser-default custom-select mb-4" id="select" name="opt">
-						<option  disabled="" selected="">Choose your option</option>
-						<option value="op1">Option 1</option>
-						<option value="op1">Option 2</option>
-						<option value="op1">Option 3</option>
+                        <select class="browser-default custom-select mb-4" id="select" name="cat">
+                            <option  selected="" value="Empty">Choose your option</option>
+<!--						<option value="op1">Option 1</option>
+						<option value="op2">Option 2</option>
+						<option value="op3">Option 3</option>-->
+                                                <?php 
+                                                for($i=0;$i<count($catArr);$i++)
+                                                {
+                                                    echo '<option value="'.$catArr[$i]->getId().'">'.$catArr[$i]->getName().'</option>'; 
+                                                }
+                                                ?>
 					</select>
 				</div>
 
@@ -72,21 +74,21 @@ if(isset($_GET['submit']))
 						ISBN
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "ISBN is required">
-						<input type="text" id="textInput" class="input100" >
+                                            <input type="text" id="textInput" class="input100" name="isbn" >
 						<span class="focus-input100"></span>
                                         </div>
                                         <span class="txt1 p-b-11" >
 						QUANTITY
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Quantity is required">
-						<input type="text" id="textInput" class="input100" >
+                                            <input type="text" id="textInput" class="input100" name="quantity" >
 						<span class="focus-input100"></span>
 					</div>
 					<span class="txt1 p-b-11">
 						Price
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Price is required">
-						<input type="text" id="textInput" class="input100">
+                                            <input type="text" id="textInput" class="input100" name="price">
 						<span class="focus-input100"></span>
 					 </div>
 					 
@@ -94,14 +96,14 @@ if(isset($_GET['submit']))
 						Book condition
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate ="Condition is required">
-						<input type="text" id="textInput" class="input100" >
+                                            <input type="text" id="textInput" class="input100" name="bookCon" >
 						<span class="focus-input100"></span>
 					</div>
 					 <span class="txt1 p-b-11">
 						Description
 					</span>
 					<div class="wrap-input100  m-b-36">
-						<textarea type="text" id="textarea" class="input100" ></textarea>
+                                            <textarea type="text" id="textarea" class="input100" name="desc" ></textarea>
 						<span class="focus-input100"></span>
 					 </div>
 					 
