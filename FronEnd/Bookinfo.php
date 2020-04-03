@@ -25,17 +25,19 @@
 
         <div class='all'>
         <div class='bookinfo'>
-            <img src="img/book1.jpg" alt="Shield Of Hades" width=200px height=300px>
+            <img src="img/book1.jpg" alt="Shield Of Hades" width=250px height=400px>
             <ul>
-                <li>     <b>Name:</b> The Loneliest girl in the uvinverse</li>
-                <li><b>Publisher:</b> Lauren James</li>
-                <li>  <b>Edition:</b> 2009 </li>
-                <li>    <b>Pages:</b> 300</li>
-                <li>    <b>ISBN:</b> 2012391</li>
+                <li>     <b>Name:</b> The Loneliest girl in the universe</li>
+                <li>     <b>Publisher:</b> Lauren James</li>
+                <li>     <b>Seller:</b> User</li>
+                <li>     <b>Category:</b> Fiction</li>
+                <li>     <b>Quantity:</b> 40</li>
+                <li>     <b>ISBN:</b> 2012391</li>
+                <li>     <b>Book Condition:</b> Fairly new</li>
             </ul>
             <button type="button" class="fa fa-shopping-cart">Add To Cart</button>
         </div>
-       
+    
         <div class="overview1 text-center" >
             <div class="container">
                     <h2 class="h1">description</h2>

@@ -41,11 +41,7 @@
 						Sign Up
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="Name is required">
-						<span class="label-input100">Full Name</span>
-						<input class="input100" type="text" name="name" placeholder="Name...">
-						<span class="focus-input100"></span>
-					</div>
+
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
@@ -58,12 +54,20 @@
 						<input class="input100" type="text" name="username" placeholder="Username...">
 						<span class="focus-input100"></span>
 					</div>
+                                    
+                                    
+                                        <div class="wrap-input100 validate-input" data-validate = "Phone Number is required">
+						<span class="label-input100">Phone Number</span>
+						<input class="input100" type="text" name="phone" placeholder="Phone Number">
+						<span class="focus-input100"></span>
+					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
 						<input class="input100" type="text" name="pass" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
+                                    
 
 					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
 						<span class="label-input100">Repeat Password</span>

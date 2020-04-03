@@ -77,6 +77,13 @@ include '../PagesController/AddBookCont.php';
                                             <input type="text" id="textInput" class="input100" name="isbn" >
 						<span class="focus-input100"></span>
                                         </div>
+                                          <span class="txt1 p-b-11">
+						Publisher
+					</span>
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Price is required">
+                                            <input type="text" id="textInput" class="input100" name="price">
+						<span class="focus-input100"></span>
+					 </div>
                                         <span class="txt1 p-b-11" >
 						QUANTITY
 					</span>
