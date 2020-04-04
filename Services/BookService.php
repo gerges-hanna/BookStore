@@ -197,10 +197,39 @@ class BookService {
         $connect->CloseConnect();
         return $array;
     }
+    Function getBookByCat($catID)
+    {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book where category_id = ' . $catID;
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array;
+    }
 }
+
+
 // just for Test
 //$tes=new BookService();
-//$tes->DeleteBook("asc");
+//print_r($tes->getBookByCat(4));
 
 /*
     INSERT INTO `book`(id, name, description, price, quantity, isbn, image_url,

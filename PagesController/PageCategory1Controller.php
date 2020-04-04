@@ -21,22 +21,26 @@ if($_GET['cat']==NULL)
 class PageCategory1Controller {
     //put your code here
     
-
-
-    function ShowBooks()
+    function test()
+    {
+        echo 'test';  
+    }
+    
+   function ShowBooks()
     {
         $book2=new BookService();
-        $arr=$book2->getBooks();
+        $arr=$book2->getBookByCat($_GET['cat']);
         for($i=0;$i<count($arr);$i++)
         {
             echo '<li>
                         <div class="Product">
-                        <a href="Bookinfo.php?cat='.$_GET['cat'].'&book='.$arr[$i]->getId().'" class="img"><img src="img/'.$arr[$i]->getImage().'"/></a>
-                        <a href="Bookinfo.php" class="name" >'.$arr[$i]->getName().'</a>
+                        <a href="Bookinfo.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'&book='.$arr[$i]->getId().'" class="img"><img src="img/'.$arr[$i]->getImage().'"/></a>
+                        <a href="Bookinfo.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'&book='.$arr[$i]->getId().'" class="name" >'.$arr[$i]->getName().'</a>
                         <div>$'.$arr[$i]->getPrice().'</div>
-                        <a href="#" class="cart">Add to cart</a>
+                           <a href="Bookinfo.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'&book='.$arr[$i]->getId().'"class="cart">Show More</a>
                         </div>
                      </li>';
         }
     }
 }
+/* <a  class="cart">Add to cart</a>*/

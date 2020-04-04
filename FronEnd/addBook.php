@@ -1,5 +1,11 @@
 <?php
+include '../PagesController/LoginCheck.php';
 include '../PagesController/AddBookCont.php';
+
+if($_SESSION['catID']==NULL || $_SESSION['catName']==NULL )
+{
+    header('Location:http://localhost/BookStore/FronEnd/Supp.php');
+}
 ?>
 
 
@@ -81,7 +87,7 @@ include '../PagesController/AddBookCont.php';
 						Publisher
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Price is required">
-                                            <input type="text" id="textInput" class="input100" name="price">
+                                            <input type="text" id="textInput" class="input100" name="publisher">
 						<span class="focus-input100"></span>
 					 </div>
                                         <span class="txt1 p-b-11" >
@@ -129,9 +135,10 @@ include '../PagesController/AddBookCont.php';
 
 				</form>
 				<div class="Reg-btn" >
-                                    <a class="Register-form-btn" href="Supp/Category1.php">
+                                    <?php echo '<a class="Register-form-btn" href="Category1.php?cat='.$_SESSION['catID'].'&catname='.$_SESSION['catName'].'">'; ?>
 						Cancel
 						<i class="fa fa-long-arrow-left m-l-5"></i>
+                                                
 					</a>
 				</div>
 			</div>

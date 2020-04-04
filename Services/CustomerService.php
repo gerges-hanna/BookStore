@@ -1,8 +1,14 @@
 <?php
-include 'DBMangement.php';
-include '../NormalClasses/User.php';
+require_once '../Services/DBMangement.php';
+require_once  '../NormalClasses/User.php';
 class CustomerService {
   
+    function function_alert($message) { 
+      
+    // Display the alert box  
+    echo "<script>alert('$message');</script>"; 
+    } 
+    
     public function getCustomers(){
 
       $db = new  DBMangement();
@@ -96,8 +102,9 @@ class CustomerService {
        $con->CloseConnect();
        if($res!=1)
         {
-            $this->function_alert("Error");
+            $this->function_alert("There is some thing wrong may be email or name is already exist ");
         }
+        return $res;
    }
 }
 

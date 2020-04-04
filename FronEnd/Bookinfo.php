@@ -1,8 +1,17 @@
+<?php
+    include '../PagesController/bookInfoController.php';
+    if(isset($_GET['submit']))
+    {
+        echo 'submit';
+    }
+?>
+
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>BOOK INFO</title>
+        <title><?php echo $ret[0]->getName()?></title>
         <link rel = 'stylesheet' href='Supp/bookinfo.css'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,8 +22,6 @@
         
     </head>
 <body>
-    
-	
 	<!--start navbar -->
 	<?php
             require_once '../PagesController/DesignController.php';
@@ -25,33 +32,29 @@
 
         <div class='all'>
         <div class='bookinfo'>
-            <img src="img/book1.jpg" alt="Shield Of Hades" width=250px height=400px>
+            <?php echo '<img src="img/'.$ret[0]->getImage().'" alt="Shield Of Hades" width=250px height=400px>';?>
             <ul>
-                <li>     <b>Name:</b> The Loneliest girl in the universe</li>
-                <li>     <b>Publisher:</b> Lauren James</li>
-                <li>     <b>Seller:</b> User</li>
-                <li>     <b>Category:</b> Fiction</li>
-                <li>     <b>Quantity:</b> 40</li>
-                <li>     <b>ISBN:</b> 2012391</li>
-                <li>     <b>Book Condition:</b> Fairly new</li>
+                <li>     <b>Name:</b> <?php echo $ret[0]->getName()?></li>
+                <li>     <b>Publisher:</b> <?php echo $ret[0]->getAuthor()?></li>
+                <li>     <b>Book Condition:</b> <?php echo $ret[0]->getCondition()  ?></li>
+                <li>     <b>Category:</b> <?php echo $_GET['catname']?></li>
+                <li>     <b>Quantity:</b> <?php echo $ret[0]->getStock()?></li>
+                <li>     <b>ISBN:</b> <?php echo $ret[0]->getIsbn() ?></li>
+                <li>     <b>Price:</b> <?php echo '$'.$ret[0]->getPrice()  ?></li>
             </ul>
-            <button type="button" class="fa fa-shopping-cart">Add To Cart</button>
-        </div>
+            
+                <?php 
+                        echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
+                ?>
+            </div>
     
         <div class="overview1 text-center" >
             <div class="container">
                     <h2 class="h1">description</h2>
-                    <p>A surprising and gripping sci-fi thriller with a killer twist
-
-                        The daughter of two astronauts, Romy Silvers is no stranger to life in space. But she never knew how isolating the universe could be until her parents’ tragic deaths left her alone on the Infinity, a spaceship speeding away from Earth.
-                        
-                        Romy tries to make the best of her lonely situation, but with only brief messages from her therapist on Earth to keep her company, she can’t help but feel like something is missing. It seems like a dream come true when NASA alerts her that another ship, the Eternity, will be joining the Infinity.
-                        
-                        Romy begins exchanging messages with J, the captain of the Eternity, and their friendship breathes new life into her world. But as the Eternity gets closer, Romy learns there’s more to J’s mission than she could have imagined. And suddenly, there are worse things than being alone….
-                        
-                        Now nominated as a YALSA Quick Pick!
+                    <p>
+                        <?php echo $ret[0]->getDescription()?>
                     </p>
-                    <?php echo '<a href="Category1.php?cat='.$_GET['cat'].'">View Other Books</a>'; ?>
+                    <?php echo '<a href="Category1.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'">View Other Books</a>'; ?>
         
                 </div>
             </div>

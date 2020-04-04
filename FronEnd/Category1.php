@@ -1,11 +1,14 @@
 <?php
 require_once '../PagesController/PageCategory1Controller.php';
+session_start();
+$_SESSION['catName']=$_GET['catname'];
+$_SESSION['catID']=$_GET['cat'];
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $_GET['cat'];?></title>
+    <title><?php echo $_GET['catname'];?></title>
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,130 +33,16 @@ require_once '../PagesController/PageCategory1Controller.php';
          <br>
          <br>
      
-         <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 30px;"><?php echo $_GET['cat'];?></h1>
+         <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 30px;"><?php echo $_GET['catname'];?></h1>
          <br>         
 <div class="products" style="margin-bottom: 70px; font-family: verdana;">
     <a class="fa fa-book" href="addBook.php" style="margin-left: 55px;font-size: 30px">Add Book</a>
         <div class="container">
-        <ul>
-               
-<!--                        <div class="Product">
-                        <a href="Bookinfo.php" class="img"><img src="img/book1.jpg"/></a>
-                        <a href="Bookinfo.php" class="name" >The Loneliest Girl in the Universe</a>
-                        <div>$29.9</div>
-                        <a href="#" class="cart">Add to cart</a>
-                        </div>-->
+        <ul
                         <?php 
                                 $bookCat=new PageCategory1Controller();
                                 $bookCat->ShowBooks();
-                        
-                        
                         ?>
-
-                
-                <li>
-                        <div class="Product" >
-                        <a href="Bookinfo.php" class="img"><img src="img/book2.jpg"/></a>
-                        <a href="Bookinfo.php" class="name" >Blue Is A Darkness Weakened By Light</a>
-                        <div>$99.99</div>
-                        <a href="#" class="cart">Add to cart</a>
-                        </div>
-
-                </li>
-                <li>
-
-                        <div class="Product" >
-                                <a href="Bookinfo.php" class="img"><img src="img/book4.jpg"/></a>
-                                <a href="Bookinfo.php" class="name" >Stephen King’s Cujo horrible psyche</a>
-                                <div>$63.99</div>
-                                <a href="#" class="cart">Add to cart</a>
-                        </div>
-                
-                </li>
-                <li>
-                        <div class="Product" >
-                                <a href="Bookinfo.html" class="img"><img src="img/book3.jpg"/></a>
-                                <a href="Bookinfo.html" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
-                                <div>$59.99</div>
-                                <a href="#" class="cart">Add to cart</a>
-                        </div>
-        
-                </li>
-                <li>
-                        <div class="Product" >
-                        <a href="Bookinfo.html" class="img"><img src="img/book1.jpg"/></a>
-                        <a href="Bookinfo.html" class="name" >The Loneliest Girl in the Universe</a>
-                        <div>$29.9</div>
-                        <a href="#" class="cart">Add to cart</a>
-                        </div>
-
-                </li>
-                <li>
-                        <div class="Product" >
-                        <a href="Bookinfo.php" class="img"><img src="img/book2.jpg"/></a>
-                        <a href="Bookinfo.php" class="name" >Blue Is A Darkness Weakened By Light</a>
-                        <div>$99.99</div>
-                        <a href="#" class="cart">Add to cart</a>
-                        </div>
-
-                </li>
-                <li>
-
-                        <div class="Product" >
-                            <a href="Bookinfo.php" class="img"><img src="img/book4.jpg"/></a>
-                                <a href="Bookinfo.php" class="name" >Stephen King’s Cujo horrible psyche</a>
-                                <div>$63.99</div>
-                                <a href="#" class="cart">Add to cart</a>
-                        </div>
-                
-                </li>
-                <li>
-                        <div class="Product" >
-                                <a href="Bookinfo.php" class="img"><img src="img/book3.jpg"/></a>
-                                <a href="Bookinfo.php" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
-                                <div>$59.99</div>
-                                <a href="#" class="cart">Add to cart</a>
-                        </div>
-        
-                </li>
-                <li>
-                        <div class="Product" >
-                        <a href="Bookinfo.php" class="img"><img src="img/book1.jpg"/></a>
-                        <a href="Bookinfo.php" class="name" >The Loneliest Girl in the Universe</a>
-                        <div>$29.9</div>
-                        <a href="#" class="cart">Add to cart</a>
-                        </div>
-
-                </li>
-                <li>
-                        <div class="Product" >
-                        <a href="Bookinfo.php" class="img"><img src="img/book2.jpg"/></a>
-                        <a href="Bookinfo.php" class="name" >Blue Is A Darkness Weakened By Light</a>
-                        <div>$99.99</div>
-                        <a href="#" class="cart">Add to cart</a>
-                        </div>
-
-                </li>
-                <li>
-
-                        <div class="Product" >
-                                <a href="Bookinfo.php" class="img"><img src="img/book4.jpg"/></a>
-                                <a href="Bookinfo.php" class="name" >Stephen King’s Cujo horrible psyche</a>
-                                <div>$63.99</div>
-                                <a href="#" class="cart">Add to cart</a>
-                        </div>
-                
-                </li>
-                <li>
-                        <div class="Product" >
-                                <a href="Bookinfo.php" class="img"><img src="img/book3.jpg"/></a>
-                                <a href="Bookinfo.php" class="name" >THE UPSTAIRS ROOM Kate Murray-Browne</a>
-                                <div>$59.99</div>
-                                <a href="#" class="cart">Add to cart</a>
-                        </div>
-        
-                </li>
-            
         </ul>
 </div>
     

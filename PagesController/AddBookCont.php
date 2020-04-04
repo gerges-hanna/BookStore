@@ -12,7 +12,7 @@ if(isset($_GET['submit']))
        echo 'Please Select Category';
    }  
    else {
-    session_start();
+    
     
     $book=new Book();
     $book->setName($_GET['name']);
@@ -21,7 +21,7 @@ if(isset($_GET['submit']))
     $book->setStock($_GET['quantity']);
     $book->setIsbn($_GET['isbn']);
     $book->setImage($_GET["myfile"]);
-    $book->setAuthor("Author");
+    $book->setAuthor($_GET['publisher']);
     $book->setCondition($_GET['bookCon']);
     $book->setCustomer_id($_SESSION['usId']);
     $book->setStatus("Available");

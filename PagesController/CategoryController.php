@@ -14,12 +14,32 @@
 require_once '../Services/DBMangement.php';
 require_once '../NormalClasses/Category.php';
 class CategoryController {
+    
     //put your code here
    function  getCategorey()
     {
         $db = new  DBMangement();
       $db->ConnectStart();
       $query = "SELECT * FROM category";
+      $res = $db->executequery($query);
+      $arr = array() ;
+      
+      while ($row=  mysqli_fetch_assoc($res))
+        {
+            $toArr=new Category();
+            $toArr->setId($row['id']);
+            $toArr->setName($row['category_name']);
+            $arr[]=$toArr;
+        }
+           
+      $db->CloseConnect();
+      return $arr;
+    }
+    function  getCategoreyByID($catID)
+    {
+        $db = new  DBMangement();
+      $db->ConnectStart();
+      $query = "SELECT * FROM category where id= ".$catID;
       $res = $db->executequery($query);
       $arr = array() ;
       
@@ -41,11 +61,13 @@ class CategoryController {
         for($i=0;$i<count($arr);$i++)
         {
             $img=$i+1;
-             echo '<a href="Category1.php?cat='.$arr[$i]->getName().'" > '
+             echo '<a href="Category1.php?cat='.$arr[$i]->getId().'&catname='.$arr[$i]->getName().'" > '
             . '<img title="Gainers" src="img/C'.$img.'.png" style="width:200px;'
-                     . 'height:250px" class="zoom">'.$arr[$i]->getName().'</a>';
+                     . 'height:250px" class="zoom"></a>';
+             
         }
     }
 }
 
-
+//$y=new CategoryController();
+//print_r($y->getCategoreyByID(4));

@@ -1,5 +1,7 @@
 <?php 
+
 require_once '../PagesController/LoginController.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +85,7 @@ require_once '../PagesController/LoginController.php';
 
                             </form>
                             <div class="Reg-btn" >
-                                    <a class="Register-form-btn" href="Register_f/index.php">
+                                <a class="Register-form-btn"  href="Register.php">
                                             Register
                                             <i class="fa fa-long-arrow-left m-l-5"></i>
                                     </a>

@@ -11,6 +11,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <input type="numeric" disabled="" value="5">
         <?php
 //            include './DBMangement.php';
 //            $ae=new DBMangement();
@@ -30,5 +31,9 @@ and open the template in the editor.
 //             echo $ae->ar[1]->id;
 //            $ae->CloseConnect();
         ?>
+        <form>
+            <button class="cart"></button>
+        </form>
+            
     </body>
 </html>

@@ -2,6 +2,8 @@
 
 
 require_once '../Services/LoginService.php';
+session_start();
+$_SESSION['usId']=NULL;
     if(isset($_POST['submit']))
     {
         $user=$_POST['username'];
@@ -11,7 +13,7 @@ require_once '../Services/LoginService.php';
         $obj=$Tes->Login($user, $pass);
         if($obj!=NULL)
         {
-            session_start();
+            
             $_SESSION['usName']=$obj->getName();
             $_SESSION['usId']=$obj->getID();
             $_SESSION['usType']=$obj->getUserType();
