@@ -25,7 +25,7 @@ margin-left: 30px;
 
 button{
  margin-top: 20px;
-  width: 150px;
+  width: 200px;
   height: 50px;
   color: red;    
 }
@@ -64,3 +64,40 @@ button{
  font-weight: bold;
  border: 1px soild #ffffff ;
 }
+.col {
+    margin-bottom: 20px;
+    margin-left: 45px;
+}
+.col-qty > * {
+    vertical-align: middle; 
+  }
+  
+  .col-qty > input {
+    max-width: 2.6em;
+  }
+  
+  
+  a.qty {
+    width: 2em;
+    line-height: 1em;
+    border-radius: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    background: #43ace3;  
+    color: #fff;
+  }
+  
+  a.qty:hover {
+    background: #3b9ac6;
+  }
+  input {
+    border: 0.3em solid #bbc3c6;
+    width: 50px;
+    font-size: 1.4em;
+    color: #8a8a8a;
+    text-align: center;
+  }
+  .col-numeric p {
+    font: bold 1.8em helvetica;
+  }
