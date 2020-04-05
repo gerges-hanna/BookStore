@@ -9,11 +9,11 @@ class CustomerService {
     echo "<script>alert('$message');</script>"; 
     } 
     
-    public function getCustomers(){
+    function getCustomers(User $user){
 
       $db = new  DBMangement();
       $db->ConnectStart();
-      $query = "SELECT * FROM user";
+      $query = ' SELECT name , email , phone  FROM `user` ';
       $res = $db->executequery($query);
       $arr = array() ;
       
@@ -21,22 +21,17 @@ class CustomerService {
             {
          
                 $cu=new User();
-                $cu->setID($row['id']);
                 $cu->setName($row['name']);
                 $cu->setEmail($row['email']);
-                $cu->setPassword($row['password']);
                 $cu->setPhone($row['phone']);
-                $cu->setUserType($row['user_type']);
-                $cu->setCan_read($row['can_read']);
-                $cu->setCan_write($row['can_write']);
-                $cu->setCan_update($row['can_update']);
-                $cu->setCan_delete($row['can_delete']);
                 $arr[] = $cu ;
-        
+                
+                print_r($row);
+                
             }
            
       $db->CloseConnect();
-      return $arr;//return all data of all customers
+     //return all data of all customers
    }
    
     public function getCustomerById($id){
