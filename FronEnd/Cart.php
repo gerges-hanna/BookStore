@@ -72,7 +72,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	  <link rel="stylesheet" href="css/main1.css">
-	  <link rel="stylesheet" href="cart.css">
+	  <link rel="stylesheet" href="css/cart.css">
     <title>Home</title>
 </head>
 <body>
@@ -244,6 +244,6 @@
 	  <script src="js/jquery-3.3.1.min.js"></script>
 	  <script src="js/popper.min.js"></script>
 	  <script src="js/bootstrap.min.js"></script>
-  <script src="cart.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

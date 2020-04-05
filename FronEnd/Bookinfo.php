@@ -42,7 +42,12 @@
                 <li>     <b>ISBN:</b> <?php echo $ret[0]->getIsbn() ?></li>
                 <li>     <b>Price:</b> <?php echo '$'.$ret[0]->getPrice()  ?></li>
             </ul>
-            
+            <span style="background-color: rgb(255, 0, 0);color: white;font-size: 25px; font-weight: bold;">Choose Quantity</span>
+            <div class="col"> 
+            <a href="#" class="qty qty-minus">-</a>
+				  <input type="numeric" value="1" />
+				<a href="#" class="qty qty-plus">+</a>
+            </div>
                 <?php 
                         echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
                 ?>
@@ -89,5 +94,6 @@
          <script src="js/jquery-3.3.1.min.js"></script>
          <script src="js/popper.min.js"></script>
        <script src="js/bootstrap.min.js"></script>
+       <script src="js/cart.js"></script>
     </body>
 </html>
