@@ -1,5 +1,8 @@
 <?php 
     require_once '../PagesController/LoginCheck.php';
+    require_once '../PagesController/HomeController.php';
+    $home=new HomeController();
+    
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +25,12 @@
 	    <div class="container">
 	        <div class="row">
 		      <div class="col-sm">
-			   <i class="fas fa-phone"></i> <span>01282692682</span>, 
+			    
                            <i class="fas fa-envelope"></i> <span><?php  echo $_SESSION['usName'];?></span> 
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login_v14/index.php">Sign Out</a>
+				<a class="get-quote" href="Login.php">Sign Out</a>
 			  </div>
 		    </div>
 	    </div>
@@ -105,9 +108,9 @@
 	<div class="overview text-center" >
     <div class="container">
 			<h2 class="h1">Who Are We?</h2>
-			<p>We pride ourselves in being the world's largest online Website for Buying&Selling Books .<br> Join us Now!
+			<p>We pride ourselves in being the world's largest online Website for Buying&Selling Books .<br>
 			</p>
-			<a href="" target="_blank">Register</a>
+<!--			<a href="" target="_blank">Register</a>-->
 
 		</div>
 	</div>
@@ -116,15 +119,15 @@
 	<div class="featured-work text-center">
 		<div class="container">
 			<h2>Most Sold Books</h2>
-			<p>"Select your category"</p>
+<!--			<p>"Select your category"</p>-->
       <ul class="list-unstyled row">
-				<li data-class="ALL" class="active col-md">ALL </li>
+<!--				<li data-class="ALL" class="active col-md">ALL </li>
 				<li data-class=".FICTION" class="col-md">Fiction</li>
 				<li data-class=".ART" class="col-md">Art And Culture</li>
 				<li data-class=".ARC" class="col-md">Architecture</li>
 				<li data-class=".HORROR" class="col-md">Horror</li>
 				<li data-class=".SPORTS" class="col-md">Sports</li>
-				<li data-class=".SCIENCE" class="col-md">Science</li>
+				<li data-class=".SCIENCE" class="col-md">Science</li>-->
 			</ul>
 		</div>
 		<div class="lol">
@@ -187,7 +190,7 @@
 								<h4 class="card-title">Buy Books</h4>
 								<h6 class="card-subtitle mb-2 text-muted">dummy</h6>
 								<p class="card-text">You can surf various Books of your choice and add it to the Cart.</p>
-								<a href="#" class="card-link">Show Books</a>
+                                                                <a href="../FronEnd/Supp.php" class="card-link">Show Books</a>
 							</div>
 						</div>
 				</div>
@@ -209,7 +212,7 @@
 								<h4 class="card-title">Sell Books</h4>
 								<h6 class="card-subtitle mb-2 text-muted">dummy</h6>
 								<p class="card-text">Upload your Book now with its details to be offered to a million of users.</p>
-								<a href="#" class="card-link">Upload</a>
+                                                                <a href="../FronEnd/addBook.php" class="card-link">Upload</a>
 							</div>
 						</div>
 					</div>
@@ -223,35 +226,10 @@
 				<div class="container">
 						<div id="testimonial" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
-								<li data-target="#testimonial" data-slide-to="0" class="active"></li>
-								<li data-target="#testimonial" data-slide-to="1"></li>
-								<li data-target="#testimonial" data-slide-to="2"></li>
+                                                                <?php $home->slideShow() ?>
 							</ol>
 							<div class="carousel-inner">
-								<div class="carousel-item active">						
-										<div class="carousel-caption d-none d-block">
-											<img src="img1/avatar1.png"  alt="...">
-											<h3>dummy</h3>
-											<span>dummy</span>
-											<p>dummy</p>
-										</div>
-								</div>
-								<div class="carousel-item">
-										<div class="carousel-caption d-none d-block">
-											<img src="img1/avatar2.png"  alt="...">
-											<h3>dummy</h3>
-											<span>dummy</span>
-											<p>dummy</p>
-										</div>
-								</div>
-								<div class="carousel-item">
-										<div class="carousel-caption d-none d-block">
-											<img src="img1/avatar3.png"  alt="...">
-											<h3>dummy</h3>
-											<span>dummy</span>
-											<p>Simeon Panda is one of the most influential fitness professionals in the world. He is a fitness entrepreneur who has immense popularity, not just because of his amazing physique, but for his character and high standards in representing the sports fitness industry. </p>
-										</div>
-								</div>
+                                                            <?php $home->slidInfo(); ?>
 							</div>
 							<a class="carousel-control-prev" href="#testimonial" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
