@@ -101,5 +101,22 @@ class CustomerService {
         }
         return $res;
    }
+   function viewBuyer($buyerId){
+       $connection = new DBMangement();
+       $connection ->ConnectStart();
+       $query = "select name , email , phone from user where id = '$buyerId' ";
+       $result = $connection->executequery($query);
+       $arr = array();
+       while ($row=  mysqli_fetch_assoc($result))
+            {
+                $cu=new User();
+                $cu->setName($row['name']);
+                $cu->setEmail($row['email']);
+                $cu->setPhone($row['phone']);
+                $arr[] = $cu ;
+            }
+        $connection->CloseConnect();
+        return $arr;
+   }
+       
 }
-
