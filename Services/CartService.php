@@ -18,6 +18,7 @@ class CartService {
         $arr = array();
         while($row = mysqli_fetch_assoc($res)){
             $ct = new Cart();
+            $ct->setTable_id('id');
             $ct->setBook_id($row['book_id']);
             $ct->setCustomer_id($row['buyer_id']);
             $ct->setSalesman_id($row['seller_id']);
@@ -50,23 +51,28 @@ class CartService {
         if($result !=1){
             $this->function_alert("Not Deleted");
         }
-        else{
-            echo 'deleted successfully';
-        }
             
     }
     function removeAll($custId){
         $connection = new DBMangement();
         $connection ->ConnectStart();
-        $query = "Delete from book_transaction where customer_id = '$custId' ";
+        $query = "Delete from book_transaction where buyer_id = ".$custId;
         $result = $connection ->executequery($query);
         $connection ->CloseConnect();
         if($result !=1){
             $this->function_alert("Not Deleted");
         }
-        else{
-            echo 'deleted successfully';
-        }
             
-    }        
+    } 
+    function UpdateQuantity($amount,$sellID,$buyerID,$bookID)
+    {
+        $connection = new DBMangement();
+        $connection ->ConnectStart();
+        $query='UPDATE book_transaction SET amount =amount+'.$amount.' WHERE seller_id ='.$sellID.' AND buyer_id='.$buyerID.'  AND book_id='.$bookID;
+        $result = $connection ->executequery($query);
+        $connection ->CloseConnect();
+        if($result !=1){
+            $this->function_alert("Not Deleted");
+        }
+    }
  }

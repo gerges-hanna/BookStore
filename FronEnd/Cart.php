@@ -2,21 +2,58 @@
     include_once '../Services/BookService.php';
     include_once '../Services/CartService.php';
     include_once '../Services/CustomerService.php';
+    session_start();
     if(isset($_GET['bookid']))
     {
-        session_start();
+        
         
         
         $book=new BookService();
         $cart=new CartService();
         $info=new Cart();
+        
+        Cart::$flag=0;
+        
+        
+        
+        $check=$cart->getAllInCart();
+        for($i=0;$i<count($check);$i++)
+        {
+            if($check[$i]->getBook_id()==$_GET['bookid'])
+            {
+                Cart::$flag=1;
+                break;
+            }
+        }
+        
+        
         $ret=$book->getBookById($_GET['bookid']);
-        echo $ret[0]->getName().' '.$ret[0]->getCustomer_id().' '.$_SESSION['usId'];
-        $info->setBook_id($_GET['bookid']);
-        $info->setCustomer_id($_SESSION['usId']);
-        $info->setSalesman_id($ret[0]->getCustomer_id());
-        $info->setQuantity(1);
-        $cart->createCart($info);
+        if(Cart::$flag==0)
+        {
+            
+            echo $ret[0]->getName().' '.$ret[0]->getCustomer_id().' '.$_SESSION['usId'];
+            $info->setBook_id($_GET['bookid']);
+            $info->setCustomer_id($_SESSION['usId']);
+            $info->setSalesman_id($ret[0]->getCustomer_id());
+            $info->setQuantity(1);
+            $cart->createCart($info);
+        }  else {
+            
+            echo $cart->UpdateQuantity(1, $ret[0]->getCustomer_id(), $_SESSION['usId'], $_GET['bookid']);
+            
+        }
+        header('Location:http://localhost/BookStore/FronEnd/Cart.php');
+    }
+    if(isset($_GET['bookiddel']))
+    {
+        $cart=new CartService();
+        $cart->remove($_GET['bookiddel'], $_GET['customer'], $_GET['seller']);
+        header('Location:http://localhost/BookStore/FronEnd/Cart.php');
+    }
+    if(isset($_GET['dell']))
+    {
+        $cart=new CartService();
+        $cart->removeAll($_SESSION['usId']);
         header('Location:http://localhost/BookStore/FronEnd/Cart.php');
     }
     
@@ -44,12 +81,15 @@
 	    <div class="container">
 	        <div class="row">
 		      <div class="col-sm">
-			   <i class="fas fa-phone"></i> <span>01282692682</span>, 
-			   <i class="fas fa-envelope"></i> <span>bebo_dragon99@yahoo.com</span> 
+			    
+                           <?php 
+                           echo '<i class="fas fa-envelope"></i> <span>'.$_SESSION['usName'].'</span>';
+                           ?>
+			    
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login_v14/index.html">Sign Out</a>
+				<a class="get-quote" href="Login.php" >Sign Out</a>
 			  </div>
 		    </div>
 	    </div>
@@ -72,7 +112,9 @@
 		
 		<div class="cart transition is-open">
 		  
-		  <button class="btn btn-update">Clear Cart</button>
+		  <?php
+                              echo '<button class="btn btn-update" onclick="document.location = \'Cart.php?dell=5\'"  >Clear Cart</button>';
+                  ?>
 		  
 		  
 		  <div class="table">
@@ -122,7 +164,7 @@
 			  </div>
 			  <div class="col col-total col-numeric">              
 				 <p>'.$arr[$i]->getQuantity()*$barr[0]->getPrice().'</p>
-				 <button style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt"></button>
+				 <button onclick="document.location = \'Cart.php?bookiddel='.$arr[$i]->getBook_id().'&seller='.$arr[$i]->getSalesman_id().'&customer='.$arr[$i]->getCustomer_id().'\'"  style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt"></button>
 			  </div>
 			  
 			</div>';
@@ -149,7 +191,7 @@
 			  </div>
 			  <div class="col col-total col-numeric">              
 				 <p>'.$arr[$i]->getQuantity()*$barr[0]->getPrice().'</p>
-				 <button style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt"></button>
+				 <button style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt" onclick="document.location = \'Cart.php?bookiddel='.$arr[$i]->getBook_id().'&seller='.$arr[$i]->getSalesman_id().'&customer='.$arr[$i]->getCustomer_id().'\'"></button>
 			  </div>
 			  
 			</div>';

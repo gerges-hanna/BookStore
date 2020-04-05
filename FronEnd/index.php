@@ -25,7 +25,7 @@
 	    <div class="container">
 	        <div class="row">
 		      <div class="col-sm">
-			   <i class="fas fa-phone"></i> <span>01282692682</span>, 
+			    
                            <i class="fas fa-envelope"></i> <span><?php  echo $_SESSION['usName'];?></span> 
 			  </div>
 			  <div class="col-sm">

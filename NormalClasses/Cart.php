@@ -2,11 +2,21 @@
 
 
 class Cart {
+    public static $flag;
+    private $Table_id;
     private $customer_id;
     private $salesman_id;
     private $book_id;
     private $quantity;
-    function getCustomer_id() {
+    function getTable_id() {
+        return $this->Table_id;
+    }
+
+    function setTable_id($Table_id) {
+        $this->Table_id = $Table_id;
+    }
+
+        function getCustomer_id() {
         return $this->customer_id;
     }
 
