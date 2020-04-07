@@ -45,15 +45,22 @@
                 <div class="containeruser" >
 		<div class="heading">
 		 
-                    <li class="userli" style="display: inline-block;">     <b>Seller:</b> Gerges</li>
-		  <a href="#" class="visibility-user transition is-closed"><i class="fas fa-eye"></i></a>    
+                    <li class="userli" style="display: inline-block;">     <b>Seller:</b> <?php
+                        require_once '../Services/CustomerService.php';
+                                            $cs=new CustomerService();
+                                            $carr=$cs->getCustomerById($ret[0]->getCustomer_id());
+                                            echo $carr[0]->getName();
+                    
+                    ?></li>
+		  <a class="visibility-user transition is-closed"><i class="fas fa-eye"></i></a>    
 		</div>
 		
 		<div class="user transition is-closed">
 			<div class="container">
 				<div class="row">
-					
-					<div class="col-md-4">
+					<?php 
+                                            
+                                            echo '<div class="col-md-4">
 						<div class="card profile-card-3">
 							<div class="background-block">
 								<img src="img/userbck.jpg" alt="profile-sample1" class="background"/>
@@ -62,13 +69,17 @@
 								<img src="img/defuserimg.png" alt="profile-image" class="profile"/>
 							</div>
 							<div class="card-content">
-							<h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-								<span>Phone : 0123127123</span>
-							<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
+							<h2>'.$carr[0]->getName().'<small>Email : '.$carr[0]->getEmail().'</small></h2>
+								<span>Phone : '.$carr[0]->getPhone().'</span>
+							<div class="icon-block"><a ><i class="fas fa-envelope"></i></a><a href="tel:'.$carr[0]->getPhone().'"> <i class="fas fa-phone"></i></a>
 							</div>
 							</div>
 					</div>
-				</div>
+				</div>';
+                                            
+                                        
+                                        ?>
+					
 				</div>
 				</div>
 		
@@ -76,12 +87,7 @@
 
                 
             </ul>
-            <span style="background-color: rgb(255, 0, 0);color: white;font-size: 25px; font-weight: bold;">Choose Quantity</span>
-            <div class="col"> 
-            <a href="#" class="qty qty-minus">-</a>
-				  <input type="numeric" value="1" />
-				<a href="#" class="qty qty-plus">+</a>
-            </div>
+            
                 <?php 
                         echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
                 ?>

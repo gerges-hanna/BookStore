@@ -9,29 +9,55 @@ class CustomerService {
     echo "<script>alert('$message');</script>"; 
     } 
     
-    function getCustomers(User $user){
+//    function getCustomers(User $user){
+//
+//      $db = new  DBMangement();
+//      $db->ConnectStart();
+//      $query = ' SELECT *  FROM `user` ';
+//      $res = $db->executequery($query);
+//      $arr = array() ;
+//      
+//     while ($row=  mysqli_fetch_assoc($res))
+//            {
+//         
+//                $cu=new User();
+//                $cu->setName($row['name']);
+//                $cu->setEmail($row['email']);
+//                $cu->setPhone($row['phone']);
+//                $arr[] = $cu ;
+//            }
+//           
+//      $db->CloseConnect();
+//     //return all data of all customers
+//   }
+   
+    public function getCustomer(){
 
       $db = new  DBMangement();
       $db->ConnectStart();
-      $query = ' SELECT name , email , phone  FROM `user` ';
+      $query = "SELECT * FROM user  ";
       $res = $db->executequery($query);
-      $arr = array() ;
+       $arr = array() ;
       
-     while ($row=  mysqli_fetch_assoc($res))
+         while ($row=  mysqli_fetch_assoc($res))
             {
          
                 $cu=new User();
+                $cu->setID($row['id']);
                 $cu->setName($row['name']);
                 $cu->setEmail($row['email']);
+                $cu->setPassword($row['password']);
                 $cu->setPhone($row['phone']);
+                $cu->setUserType($row['user_type']);
+                $cu->setCan_read($row['can_read']);
+                $cu->setCan_write($row['can_write']);
+                $cu->setCan_update($row['can_update']);
+                $cu->setCan_delete($row['can_delete']);
                 $arr[] = $cu ;
-                
-                print_r($row);
-                
+        
             }
-           
       $db->CloseConnect();
-     //return all data of all customers
+      return $arr;//return data of one customer  
    }
    
     public function getCustomerById($id){

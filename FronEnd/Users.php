@@ -1,9 +1,15 @@
-<?php
-    require_once '../PagesController/CartController.php';
-    $cc=new CartController();
-    $cc->checkIsSet();
-
+<?php 
+    require_once '../PagesController/userController.php';
+    $us=new userController();
+    session_start();
+    if(isset($_POST['trash']))
+    {
+        $cs->deletCustomer($_POST['trash']);
+    }
+    
+    
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -17,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	  <link rel="stylesheet" href="css/main1.css">
-	  <link rel="stylesheet" href="css/cart.css">
-    <title>Home</title>
+	  <link rel="stylesheet" href="users.css">
+    <title>Users</title>
 </head>
 <body>
     <!--start upper bar -->
@@ -26,64 +32,36 @@
 	    <div class="container">
 	        <div class="row">
 		      <div class="col-sm">
-			    
-                           <?php 
+			   <?php
                            echo '<i class="fas fa-envelope"></i> <span>'.$_SESSION['usName'].'</span>';
-                           ?>
-			    
-			  </div>
+                           ?> 
+			   </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login.php" >Sign Out</a>
+				<a class="get-quote" href="Login.php">Sign Out</a>
 			  </div>
 		    </div>
 	    </div>
 	</div>
 	<!-- end upper bar -->
 	<!--start navbar -->
-            <?php
-            require_once '../PagesController/DesignController.php';
-            
-            ?>
+	<?php
+          require_once '../PagesController/DesignController.php';
+        ?>
 	<!--end navbar -->
-	<div class="containercart">
-		<div class="heading">
-		  <h1>
-			<span class="shopper"></span> Shopping Cart
-		  </h1>
-		  
-		  <a href="#" class="visibility-cart transition is-open">X</a>    
-		</div>
-		
-		<div class="cart transition is-open">
-		  
-		  <?php
-                              echo '<button class="btn btn-update" onclick="document.location = \'Cart.php?dell=5\'"  >Clear Cart</button>';
-                  ?>
-		  
-		  
-		  <div class="table">
-			
-			<div class="layout-inline row th">
-			  <div class="col col-pro">Product</div>
-			  <div class="col col-price align-center "> 
-				Seller
-			  </div>
-			  <div class="col col-qty align-center">Quantity</div>
-			  <div class="col">TAX</div>
-			  <div class="col">Price</div>
-			</div>
-                      <?php
-                        $cc->cartOrders();
-                      ?>
+	<!--Card --><!--Card -->
+<div class="users">
+	<div class="container">
+    	<div class="row">
+    		
+    		<?php
+                    $us->getUsers();
+                ?>
 
-			         
-		</div>
-		  
-                    <a href="order.php" class="btn btn-update">Order Now</a>
-		
-	  </div>
 	</div>
+</div>
+	</div>
+	<!--Card --><!--Card -->
 	      <!--Footer-->
 		  <div id="footer">
 			<div class="text-center" style="padding-top: 20px;">
@@ -106,4 +84,4 @@
 	  <script src="js/bootstrap.min.js"></script>
   <script src="js/cart.js"></script>
 </body>
-</html>
+</html> 

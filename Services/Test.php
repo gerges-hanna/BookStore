@@ -1,39 +1,29 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php 
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <input type="numeric" disabled="" value="5">
-        <?php
-//            include './DBMangement.php';
-//            $ae=new DBMangement();
-//            $ae->ConnectStart();
-//            $query='SELECT * FROM address ';
-//            $res= $ae->executequery($query);
-//     
-//            while ($row=  mysqli_fetch_assoc($res))
-//            {
-//                $sa=new DBMangement();
-//                $sa->id=$row['id'];
-//                $sa->name=$row['country'];
-//                $ae->ar[]=$sa;
-////            print_r($row);
-//            }
-//            //print_r($ae->ar);
-//             echo $ae->ar[1]->id;
-//            $ae->CloseConnect();
-        ?>
-        <form>
-            <button class="cart"></button>
-        </form>
-            
-    </body>
-</html>
+include_once  '../Services/DBMangement.php';
+
+
+
+        
+
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $query = 'INSERT INTO `test`(`test1`) VALUES (5);';
+                
+        $res=$connect->executequery($query);
+        $query='SELECT LAST_INSERT_ID();';
+        $res=$connect->executequery($query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+            print_r($row);
+            }
+        $connect->CloseConnect();
+
+
+
+
+
+
+
+?>

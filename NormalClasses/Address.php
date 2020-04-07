@@ -5,11 +5,12 @@ class Address {
     private $address_id;
     private $country;   
     private $city;
-    private $state;
-    private $street_no;
+    private $address;
+    private $postal;
+    private $phone;
     
-    function getAddressId() {
-        return $this->add_id;
+    function getAddress_id() {
+        return $this->address_id;
     }
 
     function getCountry() {
@@ -20,16 +21,20 @@ class Address {
         return $this->city;
     }
 
-    function getState() {
-        return $this->state;
+    function getAddress() {
+        return $this->address;
     }
 
-    function getStreet_no() {
-        return $this->street_no;
+    function getPostal() {
+        return $this->postal;
     }
 
-    function setAddressId($id) {
-        $this->add_id = $id;
+    function getPhone() {
+        return $this->phone;
+    }
+
+    function setAddress_id($address_id) {
+        $this->address_id = $address_id;
     }
 
     function setCountry($country) {
@@ -40,13 +45,19 @@ class Address {
         $this->city = $city;
     }
 
-    function setState($state) {
-        $this->state = $state;
+    function setAddress($address) {
+        $this->address = $address;
     }
 
-    function setStreet_no($street_no) {
-        $this->street_no = $street_no;
+    function setPostal($postal) {
+        $this->postal = $postal;
     }
+
+    function setPhone($phone) {
+        $this->phone = $phone;
+    }
+
+
 
 
 }

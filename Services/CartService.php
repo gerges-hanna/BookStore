@@ -29,6 +29,25 @@ class CartService {
         return $arr ;
     }
     
+    function getAllInCartByID($id){
+        $db = new DBMangement();
+        $db->ConnectStart();
+        $query = "SELECT * FROM book_transaction where buyer_id= ".$id;
+        $res = $db->executequery($query);
+        $arr = array();
+        while($row = mysqli_fetch_assoc($res)){
+            $ct = new Cart();
+            $ct->setTable_id('id');
+            $ct->setBook_id($row['book_id']);
+            $ct->setCustomer_id($row['buyer_id']);
+            $ct->setSalesman_id($row['seller_id']);
+            $ct->setQuantity($row['amount']);
+            $arr[]= $ct ;
+        }
+        $db->CloseConnect();
+        return $arr ;
+    }
+    
     function createCart(Cart $cart){
         $con =new DBMangement();
         $con->ConnectStart();

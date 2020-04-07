@@ -1,6 +1,6 @@
 <?php
-include './DBMangement.php';
-include '../NormalClasses/Order.php';
+require_once  '../Services/DBMangement.php';
+require_once  '../NormalClasses/Order.php';
 
 class OrderService {
    public function getOrders(){
@@ -133,13 +133,32 @@ class OrderService {
    {
        $con =new DBMangement();
        $con->ConnectStart();
-       $query = ' INSERT INTO purchase( customer_id, shipping_method_id, payment_method_id, address_id, total, date) VALUES( "'.$order->getCustomerID().'", "'.$order->getSipping_method().'", "'.$order->getPayment_method().'", "'.$order->getAddressId().'", "'.$order->getTotal().'", "'.$order->getOrderDate().'") ';
+       $query = 'INSERT INTO `purchase`(`customer_id`, `shipping_method_id`, `payment_type`, `address_id`, `total`, `book_id`, `quantity`)'
+               . ' VALUES ( "'.$order->getCustomerID().'",'
+               . ' '.$order->getSipping_method().','
+               . ' "'.$order->getPayment_method().'",'
+               . ' "'.$order->getAddressID().'",'
+               . ' "'.$order->getTotal().'",'
+               . ' "'.$order->getBook_id().'",'
+               . ' "'.$order->getQuantity().'") ';
        $res = $con->executequery($query);
        $con->CloseConnect();
        if($res!=1)
         {
-            $this->function_alert("Error");
+           echo 'Error';
         }
+        return $res;
    }
    
 }
+//$or=new Order();
+//$or->setBook_id(8);
+//$or->setCustomerID(16);
+//$or->setAddressID(6);
+//$or->setSipping_method(1);
+//$or->setPayment_method("cash");
+//$or->setQuantity(300);
+//$or->setTotal(10);
+//$o=new OrderService();
+//$o->createOrder($or);
+//

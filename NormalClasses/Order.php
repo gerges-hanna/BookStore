@@ -1,5 +1,5 @@
 <?php
-include '../NormalClasses/Address.php';
+//require_once  '../NormalClasses/Address.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,7 +20,19 @@ class Order extends Address {
     private $total;
     private $sipping_method;
     private $payment_method;
-    function getSipping_method() {
+    private $book_id;
+    private $quantity;
+    private $AddressID;
+    
+    function getAddressID() {
+        return $this->AddressID;
+    }
+
+    function setAddressID($AddressID) {
+        $this->AddressID = $AddressID;
+    }
+
+        function getSipping_method() {
         return $this->sipping_method;
     }
 
@@ -79,6 +91,23 @@ class Order extends Address {
     public function setTotal($total) {
         $this->total = $total;
     }
+    function getBook_id() {
+        return $this->book_id;
+    }
+
+    function getQuantity() {
+        return $this->quantity;
+    }
+
+    function setBook_id($book_id) {
+        $this->book_id = $book_id;
+    }
+
+    function setQuantity($quantity) {
+        $this->quantity = $quantity;
+    }
+
+
 
 
 }
