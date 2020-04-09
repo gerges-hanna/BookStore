@@ -2,13 +2,7 @@
 <?php
 require_once '../PagesController/PageCategory1Controller.php';
 session_start();
-if(isset($_GET['cat']))
-{
-    $_SESSION['catName']=$_GET['catname'];
-    $_SESSION['catID']=$_GET['cat'];
-}elseif ($_GET['search']) {
-    
-}
+
 ?>
 
 <!DOCTYPE html>

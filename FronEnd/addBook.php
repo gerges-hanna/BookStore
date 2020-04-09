@@ -2,10 +2,6 @@
 include '../PagesController/LoginCheck.php';
 include '../PagesController/AddBookCont.php';
 
-if($_SESSION['catID']==NULL || $_SESSION['catName']==NULL )
-{
-    header('Location:http://localhost/BookStore/FronEnd/Supp.php');
-}
 ?>
 
 
