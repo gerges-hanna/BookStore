@@ -2,14 +2,27 @@
 <?php
 require_once '../PagesController/PageCategory1Controller.php';
 session_start();
-$_SESSION['catName']=$_GET['catname'];
-$_SESSION['catID']=$_GET['cat'];
+if(isset($_GET['cat']))
+{
+    $_SESSION['catName']=$_GET['catname'];
+    $_SESSION['catID']=$_GET['cat'];
+}elseif ($_GET['search']) {
+    
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $_GET['catname'];?></title>
+    <title><?php 
+                if(isset($_GET['cat']))
+                {
+                    echo $_GET['catname'];
+                }elseif ($_GET['search']) {
+                    
+                    echo $_GET['search'];
+                }
+    ?></title>
         <meta charset ="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -21,23 +34,7 @@ $_SESSION['catID']=$_GET['cat'];
         
     </head>
 <body>
-       <!--start upper bar -->
-	<div class="upper-bar">
-	    <div class="container">
-	        <div class="row">
-		      <div class="col-sm">
-			    <span>Welcome : </span> 
-             
-                           <i class="fas fa-user"></i> <span><?php  echo $_SESSION['usName'];?></span> 
-			  </div>
-			  <div class="col-sm">
-			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login.php">Sign Out</a>
-			  </div>
-		    </div>
-	    </div>
-	</div>
-	<!-- end upper bar -->
+       
 	
 	<!--start navbar -->
 	<?php
@@ -50,7 +47,17 @@ $_SESSION['catID']=$_GET['cat'];
          <br>
          <br>
      
-         <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 20px;"><?php echo $_GET['catname'];?></h1>
+         <h1 style="text-align: center;font-weight: 3000;font-size: 70px;margin-bottom: 20px;">
+             <?php 
+            if(isset($_GET['cat']))
+                {
+                    echo $_GET['catname'];
+                }elseif ($_GET['search']) {
+                    
+                    echo 'Search ('.$_GET['search'].')';
+                }
+         ?>
+         </h1>
          <br>         
 <div class="products" style="margin-bottom: 70px; font-family: verdana;">
   
@@ -58,7 +65,13 @@ $_SESSION['catID']=$_GET['cat'];
         <ul
                         <?php 
                                 $bookCat=new PageCategory1Controller();
-                                $bookCat->ShowBooks();
+                                
+                                if(isset($_GET['cat']))
+                                {
+                                    $bookCat->ShowBooks();
+                                }elseif ($_GET['search']) {
+                                    $bookCat->ShowBooksSearch($_GET['search']);
+                                }
                         ?>
         </ul>
 </div>

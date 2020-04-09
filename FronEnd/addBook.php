@@ -135,7 +135,7 @@ if($_SESSION['catID']==NULL || $_SESSION['catName']==NULL )
 
 				</form>
 				<div class="Reg-btn" >
-                                    <a class="Register-form-btn" href="index.php">
+                                    <a class="Register-form-btn" href="Supp.php">
 						Cancel
 						<i class="fa fa-long-arrow-left m-l-5"></i>
                                                 

@@ -170,11 +170,11 @@ class BookService {
         return $array;
         
     }
-    Function getBookByISBN($isbn)
+    Function getBookBySearchBar($search)
     {
         $connect=new DBMangement();
         $connect->ConnectStart();
-        $this->query = 'select * from book where isbn = ' . $isbn;
+        $this->query = 'SELECT * FROM book WHERE name LIKE "%'.$search.'%" OR price LIKE "%'.$search.'%" OR isbn LIKE "%'.$search.'%" ';
         $res=$connect->executequery($this->query);
         $array = array();
         while ($row=  mysqli_fetch_assoc($res))
@@ -259,4 +259,4 @@ UPDATE `book` SET `name`="ss",`description`="wqd",`price`=84,`quantity`=5,`isbn`
     //Tawfiq Test
     
 //    $tq=new BookService();
-//    print_r($tq->getBooks());
+//    print_r($tq->getBookBySearchBar("5"));

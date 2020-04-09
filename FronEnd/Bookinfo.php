@@ -27,23 +27,7 @@
         
     </head>
 <body>
-       <!--start upper bar -->
-	<div class="upper-bar">
-	    <div class="container">
-	        <div class="row">
-		      <div class="col-sm">
-			    <span>Welcome : </span> 
-             
-                           <i class="fas fa-user"></i> <span><?php  echo $_SESSION['usName'];?></span> 
-			  </div>
-			  <div class="col-sm">
-			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login_v14/index.php">Sign Out</a>
-			  </div>
-		    </div>
-	    </div>
-	</div>
-	<!-- end upper bar -->
+      
 	<!--start navbar -->
 	<?php
             require_once '../PagesController/DesignController.php';
@@ -110,8 +94,12 @@
             </ul>
             
                 <?php 
-                        echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
-                ?>
+                        if($_SESSION['usId']!=$ret[0]->getCustomer_id())
+                        {
+                           echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
+                 
+                        }
+                        ?>
             </div>
     
         <div class="overview1 text-center" >
@@ -120,7 +108,16 @@
                     <p>
                         <?php echo $ret[0]->getDescription()?>
                     </p>
-                    <?php echo '<a href="Category1.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'">View Other Books</a>'; ?>
+                    <?php 
+                    if(isset($_GET['cat']))
+                    {
+                        echo '<a href="Category1.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'">View Other Books</a>';
+                    }elseif ($_GET['search']) {
+                        echo '<a href="Category1.php?search='.$_GET['search'].'">View Other Books</a>';
+                    }
+                    ?>
+                    
+                    
         
                 </div>
             </div>
