@@ -396,7 +396,6 @@ iframe {
   z-index: -1;
   width: 100%;
   height: 300%;
-  background: #333333;
   bottom: -100%;
   left: 0;
 
@@ -417,7 +416,7 @@ iframe {
   padding: 0 20px;
   min-width: 244px;
   height: 50px;
-
+background-color: #333333;
   font-family: Raleway-Bold;
   font-size: 16px;
   color: #fff;

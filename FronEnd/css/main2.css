@@ -8,7 +8,7 @@
 .upper-bar {
 	background-color: #ffffff;
 	color: #2f00ff;
-	padding: 10px
+	padding: 10px;
 }
  
 .upper-bar span {
@@ -25,12 +25,16 @@
 /* Start Navbar */
 .navbar{
 
-	background-color: rgb(0, 0, 0);
+	background-color:black;
 	padding: 1px;
 }
 
+.navbar-brand {
+          margin-top: 10px;
+}
 .navbar-brand > span {
 	font-size: 40px;
+
 }
 .navbar-brand span:first-child {
 	font-weight: bold;
@@ -40,10 +44,6 @@
 	color: #ff0000;
 }
 
-#navbarSupportedContent {
-
-	margin-left: 40px;
-}
 #navbarSupportedContent li  {
 	
 	padding: 15px;
@@ -51,7 +51,7 @@
 	text-transform: uppercase;
 	margin-left: 15px;
 	font-weight: bold;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 #navbarSupportedContent li a:hover{
     background-color: rgb(131, 131, 131);
@@ -62,19 +62,38 @@
 .navbar-nav .active > .nav-link {
 color: #00f7ff !important
 }
-#search-bar {
 
-	color:#333;
-	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,"ＭＳ Ｐゴシック",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-	font-size:16px;
-	font-weight:600;
-	height:25px;
-	outline:none;
-	padding:0;
-	width: 300px;
-	margin-bottom: 15px;
-	margin-left: 30px;
-	}
+.search input[type=text] {
+  padding: 3px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+.search button {
+  float: left;
+  width: 20%;
+  padding: 3px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: #0b7dda;
+}
+
+.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+            
 /* End navbar */
 /*Start Slider*/
 .slider {
@@ -304,8 +323,12 @@ color: #000000;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	background: url('../img1/mus/test.jpg');
+	background: url('../img/abtus1.jpg');
 	position: relative;
+        margin-bottom: 200px;
+        width: 1300px;
+        height:700px;
+        left: 70px;
 }
 .testimonial .overlay {
 	position: absolute;
@@ -313,7 +336,6 @@ color: #000000;
 	height: 100%;
 	left: 0%;
 	top: 0%;
-	background-color: rgba(0, 0, 0, .6);
 	z-index: 2;
 }
 .testimonial .container {
@@ -322,7 +344,7 @@ color: #000000;
 }
 .testimonial .carousel-caption{
 	top: 50% ;
-	margin-top: -158px ;
+	margin-top: -90px ;
 }
 .testimonial .carousel-caption img {
 	margin-bottom: 30px ;
@@ -341,9 +363,6 @@ color: #000000;
 
 
 }
-.testimonial p {
-	color: #FFF;
-}
 .testimonial .carousel-indicators li {
 	display: inline-block;
 	width: 36px;
@@ -353,7 +372,7 @@ color: #000000;
 	cursor: pointer;
 	border: none;
 	border-radius: 50%;
-	background-color: #fad60c;
+	background-color: white;
 	box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);       
 list-style-type: square;
 }
@@ -365,7 +384,7 @@ list-style-type: square;
 	cursor: pointer;
 	border: none;
 	border-radius: 10%;
-	background-color: #6b0e0e;
+        background-color: #14fbff;
 	box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);       
 list-style-type: square;
 margin-top: 300px;
@@ -389,13 +408,12 @@ margin-top: 300px;
 /*Start Pricing Table */
 .pricing-table {
 	padding: 100px 0 100px ;
-	background-color: #242424 ;
 }
 .pricing-table h2 {
 	font-size: 60px;
 	font-weight: bold;
 	margin-bottom: 20px;
-	color: #ec1c23;
+	color: black;
 }
 .pricing-table .section-box {
 	line-height: 1.6 ;
@@ -407,6 +425,7 @@ margin-top: 300px;
 }
 .pricing-table .card {
 	margin-bottom: 25px;
+        background-color: #c1e0d0;
 }
 .pricing-table .card-body {
 	padding: 0;
@@ -465,3 +484,34 @@ margin-top: 300px;
 
 
 /*End Pricing Table */
+
+
+/* about us Page Content */
+
+
+.abtus #container{
+
+    border: 1px solid gray;
+    margin: 5%;
+    padding: 1%;
+
+}
+.abtus #container:hover{
+    background-color: black;
+    color: black;
+}
+.abtus #text{
+    display: none;
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 10%;
+
+}
+.abtus #container:hover #text{
+    display: inline;
+}
+
+/* End */
+
+
+/* ------------------------------------------------ */

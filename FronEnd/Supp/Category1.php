@@ -9,7 +9,7 @@
         <link rel="shortcut icon" type="image/png" href="../img/mainlogo.png"/>
         <link rel="stylesheet" type="text/css" href="../css/Supplement.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/main1.css">
+        <link rel="stylesheet" href="../css/main2.css">
         <link rel="stylesheet" type="text/css" href="../css/footer.css">
         
     </head>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/main1.css">
+	  <link rel="stylesheet" href="css/main2.css">
     <title>Home</title>
 </head>
 <body>
@@ -22,12 +22,13 @@
 	    <div class="container">
 	        <div class="row">
 		      <div class="col-sm">
-			   <i class="fas fa-phone"></i> <span>01282692682</span>, 
-                           <i class="fas fa-envelope"></i> <span><?php  echo $_SESSION['usName'];?></span> 
+			    <span>Welcome : </span> 
+             
+                           <i class="fas fa-user"></i> <span><?php  echo $_SESSION['usName'];?></span> 
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login_v14/index.php">Sign Out</a>
+				<a class="get-quote" href="Login.php">Sign Out</a>
 			  </div>
 		    </div>
 	    </div>
@@ -65,7 +66,7 @@
   </div>
 	  </div>
 	  <!--end slider -->
-	<!--Start Features-->
+	<!--Start Features -->
 	<div class="features text-center">
 	  <div class="container">
       <div class="row">
@@ -101,13 +102,14 @@
 		</div>
 	</div>
 	<!-- End Features -->
+  
 	<!-- Start Overview -->
 	<div class="overview text-center" >
     <div class="container">
 			<h2 class="h1">Who Are We?</h2>
-			<p>We pride ourselves in being the world's largest online Website for Buying&Selling Books .<br> Join us Now!
+			<p>We pride ourselves in being the world's largest online Website for Buying&Selling Books .<br> Want to know more about us !
 			</p>
-			<a href="" target="_blank">Register</a>
+                        <a href="aboutUS.php">About us</a>
 
 		</div>
 	</div>
@@ -174,7 +176,7 @@
 		</div>
 
 	<!-- End Featured Work -->
-	<!-- Start Latest Post -->
+	<!-- Start service for users -->
 	<div class="latest-post">
     <div class="container">
 			<h2 class="text-center">OUR SERVICES</h2>
@@ -185,9 +187,8 @@
 							<img src="img/eb1.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h4 class="card-title">Buy Books</h4>
-								<h6 class="card-subtitle mb-2 text-muted">dummy</h6>
 								<p class="card-text">You can surf various Books of your choice and add it to the Cart.</p>
-								<a href="#" class="card-link">Show Books</a>
+                                                                <a href="Supp.php" class="card-link">Show Books</a>
 							</div>
 						</div>
 				</div>
@@ -196,7 +197,6 @@
 							<img src="img/eb3.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h4 class="card-title">My Orders</h4>
-								<h6 class="card-subtitle mb-2 text-muted">dummy</h6>
 								<p class="card-text">Click to view your pervious orders with all the needed information.</p>
 								<a href="#" class="card-link">View</a>
 							</div>
@@ -207,65 +207,55 @@
 							<img src="img/eb2.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h4 class="card-title">Sell Books</h4>
-								<h6 class="card-subtitle mb-2 text-muted">dummy</h6>
 								<p class="card-text">Upload your Book now with its details to be offered to a million of users.</p>
-								<a href="#" class="card-link">Upload</a>
+                                                                <a href="addBook.php" class="card-link">Upload</a>
 							</div>
 						</div>
 					</div>
 			  </div>
 			</div>
 		</div>
-	<!-- End Latest Post -->
-		<!--Start Testimonials-->
-		<div class="testimonial">
-				<div class="overlay"></div>
-				<div class="container">
-						<div id="testimonial" class="carousel slide" data-ride="carousel">
-							<ol class="carousel-indicators">
-								<li data-target="#testimonial" data-slide-to="0" class="active"></li>
-								<li data-target="#testimonial" data-slide-to="1"></li>
-								<li data-target="#testimonial" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="carousel-item active">						
-										<div class="carousel-caption d-none d-block">
-											<img src="img1/avatar1.png"  alt="...">
-											<h3>dummy</h3>
-											<span>dummy</span>
-											<p>dummy</p>
-										</div>
-								</div>
-								<div class="carousel-item">
-										<div class="carousel-caption d-none d-block">
-											<img src="img1/avatar2.png"  alt="...">
-											<h3>dummy</h3>
-											<span>dummy</span>
-											<p>dummy</p>
-										</div>
-								</div>
-								<div class="carousel-item">
-										<div class="carousel-caption d-none d-block">
-											<img src="img1/avatar3.png"  alt="...">
-											<h3>dummy</h3>
-											<span>dummy</span>
-											<p>Simeon Panda is one of the most influential fitness professionals in the world. He is a fitness entrepreneur who has immense popularity, not just because of his amazing physique, but for his character and high standards in representing the sports fitness industry. </p>
-										</div>
-								</div>
+	<!-- End service -->
+        	<!-- Start service for admin -->
+	<div class="latest-post">
+    <div class="container">
+			<h2 class="text-center">Welcome Admin</h2>
+			<p class="section-box text-center ">Choose your command.</p>
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+						<div class="card">
+							<img src="img/eb1.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h4 class="card-title">View Books</h4>
+								<p class="card-text">View all the Books in the System as a user view</p>
+                                                                <a href="Supp.php" class="card-link">Show Books</a>
 							</div>
-							<a class="carousel-control-prev" href="#testimonial" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#testimonial" role="button" data-slide="next">
-								<span class="carousel-control-next-icon active" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
 						</div>
 				</div>
+				<div class="col-md-6 col-lg-4">
+						<div class="card">
+                                                    <img src="img/usersdefault.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h4 class="card-title">Users</h4>
+								<p class="card-text">View all the registered Users on the system with all their information</p>
+                                                                <a href="Users.php" class="card-link">View</a>
+							</div>
+						</div>
 				</div>
-			
-			<!--End Testimonials-->
+				<div class="col-md-6 col-lg-4">
+						<div class="card">
+							<img src="img/eb2.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h4 class="card-title">Sell Books</h4>
+								<p class="card-text">Upload your Book now with its details to be offered to a million of users</p>
+                                                                <a href="addBook.php" class="card-link">Upload</a>
+							</div>
+						</div>
+					</div>
+			  </div>
+			</div>
+		</div>
+	<!-- End service -->
 	<!--Start Pricing Table -->
 	<div class="pricing-table text-center">
 			<div class="container">
@@ -279,11 +269,8 @@
 									<h6 class="card-subtitle mb-2 text-muted">New Offer</h6>
 									<p class="card-text">$99/<span>Month</span</p>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
+                                        <li class="list-group-item">Tax 10% less</li>
+                                        <li class="list-group-item">User can added books up to 50/month</li>
                                     </ul>
 									<a href="" class="card-link">BUY NOW</a>
 								</div>
@@ -292,15 +279,13 @@
 					<div class="col-md-6 col-lg-4">
 							<div class="card corporate">
 								<div class="card-body">
-									<h4 class="card-title">1 YEAR</h4>
+									<h4 class="card-title">PERMANENT</h4>
 									<h6 class="card-subtitle mb-2 text-muted">New Offer</h6>
-									<p class="card-text">$199/<span>Year</span</p>
+									<p class="card-text">$2999/<span>Year</span</p>
 									<ul class="list-group list-group-flush">
-										<li class="list-group-item">dummy</li>
-										<li class="list-group-item">dummy</li>
-										<li class="list-group-item">dummy</li>
-										<li class="list-group-item">dummy</li>
-										<li class="list-group-item">dummy</li>
+                                                                                <li class="list-group-item">No Taxes! user can buy any book with its original price </li>
+                                                                                 <li class="list-group-item">User can added up unlimited number of books</li>
+                                                                                 <li class="list-group-item">sponsor on all books</li>
 									</ul>
 									<a href="" class="card-link">BUY NOW</a>
 								</div>
@@ -309,15 +294,13 @@
 					<div class="col-md-6 col-lg-4">
 							<div class="card">
 								<div class="card-body">
-									<h4 class="card-title">PERMANENT</h4>
+									<h4 class="card-title">1 YEAR</h4>
 									<h6 class="card-subtitle mb-2 text-muted">New Offer</h6>
-									<p class="card-text">$4999/<span>Perm</span</p>
+									<p class="card-text">$799/<span>Perm</span</p>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
-                                        <li class="list-group-item">dummy</li>
+                                        <li class="list-group-item">tax 30% less</li>
+   				     <li class="list-group-item">User can added books up to 100/month</li>
+					<li class="list-group-item">Sponsor on 40 books</li>
                                     </ul>
 									<a href="" class="card-link">BUY NOW</a>
 								</div>

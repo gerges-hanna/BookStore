@@ -142,7 +142,7 @@ class CartController {
 			  
 			</div>';
                             }
-                            $total=$total+($arr[$i]->getQuantity()*$barr[0]->getPrice());
+                            $total=$total+($arr[$i]->getQuantity()*$barr[0]->getPrice());                      
                         }
                         
                         echo '<div class="tf">
@@ -154,7 +154,8 @@ class CartController {
 			   </div>
 			   <div class="row layout-inline">
 				 <div class="col">
-				   <p>Total : '.$total.'</p>
+                                 <p>Order Price:'.$total.' </p>
+				   <p>Total :'.$total.' pluse " '.$this->tax*count($arr).' tax "</p>
 				 </div>
 				 <div class="col"></div>
 			   </div>

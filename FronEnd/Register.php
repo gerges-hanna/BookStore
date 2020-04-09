@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
         $user->setEmail($_POST['email']);
         $user->setPassword($_POST['pass']);
         $user->setPhone($_POST['phone']);
-        $user->setUserType('user');
+        $user->setUserType(0);
         $user->setCan_delete(0);
         $user->setCan_read(1);
         $user->setCan_update(0);
@@ -57,7 +57,7 @@ if(isset($_POST['submit']))
 	<link rel="stylesheet" type="text/css" href="Register_f/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Register_f/css/util.css">
-	<link rel="stylesheet" type="text/css" href="Register_f/css/main.css">
+	<link rel="stylesheet" type="text/css" href="Register_f/css/main1.css">
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
@@ -73,32 +73,32 @@ if(isset($_POST['submit']))
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="UserName is required">
-						<span class="label-input100">UserName</span>
-						<input class="input100" type="text" name="username" placeholder="UserName...">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Email addess...">
+						<input class="input100" type="text" name="email" placeholder="">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Phone is required">
 						<span class="label-input100">Phone</span>
-						<input class="input100" type="text" name="phone" placeholder="Phone...">
+						<input class="input100" type="text" name="phone" placeholder="">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="*************">
+						<input class="input100" type="password" name="pass" placeholder="">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
 						<span class="label-input100">Repeat Password</span>
-						<input class="input100" type="password" name="conpass" placeholder="*************">
+						<input class="input100" type="password" name="conpass" placeholder="">
 						<span class="focus-input100"></span>
 					</div>
 

@@ -16,25 +16,23 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/main1.css">
+	  <link rel="stylesheet" href="css/main2.css">
 	  <link rel="stylesheet" href="css/cart.css">
     <title>Home</title>
 </head>
 <body>
-    <!--start upper bar -->
+      <!--start upper bar -->
 	<div class="upper-bar">
 	    <div class="container">
 	        <div class="row">
 		      <div class="col-sm">
-			    
-                           <?php 
-                           echo '<i class="fas fa-envelope"></i> <span>'.$_SESSION['usName'].'</span>';
-                           ?>
-			    
+			    <span>Welcome : </span> 
+             
+                           <i class="fas fa-user"></i> <span><?php  echo $_SESSION['usName'];?></span> 
 			  </div>
 			  <div class="col-sm">
 			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login.php" >Sign Out</a>
+                            <a class="get-quote" href="Login.php">Sign Out</a>
 			  </div>
 		    </div>
 	    </div>

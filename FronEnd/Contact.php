@@ -1,24 +1,15 @@
-<?php
-include '../PagesController/LoginCheck.php';
-include '../PagesController/AddBookCont.php';
-
-if($_SESSION['catID']==NULL || $_SESSION['catName']==NULL )
-{
-    header('Location:http://localhost/BookStore/FronEnd/Supp.php');
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>ADD Book</title>
+	<title>Contact</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="Login_v14/images/icons/favicon.ico"/>
+	<link rel="shortcut icon" type="image/png" href="img/icon.png"/>
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="Login_v14/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Login_v14/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -48,87 +39,32 @@ if($_SESSION['catID']==NULL || $_SESSION['catName']==NULL )
 						E-Book Store
 					</span>
 
-					<span class="txt1 p-b-11">
-						Name
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Name is required">
-                                            <input type="text" id="textInput" class="input100" name="name" >
-						<span class="focus-input100"></span>
-					</div>
-
-
-					<span class="txt1 p-b-11">
-						Category
-					</span>
-                    <div class="wrap-input100 m-b-36" >
-                        <select class="browser-default custom-select mb-4" id="select" name="cat">
-                            <option  selected="" value="Empty">Choose your option</option>
-<!--						<option value="op1">Option 1</option>
-						<option value="op2">Option 2</option>
-						<option value="op3">Option 3</option>-->
-                                                <?php 
-                                                for($i=0;$i<count($catArr);$i++)
-                                                {
-                                                    echo '<option value="'.$catArr[$i]->getId().'">'.$catArr[$i]->getName().'</option>'; 
-                                                }
-                                                ?>
-					</select>
-				</div>
-
-
 					<span class="txt1 p-b-11" >
-						ISBN
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "ISBN is required">
-                                            <input type="text" id="textInput" class="input100" name="isbn" >
+						Email
+					</span> 
+
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Valid email is required: ex@abc.xyz">
+                                            <input type="email" id="email" class="input100" name="email" >
 						<span class="focus-input100"></span>
-                                        </div>
-                                          <span class="txt1 p-b-11">
-						Publisher
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Price is required">
-                                            <input type="text" id="textInput" class="input100" name="publisher">
-						<span class="focus-input100"></span>
-					 </div>
-                                        <span class="txt1 p-b-11" >
-						QUANTITY
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Quantity is required">
-                                            <input type="text" id="textInput" class="input100" name="quantity" >
-						<span class="focus-input100"></span>
-					</div>
-					<span class="txt1 p-b-11">
-						Price
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Price is required">
-                                            <input type="text" id="textInput" class="input100" name="price">
-						<span class="focus-input100"></span>
-					 </div>
-					 
-					<span class="txt1 p-b-11">
-						Book condition
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate ="Condition is required">
-                                            <input type="text" id="textInput" class="input100" name="bookCon" >
-						<span class="focus-input100"></span>
-					</div>
-					 <span class="txt1 p-b-11">
-						Description
-					</span>
-					<div class="wrap-input100  m-b-36">
-                                            <textarea type="text" id="textarea" class="input100" name="desc" style="height: 200px" ></textarea>
-						<span class="focus-input100"></span>
-					 </div>
-					 
-					 
-					
-						<div class="custom-file" style="margin-bottom: 50px;">
-							<label for="myfile" class="txt1 p-b-11">IMAGE:</label>
-							<input type="file"  id="myfile" name="myfile"  >
-						</div>
-	
+				   </div>
+				   <span class="txt1 p-b-11" >
+					Subject
+				</span>
+				<div class="wrap-input100 validate-input m-b-36" data-validate = "Subject is required">
+										<input type="text" id="textInput" class="input100" name="subject" >
+					<span class="focus-input100"></span>
+			   </div>
+				   
+				   <span class="txt1 p-b-11" >
+					Message
+				  </span>
+			    	<div class="wrap-input100 validate-input m-b-36" data-validate = "Message is required">
+										<textarea type="text" id="textarea" class="input100" name="message" style="height: 200px;" ></textarea>
+					<span class="focus-input100"></span>
+									</div>					
+								
 					<div class="container-login100-form-btn">
-                                            <input class="login100-form-btn" value="Add" name="submit" type="submit">
+                                            <input class="login100-form-btn" value="Send" name="submit" type="submit">
 							
 					
 					</div>
@@ -148,7 +84,9 @@ if($_SESSION['catID']==NULL || $_SESSION['catName']==NULL )
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
+
 	<script src="Login_v14/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="Login_v14/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->

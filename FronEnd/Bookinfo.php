@@ -1,3 +1,7 @@
+<?php 
+    require_once '../PagesController/LoginCheck.php';
+?>
+
 <?php
     include '../PagesController/bookInfoController.php';
     if(isset($_GET['submit']))
@@ -12,17 +16,34 @@
     <head>
         <meta charset = "UTF-8">
         <title><?php echo $ret[0]->getName()?></title>
-        <link rel = 'stylesheet' href='Supp/BookInfo1.css'>
+        <link rel = 'stylesheet' href='Supp/BookInfo.css'>
         <link rel = 'stylesheet' href='test1.css'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="img/mainlogo.png"/>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main1.css">
+        <link rel="stylesheet" href="css/main2.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         
     </head>
 <body>
+       <!--start upper bar -->
+	<div class="upper-bar">
+	    <div class="container">
+	        <div class="row">
+		      <div class="col-sm">
+			    <span>Welcome : </span> 
+             
+                           <i class="fas fa-user"></i> <span><?php  echo $_SESSION['usName'];?></span> 
+			  </div>
+			  <div class="col-sm">
+			    <span>We Are Here to Serve!</span>
+				<a class="get-quote" href="Login_v14/index.php">Sign Out</a>
+			  </div>
+		    </div>
+	    </div>
+	</div>
+	<!-- end upper bar -->
 	<!--start navbar -->
 	<?php
             require_once '../PagesController/DesignController.php';
