@@ -17,23 +17,7 @@
     <title>Home</title>
 </head>
 <body>
-    <!--start upper bar -->
-	<div class="upper-bar">
-	    <div class="container">
-	        <div class="row">
-		      <div class="col-sm">
-			    <span>Welcome : </span> 
-             
-                           <i class="fas fa-user"></i> <span><?php  echo $_SESSION['usName'];?></span> 
-			  </div>
-			  <div class="col-sm">
-			    <span>We Are Here to Serve!</span>
-				<a class="get-quote" href="Login.php">Sign Out</a>
-			  </div>
-		    </div>
-	    </div>
-	</div>
-	<!-- end upper bar -->
+    
         
 	<!--start navbar -->
 	<?php

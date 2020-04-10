@@ -3,11 +3,11 @@
 ?>
 
 <?php
-    include '../PagesController/bookInfoController.php';
-    if(isset($_GET['submit']))
-    {
-        echo 'submit';
-    }
+    require_once '../PagesController/bookInfoController.php';
+    require_once '../PagesController/CategoryController.php';
+    $cat=new CategoryController();
+    $rowCat=$cat->getCategoreyByID($ret[0]->getCategory());
+    
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
                 <li>     <b>Name:</b> <?php echo $ret[0]->getName()?></li>
                 <li>     <b>Publisher:</b> <?php echo $ret[0]->getAuthor()?></li>
                                 <li>     <b>Book Condition:</b> <?php echo $ret[0]->getCondition()  ?></li>
-                <li>     <b>Category:</b> <?php echo $_GET['catname']?></li>
+                                <li>     <b>Category:</b> <?php echo $rowCat[0]->getName(); ?></li>
                 <li>     <b>Quantity:</b> <?php echo $ret[0]->getStock()?></li>
                 <li>     <b>ISBN:</b> <?php echo $ret[0]->getIsbn() ?></li>
                 <li>     <b>Price:</b> <?php echo '$'.$ret[0]->getPrice()  ?></li>
