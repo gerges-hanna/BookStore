@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+          <link rel="shortcut icon" type="image/png" href="img/mainlogo.png" />
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	  <link rel="stylesheet" href="css/main2.css">
           <link rel="stylesheet" href="css/purchase.css">
-    <title>Home</title>
+    <title>Transaction</title>
 </head>
 <body>
       
