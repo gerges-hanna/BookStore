@@ -77,7 +77,7 @@
 			  
 			  <div class="col col-vat col-numeric">
 				<h6>Method:<br><p style="display: inline;font-size: 15px;">Visa</p></h6> 
-				<h6>Visa Info<p style="display: inline;font-size: 15px;"><br>*********<br>CVV: 123241<br>Name: bebo<br>********</p></h6> 
+		<h6>Visa Info<p style="display: inline;font-size: 15px;"><br>--------<br>CVV: 123241<br>Name: Bebo<br>--------</p></h6>
 			  </div>
 			  <div class="col col-total col-numeric">    
 				 <p> £182.95</p>
