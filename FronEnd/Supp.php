@@ -6,7 +6,7 @@
 <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="css/Supplements.css">
+        <link rel="stylesheet" href="css/Categories.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
           <link rel="stylesheet" href="css/main2.css">
@@ -32,10 +32,15 @@
 <div class="Supp">               
     <h1 style="bottom: 150px"><strong>Categories</strong></h1>
 <div class="Supp" style="bottom: 150px">
-      <a class="fa fa-book" href="addBook.php" style="margin-left: 15px;font-size: 30px ; color: red;margin-bottom: 30px">Add Book</a>
+    <div class="addbook"> <a href="addBook.php">Add <i class="fas fa-book fa-1x" style=" color: black;"></i> Book</a> </div>
+    <br>
+    <br>
+    <br>
+    <br>
+     <div class="allbooks"> <a href="Category1.php">Show All</a> </div>
     <ul style="list-style-type: none;text-align: center;">
+       
         <li>
-
             <?php
                 include_once '../PagesController/CategoryController.php';
                 $t=new CategoryController();

@@ -21,7 +21,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="img/mainlogo.png"/>
-        <link rel="stylesheet" type="text/css" href="css/Supplement.css">
+        <link rel="stylesheet" type="text/css" href="css/subbook.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main2.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -53,10 +53,11 @@ session_start();
          ?>
          </h1>
          <br>         
-<div class="products" style="margin-bottom: 70px; font-family: verdana;">
-  
+<div class="products" style="margin-bottom: 70px; font-family: verdana;"> 
+    
         <div class="container">
-        <ul
+            <div class="row" >
+                <ul>
                         <?php 
                                 $bookCat=new PageCategory1Controller();
                                 
@@ -69,7 +70,7 @@ session_start();
                         ?>
         </ul>
 </div>
-    
+        </div>
     </div>
     
      <!--End-->

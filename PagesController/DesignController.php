@@ -27,7 +27,7 @@
                 </button>
                     
                     <form class="search" action="../FronEnd/Category1.php" method="GET" style="margin:auto;max-width:400px">
-                          <input type="text" placeholder="Search BY(Name,Price,ISBN)" name="search">
+                          <input type="text" placeholder="Search Name,Price,ISBN" name="search">
                          <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                      
@@ -37,7 +37,10 @@
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Purchase</a>
+                        <a class="nav-link" href="purchase.php" style="color: white;">Purchase</a>
+                      </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="purchase.php" style="color: white;">Transaction</a>
                       </li>
                         <li class="nav-item">
                         <a class="nav-link" href="Cart.php" style="color: white;" >CART</a>
