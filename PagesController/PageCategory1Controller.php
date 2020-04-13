@@ -43,7 +43,7 @@ class PageCategory1Controller {
                         <div class="Product">
                         <a href="Bookinfo.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'&book='.$arr[$i]->getId().'" class="img"><img src="img/'.$arr[$i]->getImage().'"/></a>
                         <a href="Bookinfo.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'&book='.$arr[$i]->getId().'" class="name" >'.$name.'</a>
-                        <div>$'.$arr[$i]->getPrice().'</div>
+                        <div>   $'.$arr[$i]->getPrice().'</div>
                            <a href="Bookinfo.php?cat='.$_GET['cat'].'&catname='.$_GET['catname'].'&book='.$arr[$i]->getId().'"class="cart">Show Book</a>
                         </div>
                      </li>';
@@ -66,7 +66,7 @@ class PageCategory1Controller {
                         <div class="Product ">
                         <a href="Bookinfo.php?search='.$search.'&book='.$arr[$i]->getId().'" class="img"><img src="img/'.$arr[$i]->getImage().'"/></a>
                         <a href="Bookinfo.php?search='.$search.'&book='.$arr[$i]->getId().'" class="name" >'.$name.'</a>
-                        <div>$'.$arr[$i]->getPrice().'</div>
+                        <div>   $'.$arr[$i]->getPrice().'</div>
                            <a href="Bookinfo.php?search='.$search.'&book='.$arr[$i]->getId().'"class="cart">Show More</a>
                         </div>
                      </li>';

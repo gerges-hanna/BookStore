@@ -23,7 +23,7 @@ class CartController {
         {
 
 
-
+            $bo=new Book(); 
             $book=new BookService();
             $cart=new CartService();
             $info=new Cart();
@@ -51,19 +51,27 @@ class CartController {
                 $info->setBook_id($_GET['bookid']);
                 $info->setCustomer_id($_SESSION['usId']);
                 $info->setSalesman_id($ret[0]->getCustomer_id());
-                $info->setQuantity(1);
+                $info->setQuantity($_GET['qua']);
                 $cart->createCart($info);
             }  else {
 
-                echo $cart->UpdateQuantity(1, $ret[0]->getCustomer_id(), $_SESSION['usId'], $_GET['bookid']);
+                echo $cart->UpdateQuantity($_GET['qua'], $ret[0]->getCustomer_id(), $_SESSION['usId'], $_GET['bookid']);
 
             }
+            $bo->setId($_GET['bookid']);
+            $bo->setStock('-'.$_GET['qua']);
+            $book->UpdateBookQuantity($bo);
             header('Location:http://localhost/BookStore/FronEnd/Cart.php');
         }
         if(isset($_GET['bookiddel']))
         {
+            $bo=new Book(); 
+            $book=new BookService();
             $cart=new CartService();
             $cart->remove($_GET['bookiddel'], $_GET['customer'], $_GET['seller']);
+            $bo->setId($_GET['bookiddel']);
+            $bo->setStock($_GET['quantityb']);
+            $book->UpdateBookQuantity($bo);
             header('Location:http://localhost/BookStore/FronEnd/Cart.php');
         }
         if(isset($_GET['dell']))
@@ -110,7 +118,7 @@ class CartController {
 			  </div>
 			  <div class="col col-total col-numeric">              
 				 <p>'.$arr[$i]->getQuantity()*$barr[0]->getPrice().'</p>
-				 <button onclick="document.location = \'Cart.php?bookiddel='.$arr[$i]->getBook_id().'&seller='.$arr[$i]->getSalesman_id().'&customer='.$arr[$i]->getCustomer_id().'\'"  style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt"></button>
+                            <button onclick="document.location = \'Cart.php?bookiddel='.$arr[$i]->getBook_id().'&seller='.$arr[$i]->getSalesman_id().'&customer='.$arr[$i]->getCustomer_id().'&quantityb='.$arr[$i]->getQuantity().'\'"  style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt"></button>
 			  </div>
 			  
 			</div>';
@@ -137,7 +145,7 @@ class CartController {
 			  </div>
 			  <div class="col col-total col-numeric">              
 				 <p>'.$arr[$i]->getQuantity()*$barr[0]->getPrice().'</p>
-				 <button style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt" onclick="document.location = \'Cart.php?bookiddel='.$arr[$i]->getBook_id().'&seller='.$arr[$i]->getSalesman_id().'&customer='.$arr[$i]->getCustomer_id().'\'"></button>
+				 <button style="background-color: black;color: rgb(255, 255, 255); font-size: 25px;" class="fas fa-trash-alt" onclick="document.location = \'Cart.php?bookiddel='.$arr[$i]->getBook_id().'&seller='.$arr[$i]->getSalesman_id().'&customer='.$arr[$i]->getCustomer_id().'&quantityb='.$arr[$i]->getQuantity().'\'"></button>
 			  </div>
 			  
 			</div>';

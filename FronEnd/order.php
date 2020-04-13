@@ -14,7 +14,6 @@
     
     if(isset($_POST['submit']))
     {  
-        session_start();
         $address->setCountry($_POST['country']);
         $address->setCity($_POST['city']);
         $address->setAddress($_POST['address']);

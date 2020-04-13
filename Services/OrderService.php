@@ -6,7 +6,7 @@ class OrderService {
    public function getOrders(){
        $db = new  DBMangement();
       $db->ConnectStart();
-      $query = "SELECT * FROM purchase ";
+      $query = "SELECT * FROM purchase ORDER BY id DESC; ";
       $res = $db->executequery($query);
       $arr = array() ;
       
@@ -38,7 +38,7 @@ class OrderService {
        
       $db = new  DBMangement();
       $db->ConnectStart();
-      $query = "SELECT * FROM purchase WHERE customer_id= ".$id;
+      $query = "SELECT * FROM purchase WHERE customer_id= ".$id." ORDER BY id DESC;";
       $res = $db->executequery($query);
       $arr = array() ;
       
@@ -70,7 +70,7 @@ class OrderService {
        
        $con =new DBMangement();
        $con->ConnectStart();
-       $query = 'SELECT * FROM purchase WHERE customer_id= "'.$order->getCustomerID().'" ';
+       $query = 'SELECT * FROM purchase WHERE customer_id= "'.$order->getCustomerID().'" ORDER BY id DESC; ';
        $res = $con->executequery($query);
        $ar=array();
        

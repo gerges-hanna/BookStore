@@ -1,11 +1,6 @@
-<?php
+<?php 
     require_once '../PagesController/LoginCheck.php';
-    require_once '../PagesController/CartController.php';
-    $cc=new CartController();
-    $cc->checkIsSet();
-
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/png" href="img/mainlogo.png" />
+          <link rel="shortcut icon" type="image/png" href="img/mainlogo.png" />
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	  <link rel="stylesheet" href="css/main2.css">
-	  <link rel="stylesheet" href="css/cart.css">
-    <title>My Cart</title>
+          <link rel="stylesheet" href="css/purchase.css">
+    <title>My Book</title>
 </head>
 <body>
       
@@ -32,7 +27,7 @@
 	<div class="containercart">
 		<div class="heading">
 		  <h1>
-			<span class="shopper"></span> Shopping Cart
+			<span class="shopper"></span>My Books
 		  </h1>
 		  
 <!--		  <a href="#" class="visibility-cart transition is-open">X</a>    -->
@@ -40,30 +35,29 @@
 		
 		<div class="cart transition is-open">
 		  
-		  
-<!--                              <button class="btn btn-update" onclick="document.location = \'Cart.php?dell=5\'"  >Clear Cart</button>;-->
-                  
+<!--		  <button class="btn btn-update">Clear History</button>-->
 		  
 		  
 		  <div class="table">
 			
 			<div class="layout-inline row th">
-			  <div class="col col-pro">Product</div>
-			  <div class="col col-price align-center "> 
-				Seller
-			  </div>
-			  <div class="col col-qty align-center">Quantity</div>
-			  <div class="col">TAX</div>
-			  <div class="col">Price</div>
+			  <div class="col col-pro">Products</div>
+			  <div class="col col-qty align-center">QTY</div>
+			  <div class="col">Order Price</div>
 			</div>
-                      <?php
-                        $cc->cartOrders();
-                      ?>
+			
+			
+<!--	from 				-->
+<?php require_once '../PagesController/MyBooks.php';  ?>
+	
+	
+<!--                      to here-->
 
-			         
+		
+			 
+
+
 		</div>
-		  
-                    <a href="order.php" class="btn btn-update">Order Now</a>
 		
 	  </div>
 	</div>
@@ -88,5 +82,49 @@
 	  <script src="js/popper.min.js"></script>
 	  <script src="js/bootstrap.min.js"></script>
   <script src="js/cart.js"></script>
+  <script>
+var containers = document.getElementsByClassName('visibility-user');
+
+Array.from(containers).forEach(element => {
+
+	element.onclick = () => {
+var user = element.parentElement.parentElement.getElementsByClassName('user')[0];
+
+	   console.log(element);
+	   
+	   if (element.className.includes('is-closed')) {
+		 element.className = element.className.replace('is-closed', 'is-open');
+		 element.textContent = 'close';
+		 user.className = user.className.replace('is-closed', 'is-open');
+	   } else {
+		 element.className = element.className.replace('is-open', 'is-closed');
+		 element.textContent = 'view'; 
+		 user.className = user.className.replace('is-open', 'is-closed');
+	   }
+	}
+});
+	</script>
+	  <script>
+var containers = document.getElementsByClassName('visibility-seller');
+
+Array.from(containers).forEach(element => {
+
+	element.onclick = () => {
+var seller = element.parentElement.parentElement.getElementsByClassName('seller')[0];
+
+	   console.log(element);
+	   
+	   if (element.className.includes('is-closed')) {
+		 element.className = element.className.replace('is-closed', 'is-open');
+		 element.textContent = 'close';
+		 seller.className = seller.className.replace('is-closed', 'is-open');
+	   } else {
+		 element.className = element.className.replace('is-open', 'is-closed');
+		 element.textContent = 'view'; 
+		 seller.className = seller.className.replace('is-open', 'is-closed');
+	   }
+	}
+});
+		</script>
 </body>
-</html>
+</html> 

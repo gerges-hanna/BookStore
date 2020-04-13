@@ -20,7 +20,7 @@ class LoginService {
     {
         
         
-        $this->query= 'SELECT  COUNT(id) as count , id FROM `user` WHERE email ="'.$email.'" AND password="'.$pass.'"';
+        $this->query= 'SELECT  COUNT(id) as count , id FROM `user` WHERE (email ="'.$email.'" OR name="'.$email.'") AND password="'.$pass.'"';
 //'SELECT id FROM `user` WHERE email ="'.$email.'" AND password="'.$pass.'"';
         $connect=new DBMangement();
         $connect->ConnectStart();

@@ -44,23 +44,35 @@
                             echo 
                             '<li class="nav-item">
                               <a class="nav-link" href="purchase.php" style="color: white;">Purchase</a>
-                            </li>';
+                            </li>
+                            <li class="nav-item">
+                        <a class="nav-link" href="MyBooks.php" style="color: white;" >MyBooks</a>
+                      </li>';
                         }  else if($_SESSION['usType']==1) {
                             echo 
                             '<li class="nav-item">
                               <a class="nav-link" href="purchase.php" style="color: white;">TransAction</a>
-                            </li>';
+                            </li>
+                            <li class="nav-item">
+                        <a class="nav-link" href="Users.php" style="color: white;" >Users</a>
+                      </li>';
                         }
-                      ?>
-                        <li class="nav-item">
+                        echo '<li class="nav-item">
+                        <a class="nav-link" href="Supp.php"  style="color: white;">Books</a>
+                      </li>';
+                      if($_SESSION['usType']!=1)
+                       {
+                       echo ' <li class="nav-item">
                         <a class="nav-link" href="Cart.php" style="color: white;" >CART</a>
                       </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="Supp.php"  style="color: white;">Books</a>
-                      </li>	
                        <li class="nav-item">
                         <a class="nav-link" href="Contact.php" style="color: white;" >Contact</a>
-                      </li>	
+                      </li>';
+                      }
+                       
+                        	
+                      
+                                ?>
                     </ul>
                   </div>
                 </div>

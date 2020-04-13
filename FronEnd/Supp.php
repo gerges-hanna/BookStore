@@ -32,7 +32,12 @@
 <div class="Supp">               
     <h1 style="bottom: 150px"><strong>Categories</strong></h1>
 <div class="Supp" style="bottom: 150px">
-    <div class="addbook"> <a href="addBook.php">Add <i class="fas fa-book fa-1x" style=" color: black;"></i> Book</a> </div>
+    <?php
+        if($_SESSION['usType']!=1)
+        {
+            echo '<div class="addbook"> <a href="addBook.php">Add <i class="fas fa-book fa-1x" style=" color: black;"></i> Book</a> </div>';
+        }
+    ?>
     <br>
     <br>
     <br>

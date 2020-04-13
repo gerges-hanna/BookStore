@@ -1,12 +1,24 @@
 <?php 
-    require_once '../PagesController/LoginCheck.php';
-?>
 
-<?php
+    require_once '../PagesController/LoginCheck.php';
+    if(isset($_GET['submit']))
+    {
+        if($_GET['quaAllow']>=$_GET['qua'])
+        {
+            header("Location: Cart.php?qua=".$_GET['qua']."&bookid=".$_GET['bookid']);
+        }  else {
+            header("Location: http://localhost/BookStore/FronEnd/Bookinfo.php?cat=".$_GET['cat']."&catname=".$_GET['catname']."&book=".$_GET['bookid']);
+        }
+        
+      
+        
+    }
+    
     require_once '../PagesController/bookInfoController.php';
     require_once '../PagesController/CategoryController.php';
     $cat=new CategoryController();
     $rowCat=$cat->getCategoreyByID($ret[0]->getCategory());
+    
     
 ?>
 
@@ -92,16 +104,33 @@
 
                 
             </ul>
-            
+             
                 <?php 
-                        if($_SESSION['usId']!=$ret[0]->getCustomer_id())
+                        if($_SESSION['usId']!=$ret[0]->getCustomer_id() && $_SESSION['usType']!=1 && $ret[0]->getStock()>=1)
                         {
-                           echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
-                 
+                           //echo '<button type="button" onclick="document.location = \'Cart.php?bookid='.$ret[0]->getId().'\'" class="fa fa-shopping-cart" >Add To Cart</button>';
+                           echo '<form  method="get">
+                                <span style="background-color: rgb(255, 0, 0);color: white;font-size: 25px; font-weight: bold;">Choose Quantity</span>
+                                <div class="col"> 
+                                <a href="#" class="qty qty-minus">-</a>
+                                                      <input type="numeric" name="qua" value="1" />
+                                                    <a href="#" class="qty qty-plus">+</a>
+                                                    
+                                </div>
+                                <input name="bookid" value="'.$ret[0]->getId().'" hidden="">
+                                <input name="quaAllow" value="'.$ret[0]->getStock().'" hidden="">
+                                <input name="cat" value="'.$_GET['cat'].'" hidden="">
+                                <input name="catname" value="'.$_GET['catname'].'" hidden="">
+                                <input type="submit" name="submit"  value="Add to Cart">
+                              </form> ';
+                        }else if ($ret[0]->getStock()<1)
+                        {
+                            echo '<button type="button" disabled=""  class="fa fa-shopping-cart" >Out of Stock</button>';
+            
                         }
                         ?>
+            
             </div>
-    
         <div class="overview1 text-center" >
             <div class="container">
                     <h2 class="h1">description</h2>

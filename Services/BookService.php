@@ -61,9 +61,23 @@ class BookService {
         {
             $this->function_alert("Error");
         }
- else {
-            echo 'Done';
- }
+        else {
+                   echo 'Done';
+        }
+    }
+    Function UpdateBookQuantity(Book $book)
+    {
+        $this->query='UPDATE book SET quantity=quantity+'.$book->getStock().' WHERE id = '.$book->getId().';';
+//'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $res=$connect->executequery($this->query);
+        $connect->CloseConnect();
+        if($res!=1)
+        {
+            $this->function_alert("Error");
+        }
+        
     }
     Function CreateBook(Book $book)
     {
@@ -92,7 +106,7 @@ class BookService {
     {
         $connect=new DBMangement();
         $connect->ConnectStart();
-        $this->query = 'select * from book';
+        $this->query = 'select * from book ORDER BY id DESC;';
         $res=$connect->executequery($this->query);
         $array = array();
         while ($row=  mysqli_fetch_assoc($res))
@@ -119,7 +133,34 @@ class BookService {
     {
         $connect=new DBMangement();
         $connect->ConnectStart();
-        $this->query = 'select * from book where id = ' . $id;
+        $this->query = 'select * from book where id = ' . $id.' ORDER BY id DESC;';
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array;
+    }
+    Function getBookBySeller($id)
+    {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book where customer_id = ' . $id.' ORDER BY id DESC;';
         $res=$connect->executequery($this->query);
         $array = array();
         while ($row=  mysqli_fetch_assoc($res))
@@ -146,7 +187,7 @@ class BookService {
     {
         $connect=new DBMangement();
         $connect->ConnectStart();
-        $this->query = 'select * from book where name = ' . $name;
+        $this->query = 'select * from book where name = ' . $name.' ORDER BY id DESC;';
         $res=$connect->executequery($this->query);
         $array = array();
         while ($row=  mysqli_fetch_assoc($res))
@@ -174,7 +215,7 @@ class BookService {
     {
         $connect=new DBMangement();
         $connect->ConnectStart();
-        $this->query = 'SELECT * FROM book WHERE name LIKE "%'.$search.'%" OR price LIKE "%'.$search.'%" OR isbn LIKE "%'.$search.'%" ';
+        $this->query = 'SELECT * FROM book WHERE name LIKE "%'.$search.'%" OR price LIKE "%'.$search.'%" OR isbn LIKE "%'.$search.'%" ORDER BY id DESC;';
         $res=$connect->executequery($this->query);
         $array = array();
         while ($row=  mysqli_fetch_assoc($res))
@@ -203,10 +244,10 @@ class BookService {
         $connect->ConnectStart();
         if($catID==0)
         {
-            $this->query = 'select * from book ';
+            $this->query = 'select * from book ORDER BY id DESC;';
         }else
         {
-            $this->query = 'select * from book where category_id = ' . $catID;
+            $this->query = 'select * from book where category_id = ' . $catID.' ORDER BY id DESC;';
         }
         
         $res=$connect->executequery($this->query);
