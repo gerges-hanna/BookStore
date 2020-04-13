@@ -36,12 +36,22 @@
                       <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="purchase.php" style="color: white;">Purchase</a>
-                      </li>
-                       <li class="nav-item">
-                        <a class="nav-link" href="purchase.php" style="color: white;">Transaction</a>
-                      </li>
+                      
+                      <?php
+                        
+                        if($_SESSION['usType']==0)
+                        {
+                            echo 
+                            '<li class="nav-item">
+                              <a class="nav-link" href="purchase.php" style="color: white;">Purchase</a>
+                            </li>';
+                        }  else if($_SESSION['usType']==1) {
+                            echo 
+                            '<li class="nav-item">
+                              <a class="nav-link" href="purchase.php" style="color: white;">TransAction</a>
+                            </li>';
+                        }
+                      ?>
                         <li class="nav-item">
                         <a class="nav-link" href="Cart.php" style="color: white;" >CART</a>
                       </li>

@@ -161,7 +161,11 @@
 
 	<!-- End Featured Work -->
 	<!-- Start service for users -->
-	<div class="latest-post">
+        <?php
+                    if($_SESSION['usType']!=1)
+                    {
+                        echo 
+                        '<div class="latest-post">
     <div class="container">
 			<h2 class="text-center">OUR SERVICES</h2>
 			<p class="section-box text-center ">We provide free payed services for all users.</p>
@@ -182,7 +186,7 @@
 							<div class="card-body">
 								<h4 class="card-title">My Orders</h4>
 								<p class="card-text">Click to view your pervious orders with all the needed information.</p>
-								<a href="#" class="card-link">View</a>
+								<a href="purchase.php" class="card-link">View</a>
 							</div>
 						</div>
 				</div>
@@ -198,10 +202,18 @@
 					</div>
 			  </div>
 			</div>
-		</div>
+		</div>';
+                    }
+                    
+        ?>
+	
 	<!-- End service -->
         	<!-- Start service for admin -->
-	<div class="latest-post">
+                <?php
+                    if($_SESSION['usType']==1)
+                    {
+                        echo 
+                        '<div class="latest-post">
     <div class="container">
 			<h2 class="text-center">Welcome Admin</h2>
 			<p class="section-box text-center ">Choose your command.</p>
@@ -238,7 +250,12 @@
 					</div>
 			  </div>
 			</div>
-		</div>
+		</div>';
+                        
+                    }
+                
+                ?>
+	
 	<!-- End service -->
 	<!--Start Pricing Table -->
 	<div class="pricing-table text-center">

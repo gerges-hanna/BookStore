@@ -1,8 +1,9 @@
 <?php 
+    require_once '../PagesController/LoginCheck.php';
     require_once '../PagesController/userController.php';
     $us=new userController();
     $cs=new CustomerService();
-    session_start();
+    
     if(isset($_POST['trash']))
     {
         $cs->deletCustomer($_POST['trash']);

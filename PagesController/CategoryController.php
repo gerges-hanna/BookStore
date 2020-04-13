@@ -37,6 +37,7 @@ class CategoryController {
     }
     function  getCategoreyByID($catID)
     {
+        
         $db = new  DBMangement();
       $db->ConnectStart();
       $query = "SELECT * FROM category where id= ".$catID;

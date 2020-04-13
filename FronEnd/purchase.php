@@ -30,12 +30,12 @@
 			<span class="shopper"></span>Purchase History
 		  </h1>
 		  
-		  <a href="#" class="visibility-cart transition is-open">X</a>    
+<!--		  <a href="#" class="visibility-cart transition is-open">X</a>    -->
 		</div>
 		
 		<div class="cart transition is-open">
 		  
-		  <button class="btn btn-update">Clear History</button>
+<!--		  <button class="btn btn-update">Clear History</button>-->
 		  
 		  
 		  <div class="table">
@@ -50,214 +50,24 @@
 			  <div class="col">Order Price</div>
 			</div>
 			
-			<div class="layout-inline row row-bg2">
-			  
-			    <div class="col col-shipping col-numeric align-left">
-					
-					<h6 style="color: blue;margin-left: 10px;">Secrets</h6> 
-					<h6 style="color: blue;margin-left: 10px;">King kong<h6> 
-					<h6 style="color: blue;margin-left: 10px;">Hercules</h6> 
-					<h6 style="color: blue;margin-left: 10px;">Blue ball</h6> 
-                                        <h6 style="color: blue;margin-left: 10px;">Spider man</h6> 
-                                        <h6 style="color: blue;margin-left: 10px;">Avatar</h6>
-			 </div>
-			  <div class="col col-shipping col-numeric align-center">
-				  <div class="col-md">
-		              	        <h6>Country: <p style="display: inline;font-size: 15px;">Egypt</p></h6> 
-			                <h6>City: <p style="display: inline;font-size: 15px;">Cairo</p></h6> 
-			                <h6>Address: <p style="display: inline;font-size: 15px;">13 st. el haram</p></h6> 
-			                <h6>Phone: <p style="display: inline;font-size: 15px;">012312418</p></h6> 
-                                         <h6>Postal Code: <p style="display: inline;font-size: 15px;">21334</p></h6>
-				  </div>
-			  </div>
-	  
-			  <div class="col col-qty layout-inline">
-				  <input type="numeric" disabled="" value="3" />
-			  </div>
-			  
-			  <div class="col col-vat col-numeric">
-				<h6>Method:<br><p style="display: inline;font-size: 15px;">Visa</p></h6> 
-		<h6>Visa Info<p style="display: inline;font-size: 15px;"><br>--------<br>CVV: 123241<br>Name: Bebo<br>--------</p></h6>
-			  </div>
-			  <div class="col col-total col-numeric">    
-				 <p> £182.95</p>
-				 <button style="background-color: black;color: red; font-size: 20px;" class="fas fa-trash-alt"></button>
-			  </div>
-			  
-			</div>
-			<div class="containeruser">
-				<div class="heading1">
-					<h6 class="userli" style="display: inline-block;"><b>User :</b> gerges
-					</h6>
-				  
-				  <a href="#" class="visibility-user transition is-closed"><i class="fas fa-eye"></i></a>    
-				</div>
-				
-				<div class="user transition is-closed">
-					<div class="container">
-						<div class="row">
-							
-							<div class="col-md-4">
-								<div class="card profile-card-3">
-									<div class="background-block">
-										<img src="img/userbck.jpg" alt="profile-sample1" class="background"/>
-									</div>
-									<div class="profile-thumb-block">
-										<img src="img/defuserimg.png" alt="profile-image" class="profile"/>
-									</div>
-									<div class="card-content">
-									<h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-										<span>Phone : 0123127123</span>
-									<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
-									</div>
-									</div>
-							</div>
-						</div>
-						</div>
-						</div>
-				
-			  </div>
-		</div>
-		<div class="containerseller">
-			<div class="heading1">
-			 
-				<h6 class="userli" style="display: inline-block;">     <b>Seller :</b> abanoub
-				</h6>
-			  <a href="#" class="visibility-seller transition is-closed"><i class="fas fa-eye"></i></a>    
-			</div>
 			
-			<div class="seller transition is-closed">
-				<div class="container">
-					<div class="row">
-						
-						<div class="col-md-4">
-							<div class="card profile-card-3">
-								<div class="background-block">
-									<img src="img/userbck.jpg" alt="profile-sample1" class="background"/>
-								</div>
-								<div class="profile-thumb-block">
-									<img src="img/defuserimg.png" alt="profile-image" class="profile"/>
-								</div>
-								<div class="card-content">
-								<h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-									<span>Phone : 0123127123</span>
-								<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
-								</div>
-								</div>
-						</div>
-					</div>
-					</div>
-					</div>
-			
-		  </div>
-	</div>		
-	<div class="layout-inline row row-bg2">
-			  
-		<div class="col col-pro layout-inline">
-			<a href=""><img src="img/book2.jpg" alt="kitten" /></a>
-			<p>The Secret</p>
-		  </div>
-	  <div class="col col-shipping col-numeric align-center">
-		  <div class="col-md">
-			 <h6>Country: <p style="display: inline;font-size: 15px;">Egypt</p></h6> 
-			 <h6>City: <p style="display: inline;font-size: 15px;">Cairo</p></h6> 
-			 <h6>Address: <p style="display: inline;font-size: 15px;">13 st. el haram</p></h6> 
-			 <h6>Phone: <p style="display: inline;font-size: 15px;">012312418</p></h6> 
-                         <h6>Postal Code: <p style="display: inline;font-size: 15px;">21334</p></h6>
-			</div>
-	  </div>
+<!--	from 				-->
+<?php require_once '../PagesController/PurchaseController.php';  ?>
+	
+	
+<!--                      to here-->
 
-	  <div class="col col-qty layout-inline">
-		  <input type="numeric" disabled="" value="3" />
-	  </div>
-	  
-	  <div class="col col-vat col-numeric">
-		<h6>Method:<br><p style="display: inline;font-size: 15px;">Visa</p></h6> 
-		<h6>Visa Info<p style="display: inline;font-size: 15px;"><br>--------<br>CVV: 123241<br>Name: Bebo<br>--------</p></h6>
-	  </div>
-	  <div class="col col-total col-numeric">    
-		 <p> £182.95</p>
-		 <button style="background-color: black;color: red; font-size: 20px;" class="fas fa-trash-alt"></button>
-	  </div>
-	  
-	</div>
-	<div class="containeruser">
-		<div class="heading1">
-			<h6 class="userli" style="display: inline-block;"><b>User :</b> gerges
-			</h6>
-		  
-		  <a href="#" class="visibility-user transition is-closed" ><i class="fas fa-eye"></i></a>    
-		</div>
-		
-		<div class="user transition is-closed">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-4">
-						<div class="card profile-card-3">
-							<div class="background-block">
-								<img src="img/userbck.jpg" alt="profile-sample1" class="background"/>
-							</div>
-							<div class="profile-thumb-block">
-								<img src="img/defuserimg.png" alt="profile-image" class="profile"/>
-							</div>
-							<div class="card-content">
-							<h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-								<span>Phone : 0123127123</span>
-							<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
-							</div>
-							</div>
-					</div>
-				</div>
-				</div>
-				</div>
-		
-	  </div>
-</div>
-<div class="containerseller">
-	<div class="heading1">
-	 
-		<h6 class="userli" style="display: inline-block;">     <b>Seller :</b> abanoub
-		</h6>
-	  <a href="#" class="visibility-seller transition is-closed"><i class="fas fa-eye"></i></a>    
-	</div>
-	
-	<div class="seller transition is-closed">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-md-4">
-					<div class="card profile-card-3">
-						<div class="background-block">
-							<img src="img/userbck.jpg" alt="profile-sample1" class="background"/>
-						</div>
-						<div class="profile-thumb-block">
-							<img src="img/defuserimg.png" alt="profile-image" class="profile"/>
-						</div>
-						<div class="card-content">
-						<h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-							<span>Phone : 0123127123</span>
-						<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
-						</div>
-						</div>
-				</div>
-			</div>
-			</div>
-			</div>
-	
-  </div>
-</div>	
-	
-			
 		
 			 <div class="tf">
 				<div class="row layout-inline">
 				 <div class="col">
-				   <p>Total : £1230</p>
+                                     <p>Total : $<?php echo $count; ?></p>
 				 </div>
 				 <div class="col"></div>
 			   </div>
-			 </div>         
+			 </div>  
+
+
 		</div>
 		
 	  </div>

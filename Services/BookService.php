@@ -201,7 +201,14 @@ class BookService {
     {
         $connect=new DBMangement();
         $connect->ConnectStart();
-        $this->query = 'select * from book where category_id = ' . $catID;
+        if($catID==0)
+        {
+            $this->query = 'select * from book ';
+        }else
+        {
+            $this->query = 'select * from book where category_id = ' . $catID;
+        }
+        
         $res=$connect->executequery($this->query);
         $array = array();
         while ($row=  mysqli_fetch_assoc($res))

@@ -34,7 +34,7 @@ class PageCategory1Controller {
         {
             if(strlen($arr[$i]->getName())>19)
             {
-                $name=substr($arr[$i]->getName(), 0,25)."...";
+                $name=substr($arr[$i]->getName(), 0,19)."...";
             }  else {
                 $name =$arr[$i]->getName();
             }

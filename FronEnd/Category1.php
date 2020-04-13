@@ -1,7 +1,8 @@
 
 <?php
+require_once '../PagesController/LoginCheck.php';
 require_once '../PagesController/PageCategory1Controller.php';
-session_start();
+
 
 ?>
 

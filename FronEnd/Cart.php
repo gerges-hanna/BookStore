@@ -1,4 +1,5 @@
 <?php
+    require_once '../PagesController/LoginCheck.php';
     require_once '../PagesController/CartController.php';
     $cc=new CartController();
     $cc->checkIsSet();

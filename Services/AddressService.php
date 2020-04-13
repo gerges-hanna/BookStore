@@ -37,9 +37,37 @@ class AddressService {
         return $id;
         
     }
+    public function getAddressById($id){
+       
+      $db = new  DBMangement();
+      $db->ConnectStart();
+      $query = "SELECT * FROM `address` WHERE id = ".$id;
+      $res = $db->executequery($query);
+      $arr = array() ;
+      
+     while ($row=  mysqli_fetch_assoc($res))
+            {
+         
+                $ad=new Address;
+                $ad->setAddress_id($row['id']);
+                $ad->setAddress($row['address']);
+                $ad->setCity($row['city']);
+                $ad->setCountry($row['country']);
+                $ad->setPhone($row['phone_number']);
+                $ad->setPostal($row['postal_code']);
+                $arr[] = $ad ;
+        
+            }
+           
+      $db->CloseConnect();
+      return $arr;
+     
+   }
 }
 
-//$ad=new Address();
+
+//$ad=new AddressService();
+//print_r($ad->getAddressById(10));
 //$as=new AddressService();
 //$ad->getCity("sc");
 //$ad->getAddress("cac");

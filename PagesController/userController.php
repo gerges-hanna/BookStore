@@ -11,6 +11,10 @@
  *
  * @author Gerges hanna FCI-H
  */
+if($_SESSION['usType']!=1)
+{
+    header("Location:http://localhost/BookStore/FronEnd/index.php");
+}
 require_once '../Services/CustomerService.php';
 
 class userController {

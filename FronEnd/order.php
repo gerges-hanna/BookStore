@@ -1,5 +1,5 @@
 <?php
-    
+    require_once '../PagesController/LoginCheck.php';
     require_once '../Services/AddressService.php';
     require_once '../Services/OrderService.php';
     require_once '../Services/CartService.php';

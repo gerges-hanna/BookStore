@@ -18,7 +18,7 @@ class CartController {
     public $tax=2.99;
     function checkIsSet()
     {
-        session_start();
+        
         if(isset($_GET['bookid']))
         {
 

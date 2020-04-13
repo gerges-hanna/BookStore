@@ -37,7 +37,7 @@
     <br>
     <br>
     <br>
-     <div class="allbooks"> <a href="Category1.php">Show All</a> </div>
+     <div class="allbooks"> <a href="Category1.php?cat=0&catname=show_all">Show All</a> </div>
     <ul style="list-style-type: none;text-align: center;">
        
         <li>
