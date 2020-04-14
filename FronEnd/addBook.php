@@ -120,7 +120,7 @@ include '../PagesController/AddBookCont.php';
 					
 						<div class="custom-file" style="margin-bottom: 50px;">
 							<label for="myfile" class="txt1 p-b-11">IMAGE:</label>
-							<input type="file"  id="myfile" name="myfile"  >
+							<input type="file"  id="myfile" name="myfile"  >                                                
 						</div>
 	
 					<div class="container-login100-form-btn">

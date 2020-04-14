@@ -50,7 +50,7 @@ a {
 }
 
 .containercart{
-  max-width: 150em;
+  max-width: 110em;
   width: 90%;
   margin: 40px auto;  
   overflow: hidden;
@@ -65,7 +65,7 @@ a {
   position: relative;
   z-index: 1;
   color: #000000;
-  background: red;
+  background:#66ff66;
 }
 
 .cart {
@@ -104,7 +104,7 @@ a {
 }
 
 .tf {
-  background:red;
+    background:#66ff66;
   text-transform: uppercase;
   text-align: right;
   font-size: 1.2em;  
@@ -156,6 +156,7 @@ a {
 
 .row-bg2 {
   background: #f7f7f7;
+  margin-bottom: 15px;
 }
 
 .visibility-cart {

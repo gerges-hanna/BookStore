@@ -25,7 +25,7 @@
 
                     <div class="col col-pro layout-inline">
                             <a ><img src="img/'.$boArr[0]->getImage().'" alt="'.$boArr[0]->getName().'" /></a>
-                            <p>'.$boArr[0]->getName().'</p>
+                            <p style="color:black">'.$boArr[0]->getName().'</p>
                       </div>
               <div class="col col-shipping col-numeric align-center">
                       <div class="col-md">
@@ -50,7 +50,9 @@
               </div>
 
             </div>
-            <div class="containeruser">
+            
+ ';
+                            /*   <div class="containeruser">
                     <div class="heading1">
                             <h6 class="userli" style="display: inline-block;"><b>User :</b> gerges
                             </h6>
@@ -115,5 +117,5 @@
                             </div>
 
       </div>
-    </div>	';
+    </div>	*/
     }

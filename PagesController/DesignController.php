@@ -27,14 +27,14 @@
                 </button>
                     
                     <form class="search" action="../FronEnd/Category1.php" method="GET" style="margin:auto;max-width:400px">
-                          <input type="text" placeholder="Search Name,Price,ISBN" name="search">
+                          <input type="text" placeholder="Search.." name="search">
                          <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                      
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php"><span class="sr-only">(current)</span><i class="fas fa-home" style="font-size:25px "></i>Home</a>
                       </li>
                       
                       <?php
@@ -43,30 +43,30 @@
                         {
                             echo 
                             '<li class="nav-item">
-                              <a class="nav-link" href="purchase.php" style="color: white;">Purchase</a>
+                              <a class="nav-link" href="purchase.php" style="color: white;"><i class="fas fa-list" style="font-size:25px "></i> my purchase</a>
                             </li>
                             <li class="nav-item">
-                        <a class="nav-link" href="MyBooks.php" style="color: white;" >MyBooks</a>
+                        <a class="nav-link" href="MyBooks.php" style="color: white;" ><i class="fas fa-book-reader" style="font-size:25px "></i> My Books</a>
                       </li>';
                         }  else if($_SESSION['usType']==1) {
                             echo 
                             '<li class="nav-item">
-                              <a class="nav-link" href="purchase.php" style="color: white;">TransAction</a>
+                              <a class="nav-link" href="purchase.php" style="color: white;"><i class="fas fa-clipboard-list" style="font-size:25px" ></i>Transactions</a>
                             </li>
                             <li class="nav-item">
-                        <a class="nav-link" href="Users.php" style="color: white;" >Users</a>
+                        <a class="nav-link" href="Users.php" style="color: white;" ><i class="fas fa-user" style="font-size:25px" ></i>Users</a>
                       </li>';
                         }
                         echo '<li class="nav-item">
-                        <a class="nav-link" href="Supp.php"  style="color: white;">Books</a>
+                        <a class="nav-link" href="Supp.php"  style="color: white;"><i class="fas fa-book" style="font-size:25px" ></i> book Categories</a>
                       </li>';
                       if($_SESSION['usType']!=1)
                        {
                        echo ' <li class="nav-item">
-                        <a class="nav-link" href="Cart.php" style="color: white;" >CART</a>
+                        <a class="nav-link" href="Cart.php" style="color: white;" ><i class="fas fa-shopping-cart" style="font-size:25px "></i>CART</a>
                       </li>
                        <li class="nav-item">
-                        <a class="nav-link" href="Contact.php" style="color: white;" >Contact</a>
+                        <a class="nav-link" href="Contact.php" style="color: white;" ><i class="far fa-envelope" style="font-size:25px;"></i>Contact</a>
                       </li>';
                       }
                        

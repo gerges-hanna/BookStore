@@ -17,9 +17,21 @@ body{
     background-color: blue;
     color: white;
 }
+.allbooks {
+  margin-bottom: 40px;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .allbooks a{
-    color:black;
-    background-color: grey ;
+      font-family: Raleway-Bold;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  padding: 0 20px;
+  height: 55px;
+  background-color: black;
+  border-radius: 27px;
+
 }
 .allbooks a:hover{
     background-color: blue;

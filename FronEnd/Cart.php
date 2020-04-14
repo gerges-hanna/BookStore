@@ -17,8 +17,8 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/main2.css">
-	  <link rel="stylesheet" href="css/cart.css">
+	  <link rel="stylesheet" href="css/main1.css">
+	  <link rel="stylesheet" href="css/Cart1.css">
     <title>My Cart</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
 			<span class="shopper"></span> Shopping Cart
 		  </h1>
 		  
-<!--		  <a href="#" class="visibility-cart transition is-open">X</a>    -->
+	  <a href="#" class="visibility-cart transition is-open">X</a>    
 		</div>
 		
 		<div class="cart transition is-open">
@@ -67,23 +67,23 @@
 		
 	  </div>
 	</div>
-	      <!--Footer-->
-		  <div id="footer">
-			<div class="text-center" style="padding-top: 20px;">
-				<ul class="list-unstyled list-inline" style=" text-transform: uppercase; letter-spacing: 15px;">
-					<i onclick="window.open('_blank')"  class="fab fa-facebook fa-2x " aria-hidden="true" style ="color:#3b5999;"></i>
-					<i onclick="window.open('_blank')" class="fab fa-instagram fa-2x"aria-hidden="true" style ="color:#cd486b"></i>
-					<i onclick="window.open('_blank')" class="fab fa-twitter fa-2x"aria-hidden="true" style ="color:#55acee"></i>
-					<i onclick="window.open('_blank')" class="fab fa-youtube fa-2x"aria-hidden="true" style ="color:#cd201f" ></i>
-				</ul>
-				</div>
-			</div>
-			<div class="footer-copyright py-3 text-center">
-				<small>© 2020 Copyright:
-					<a href="https://www.facebook.com/xXlBebolXx">Abanoub Rafaat</a></small>            </div>
-		</div>
-		
-			<!--End of Footer-->
+    <!--Footer-->
+    <div id="footer">
+        <div class="text-center" style="padding-top: 20px;">
+            <ul class="list-unstyled list-inline" style=" text-transform: uppercase; letter-spacing: 15px;">
+                <i onclick="window.open('https://www.facebook.com/xXlBebolXx','_blank')"  class="fab fa-facebook fa-2x " aria-hidden="true" style ="color:#3b5999;"></i>
+                <i onclick="window.open('https://www.instagram.com/illll_bebo_illll/','_blank')" class="fab fa-instagram fa-2x"aria-hidden="true" style ="color:#cd486b"></i>
+                <i onclick="window.open('https://web.whatsapp.com/','_blank')" class="fab fa-whatsapp fa-2x"aria-hidden="true" style ="color:greenyellow"></i>
+                <i onclick="window.open('https://www.youtube.com/channel/UC5ykJ9vGoQIfsV8DK-3jnBg/featured','_blank')" class="fab fa-youtube fa-2x"aria-hidden="true" style ="color:#cd201f" ></i>
+            </ul>
+            </div>
+        </div>
+        <div class="footer-copyright py-3 text-center">
+            <small>© 2020 Copyright:
+                <a href="https://www.facebook.com/xXlBebolXx">Abanoub Rafaat</a></small>            </div>
+    </div>
+    
+		<!--End of Footer-->
 	  <script src="js/jquery-3.3.1.min.js"></script>
 	  <script src="js/popper.min.js"></script>
 	  <script src="js/bootstrap.min.js"></script>
