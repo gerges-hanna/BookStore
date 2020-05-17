@@ -7,6 +7,7 @@
     $or=new OrderService();
     $book=new BookService();
     $address=new AddressService();
+    $cs=new CustomerService();
     if($_SESSION['usType']==0)
     {
         $OrArr=$or->getOrderById($_SESSION['usId']);
@@ -20,6 +21,9 @@
                     $count=$count+$OrArr[$i]->getTotal();
                     $boArr=$book->getBookById($OrArr[$i]->getBook_id());
                     $adArr=$address->getAddressById($OrArr[$i]->getAddressID());
+                    $csArr=$cs->getCustomerById($boArr[0]->getCustomer_id());
+                    $csArr2=$cs->getCustomerById($OrArr[0]->getCustomerID());
+                    
                     echo
                     '<div class="layout-inline row row-bg2">
 
@@ -52,7 +56,7 @@
             </div>
             <div class="containeruser">
                     <div class="heading1">
-                            <h6 class="userli" style="display: inline-block;"><b>User :</b> gerges
+                            <h6 class="userli" style="display: inline-block;"><b>User :</b>'.$csArr2[0]->getName().'
                             </h6>
 
                       <a  class="visibility-user transition is-closed" ><i class="fas fa-eye"></i></a>    
@@ -71,9 +75,9 @@
                                                                     <img src="img/defuserimg.png" alt="profile-image" class="profile"/>
                                                             </div>
                                                             <div class="card-content">
-                                                            <h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-                                                                    <span>Phone : 0123127123</span>
-                                                            <div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
+                                                            <h2>'.$csArr2[0]->getName().'<small>Email : '.$csArr2[0]->getEmail().'</small></h2>
+                                                                    <span>Phone : '.$csArr2[0]->getPhone().'</span>
+                                                            <div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:'.$csArr2[0]->getPhone().'"> <i class="fas fa-phone"></i></a>
                                                             </div>
                                                             </div>
                                             </div>
@@ -86,7 +90,7 @@
     <div class="containerseller">
             <div class="heading1">
 
-                    <h6 class="userli" style="display: inline-block;">     <b>Seller :</b> abanoub
+                    <h6 class="userli" style="display: inline-block;">     <b>Seller :</b> '.$csArr[0]->getName().'
                     </h6>
               <a class="visibility-seller transition is-closed"><i class="fas fa-eye"></i></a>    
             </div>
@@ -104,9 +108,9 @@
                                                             <img src="img/defuserimg.png" alt="profile-image" class="profile"/>
                                                     </div>
                                                     <div class="card-content">
-                                                    <h2>Abanoub Rafaat<small>Email : abanoub@yahoo.com</small></h2>
-                                                            <span>Phone : 0123127123</span>
-                                                    <div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:+0132183213"> <i class="fas fa-phone"></i></a>
+                                                    <h2>'.$csArr[0]->getName().'<small>Email : '.$csArr[0]->getEmail().'</small></h2>
+                                                            <span>Phone : '.$csArr[0]->getPhone().'</span>
+                                                    <div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:'.$csArr[0]->getPhone().'"> <i class="fas fa-phone"></i></a>
                                                     </div>
                                                     </div>
                                     </div>

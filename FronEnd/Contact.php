@@ -1,5 +1,13 @@
 <?php 
     require_once '../PagesController/LoginCheck.php';
+    require_once '../Services/MailService.php';
+    
+    if(isset($_GET['submit']))
+    {
+        $email=new EmailSender();
+        $email->send_email("gogohanna50@gmail.com", "css", "message");
+        echo 'Done';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
