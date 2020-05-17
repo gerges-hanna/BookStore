@@ -100,7 +100,7 @@ class CartController {
 			  
 			  <div class="col col-pro layout-inline">
 			<a href=""><img src="img/'.$barr[0]->getImage().'" alt="'.$barr[0]->getName().'" /></a>	
-				<p>'.$barr[0]->getName().'</p>
+				<p style="color:black">'.$barr[0]->getName().'</p>
 			  </div>
 			  
 			  <div class="col col-price col-numeric align-center ">
@@ -127,7 +127,7 @@ class CartController {
 	  
 			  <div class="col col-pro layout-inline">
 				<a href=""><img src="img/'.$barr[0]->getImage().'" alt="'.$barr[0]->getName().'" /></a>	
-				<p>'.$barr[0]->getName().'</p>
+				<p style="color:black">'.$barr[0]->getName().'</p>
 			  </div>
 			  
 			  <div class="col col-price col-numeric align-center ">
@@ -156,12 +156,7 @@ class CartController {
                         echo '<div class="tf">
 			   <div class="row layout-inline">
 				 <div class="col">
-				   <p>TAX : '.$this->tax*count($arr) .'</p>
-				 </div>
-				 <div class="col"></div>
-			   </div>
-			   <div class="row layout-inline">
-				 <div class="col">
+                                 <p>TAX : '.$this->tax*count($arr) .'</p>
                                  <p>Order Price:'.$total.' </p>
 				   <p>Total :'.$total.' pluse " '.$this->tax*count($arr).' tax "</p>
 				 </div>

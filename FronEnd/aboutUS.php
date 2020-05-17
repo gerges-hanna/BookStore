@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/main2.css">
+	  <link rel="stylesheet" href="css/main1.css">
     <title>About</title>
 </head>
 <body>
@@ -60,21 +60,21 @@ Our vision is to provide “All Books Available to All” by improving selection
 							<div class="carousel-inner">
 								<div class="carousel-item active">						
 										<div class="carousel-caption d-none d-block">
-                                                                                    <img src="img/testimg1.jpg"  alt="...">
+                                                                                    <img src="img/abanoub.jpg"  alt="..." style="height: 128px; width: 128px;">
 											<h3>Abanoub Rafaat</h3>
 											<span>Admin</span>
 										</div>
 								</div>
 								<div class="carousel-item">
 										<div class="carousel-caption d-none d-block">
-                                                                                    <img src="img/testimg1.jpg"  alt="...">
-											<h3>Abanoub Rafaat</h3>
+                                                                                    <img src="img/gergis.jpg"  alt="..." style="height: 128px; width: 128px;" >
+											<h3>Gerges Hanna</h3>
 											<span>Admin</span>
 										</div>
 								</div>
 								<div class="carousel-item">
 										<div class="carousel-caption d-none d-block">
-                                                                                    <img src="img/testimg1.jpg"  alt="...">
+                                                                                    <img src="img/abanoub.jpg"  alt="..." style="height: 128px; width: 128px;" >
 											<h3>Abanoub Rafaat</h3>
 											<span>Admin</span>
 										</div>
@@ -94,14 +94,14 @@ Our vision is to provide “All Books Available to All” by improving selection
 			<!--End Testimonials-->
         <!-- End -->
 
-     <!--Footer-->
+      <!--Footer-->
     <div id="footer">
         <div class="text-center" style="padding-top: 20px;">
             <ul class="list-unstyled list-inline" style=" text-transform: uppercase; letter-spacing: 15px;">
-                <i onclick="window.open('_blank')"  class="fab fa-facebook fa-2x " aria-hidden="true" style ="color:#3b5999;"></i>
-                <i onclick="window.open('_blank')" class="fab fa-instagram fa-2x"aria-hidden="true" style ="color:#cd486b"></i>
-                <i onclick="window.open('_blank')" class="fab fa-twitter fa-2x"aria-hidden="true" style ="color:#55acee"></i>
-                <i onclick="window.open('_blank')" class="fab fa-youtube fa-2x"aria-hidden="true" style ="color:#cd201f" ></i>
+                <i onclick="window.open('https://www.facebook.com/xXlBebolXx','_blank')"  class="fab fa-facebook fa-2x " aria-hidden="true" style ="color:#3b5999;"></i>
+                <i onclick="window.open('https://www.instagram.com/illll_bebo_illll/','_blank')" class="fab fa-instagram fa-2x"aria-hidden="true" style ="color:#cd486b"></i>
+                <i onclick="window.open('https://web.whatsapp.com/','_blank')" class="fab fa-whatsapp fa-2x"aria-hidden="true" style ="color:greenyellow"></i>
+                <i onclick="window.open('https://www.youtube.com/channel/UC5ykJ9vGoQIfsV8DK-3jnBg/featured','_blank')" class="fab fa-youtube fa-2x"aria-hidden="true" style ="color:#cd201f" ></i>
             </ul>
             </div>
         </div>

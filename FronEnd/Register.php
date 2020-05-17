@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
         }
         
     }  else {
-        echo 'Sorry Password And Confirm Pass Not The Same';
+        echo 'Sorry Password didnt match';
     }
 }
 ?>

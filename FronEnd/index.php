@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	  <link rel="stylesheet" href="css/main2.css">
+	  <link rel="stylesheet" href="css/main1.css">
     <title>Home</title>
 </head>
 <body>
@@ -59,20 +59,23 @@
 					<h2>ONLINE</h2>
 					<h3>READING</h3>
 					<p>You can read your favourite book now online without any effort ,
-						just register now and pick your book for free . </p>
+                                            just register now and pick your book for free <br>
+                                                 <span style="color: red">Coming Soon!</span>
+                                        </p>
 				</div>
 				<div class="col-sm-6 col-lg-3">
 					<i class="fas fa-dollar-sign fa-2x rounded-circle"></i>
 					<h2>ONLINE</h2>
 					<h3>SELLING</h3>
-					<p>	Just Upload your Book and our online Book Store helps you sell textbooks and used books for the best price .
-					</p>
+					<p>	Just Add your Book and our website will help you show it to a million of users all around the world to be sold with the best price .
+                                        </p>
+                                        
 				</div>
 				<div class="col-sm-6 col-lg-3">
 					<i class="far fa-credit-card fa-2x rounded-circle"></i>
 					<h2>ONLINE</h2>
 					<h3>STORE</h3>
-					<p> Buy your Book now with Visa or MasterCard in one click! View our store section signup and add your book to the cart.</p>
+					<p> Buy your Book now by Visa or Cash in one click! Sign in,View our store section and add your book to the cart.</p>
 				</div>
 				<div class="col-sm-6 col-lg-3">
 					<i class="fas fa-users-cog fa-2x rounded-circle"></i>
@@ -93,7 +96,7 @@
 			<h2 class="h1">Who Are We?</h2>
 			<p>We pride ourselves in being the world's largest online Website for Buying&Selling Books .<br> Want to know more about us !
 			</p>
-                        <a href="aboutUS.php">About us</a>
+                        <a href="aboutUS.php" style="text-decoration: none">About us</a>
 
 		</div>
 	</div>
@@ -218,33 +221,34 @@
 			<h2 class="text-center">Welcome Admin</h2>
 			<p class="section-box text-center ">Choose your command.</p>
       <div class="row">
-        <div class="col-md-6 col-lg-4">
+                                
+				<div class="col-md-6 col-lg-4">
+						<div class="card">
+                                                    <img src="img/usersdefault.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h4 class="card-title">Users</h4>
+								<p class="card-text">All the registered Users on the system with all their information</p>
+                                                                <a href="Users.php" class="card-link">View</a>
+							</div>
+						</div>
+				</div>
+                                 <div class="col-md-6 col-lg-4">
 						<div class="card">
 							<img src="img/eb1.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h4 class="card-title">View Books</h4>
-								<p class="card-text">View all the Books in the System as a user view</p>
+								<h4 class="card-title">Books</h4>
+								<p class="card-text">All the Books in the System as a admin view</p>
                                                                 <a href="Supp.php" class="card-link">Show Books</a>
 							</div>
 						</div>
 				</div>
 				<div class="col-md-6 col-lg-4">
 						<div class="card">
-                                                    <img src="img/usersdefault.jpg" class="card-img-top" alt="...">
+							<img src="img/transaction.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h4 class="card-title">Users</h4>
-								<p class="card-text">View all the registered Users on the system with all their information</p>
-                                                                <a href="Users.php" class="card-link">View</a>
-							</div>
-						</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-						<div class="card">
-							<img src="img/eb2.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h4 class="card-title">Sell Books</h4>
-								<p class="card-text">Upload your Book now with its details to be offered to a million of users</p>
-                                                                <a href="addBook.php" class="card-link">Upload</a>
+								<h4 class="card-title">Transactions</h4>
+								<p class="card-text">All the users pervious orders with its detials</p>
+                                                                <a href="purchase.php" class="card-link">View</a>
 							</div>
 						</div>
 					</div>
@@ -315,10 +319,10 @@
     <div id="footer">
         <div class="text-center" style="padding-top: 20px;">
             <ul class="list-unstyled list-inline" style=" text-transform: uppercase; letter-spacing: 15px;">
-                <i onclick="window.open('_blank')"  class="fab fa-facebook fa-2x " aria-hidden="true" style ="color:#3b5999;"></i>
-                <i onclick="window.open('_blank')" class="fab fa-instagram fa-2x"aria-hidden="true" style ="color:#cd486b"></i>
-                <i onclick="window.open('_blank')" class="fab fa-twitter fa-2x"aria-hidden="true" style ="color:#55acee"></i>
-                <i onclick="window.open('_blank')" class="fab fa-youtube fa-2x"aria-hidden="true" style ="color:#cd201f" ></i>
+                <i onclick="window.open('https://www.facebook.com/xXlBebolXx','_blank')"  class="fab fa-facebook fa-2x " aria-hidden="true" style ="color:#3b5999;"></i>
+                <i onclick="window.open('https://www.instagram.com/illll_bebo_illll/','_blank')" class="fab fa-instagram fa-2x"aria-hidden="true" style ="color:#cd486b"></i>
+                <i onclick="window.open('https://web.whatsapp.com/','_blank')" class="fab fa-whatsapp fa-2x"aria-hidden="true" style ="color:greenyellow"></i>
+                <i onclick="window.open('https://www.youtube.com/channel/UC5ykJ9vGoQIfsV8DK-3jnBg/featured','_blank')" class="fab fa-youtube fa-2x"aria-hidden="true" style ="color:#cd201f" ></i>
             </ul>
             </div>
         </div>

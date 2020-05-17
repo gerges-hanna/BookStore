@@ -39,6 +39,7 @@
             $order->setTotal($qua);
             if($orSer->createOrder($order)==1)
             {
+                echo 'Done';
                 $caSer->removeAll($_SESSION['usId']);
             }
             

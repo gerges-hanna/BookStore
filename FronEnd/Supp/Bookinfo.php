@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcut icon" type="image/png" href="../img/mainlogo.png"/>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/main2.css">
+        <link rel="stylesheet" href="../css/main1.css">
         <link rel="stylesheet" type="text/css" href="../css/footer.css">
         
     </head>
