@@ -6,9 +6,8 @@
  * and open the template in the editor.
  */
 
-    include_once '../Services/BookService.php';
-    include_once '../Services/CartService.php';
-    include_once '../Services/CustomerService.php';
+    include_once '../Services/FundamentalFactory.php';
+    
 /**
  * Description of CartController
  *
@@ -16,9 +15,10 @@
  */
 class CartController {
     public $tax=2.99;
-    function checkIsSet()
+   
+            function checkIsSet()
     {
-        
+        $temp=new FundamentalFactory();
         if(isset($_GET['bookid']))
         {
 
@@ -31,8 +31,8 @@ class CartController {
             Cart::$flag=0;
 
 
-
-            $check=$cart->getAllInCartByID($_SESSION['usId']);
+            
+            $check=$temp->getType("cart")->getAllItemsByID($_SESSION['usId']);
             for($i=0;$i<count($check);$i++)
             {
                 if($check[$i]->getBook_id()==$_GET['bookid'])
@@ -43,7 +43,7 @@ class CartController {
             }
 
 
-            $ret=$book->getBookById($_GET['bookid']);
+            $ret=$temp->getType("book")->getAllItemsByID($_GET['bookid']);
             if(Cart::$flag==0)
             {
 
@@ -77,23 +77,21 @@ class CartController {
         if(isset($_GET['dell']))
         {
             $cart=new CartService();
-            $cart->removeAll($_SESSION['usId']);
+            $temp->getType("cart")->delete($_SESSION['usId']);
             header('Location:http://localhost/BookStore/FronEnd/Cart.php');
         }
 
     }
     function cartOrders()
     {
-        $ca=new CartService();
-                        $arr=$ca->getAllInCartByID($_SESSION['usId']);
+        $factorydp=new FundamentalFactory();
+                        $arr=$factorydp->getType("cart")->getAllItemsByID($_SESSION['usId']);
                         $total=NULL;
                         for($i=0;$i<count($arr);$i++)
                         {
-                            $cs=new CustomerService();
-                            $bo=new BookService();
                             $id=$arr[$i]->getBook_id();
-                            $barr=$bo->getBookById($id);
-                            $carr=$cs->getCustomerById($arr[$i]->getSalesman_id());
+                            $barr=$factorydp->getType("book")->getAllItemsByID($id);
+                            $carr=$factorydp->getType("user")->getAllItemsByID($arr[$i]->getSalesman_id());
                             if($i%2==0)
                             {
                                 echo '<div class="layout-inline row">

@@ -12,7 +12,7 @@
  * @author Gerges hanna FCI-H
  */
 
-include_once  '../Services/CustomerService.php';
+include_once  '../Services/FundamentalFactory.php';
 
 class LoginService {
     //put your code here
@@ -33,8 +33,9 @@ class LoginService {
         }
         if($rCount>0)
         {
+            $temp=new FundamentalFactory();
             $toLogin=new CustomerService();
-            $arr=$toLogin->getCustomerById($rID);
+            $arr=$temp->getType("user")->getAllItemsByID($rID);
             return $arr[0];
         }  else { 
             return NULL;

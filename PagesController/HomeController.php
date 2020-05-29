@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Services/BookService.php';
+require_once '../Services/FundamentalFactory.php';
     
 
 class HomeController {
@@ -20,9 +20,9 @@ class HomeController {
         }
     }
         function slidInfo()
-        {
-            $book=new BookService();
-            $ret=$book->getBooks();
+        {   
+            $temp=new FundamentalFactory();
+            $ret=$temp->getType("book")->getAllItems();
             for($i=0;$i<4;$i++)
             {
                 $str=substr($ret[$i]->getDescription(), 0,200);

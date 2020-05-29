@@ -1,15 +1,13 @@
 <?php
     require_once '../PagesController/LoginCheck.php';
     require_once '../Services/AddressService.php';
-    require_once '../Services/OrderService.php';
-    require_once '../Services/CartService.php';
-    require_once '../Services/BookService.php';
+    require_once '../Services/FundamentalFactory.php';
     
     $address=new Address();
     $cart=new Cart();
-    $caSer=new CartService();
     $orSer=new OrderService();
     $adSer=new AddressService();
+    $temp=new FundamentalFactory();
     
     
     if(isset($_POST['submit']))
@@ -20,7 +18,7 @@
         $address->setPostal($_POST['postal']);
         $address->setPhone($_POST['phone']);
         
-        $arr=$caSer->getAllInCartByID($_SESSION['usId']);
+        $arr=$temp->getType("cart")->getAllItemsByID($_SESSION['usId']);
         
         $order=new Order();
         $order->setPayment_method($_POST['type']);
@@ -30,17 +28,15 @@
         
         for($i=0;$i<count($arr);$i++)
         {
-            $boSer=new BookService();
             $order->setBook_id($arr[$i]->getBook_id());
             $order->setQuantity($arr[$i]->getQuantity());
-            
-            $bArr=$boSer->getBookById($arr[$i]->getBook_id());
+            $bArr=$temp->getType("book")->getAllItemsByID($arr[$i]->getBook_id());
             $qua=$bArr[0]->getPrice()*$arr[$i]->getQuantity();
             $order->setTotal($qua);
             if($orSer->createOrder($order)==1)
             {
                 echo 'Done';
-                $caSer->removeAll($_SESSION['usId']);
+                $temp->getType("cart")->delete($_SESSION['usId']);
             }
             
         }

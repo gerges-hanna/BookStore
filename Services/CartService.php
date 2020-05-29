@@ -1,53 +1,16 @@
 <?php
 require_once '../Services/DBMangement.php';
 include '../NormalClasses/Cart.php';
+include_once '../Services/CommonFundamentalMethod.php';
 
-class CartService {
+class CartService implements CommonFundamentalMethod {
     
     function function_alert($message) { 
       
     // Display the alert box  
     echo "<script>alert('$message');</script>"; 
     }
-    
-    function getAllInCart(){
-        $db = new DBMangement();
-        $db->ConnectStart();
-        $query = "SELECT * FROM book_transaction";
-        $res = $db->executequery($query);
-        $arr = array();
-        while($row = mysqli_fetch_assoc($res)){
-            $ct = new Cart();
-            $ct->setTable_id('id');
-            $ct->setBook_id($row['book_id']);
-            $ct->setCustomer_id($row['buyer_id']);
-            $ct->setSalesman_id($row['seller_id']);
-            $ct->setQuantity($row['amount']);
-            $arr[]= $ct ;
-        }
-        $db->CloseConnect();
-        return $arr ;
-    }
-    
-    function getAllInCartByID($id){
-        $db = new DBMangement();
-        $db->ConnectStart();
-        $query = "SELECT * FROM book_transaction where buyer_id= ".$id;
-        $res = $db->executequery($query);
-        $arr = array();
-        while($row = mysqli_fetch_assoc($res)){
-            $ct = new Cart();
-            $ct->setTable_id('id');
-            $ct->setBook_id($row['book_id']);
-            $ct->setCustomer_id($row['buyer_id']);
-            $ct->setSalesman_id($row['seller_id']);
-            $ct->setQuantity($row['amount']);
-            $arr[]= $ct ;
-        }
-        $db->CloseConnect();
-        return $arr ;
-    }
-    
+ 
     function createCart(Cart $cart){
         $con =new DBMangement();
         $con->ConnectStart();
@@ -72,17 +35,6 @@ class CartService {
         }
             
     }
-    function removeAll($custId){
-        $connection = new DBMangement();
-        $connection ->ConnectStart();
-        $query = "Delete from book_transaction where buyer_id = ".$custId;
-        $result = $connection ->executequery($query);
-        $connection ->CloseConnect();
-        if($result !=1){
-            $this->function_alert("Not Deleted");
-        }
-            
-    } 
     function UpdateQuantity($amount,$sellID,$buyerID,$bookID)
     {
         $connection = new DBMangement();
@@ -94,4 +46,55 @@ class CartService {
             $this->function_alert("Not Deleted");
         }
     }
- }
+
+    public function getAllItems() {
+        $db = new DBMangement();
+        $db->ConnectStart();
+        $query = "SELECT * FROM book_transaction";
+        $res = $db->executequery($query);
+        $arr = array();
+        while($row = mysqli_fetch_assoc($res)){
+            $ct = new Cart();
+            $ct->setTable_id('id');
+            $ct->setBook_id($row['book_id']);
+            $ct->setCustomer_id($row['buyer_id']);
+            $ct->setSalesman_id($row['seller_id']);
+            $ct->setQuantity($row['amount']);
+            $arr[]= $ct ;
+        }
+        $db->CloseConnect();
+        return $arr ;
+    }
+
+    public function getAllItemsByID($id) {
+        $db = new DBMangement();
+        $db->ConnectStart();
+        $query = "SELECT * FROM book_transaction where buyer_id= ".$id;
+        $res = $db->executequery($query);
+        $arr = array();
+        while($row = mysqli_fetch_assoc($res)){
+            $ct = new Cart();
+            $ct->setTable_id('id');
+            $ct->setBook_id($row['book_id']);
+            $ct->setCustomer_id($row['buyer_id']);
+            $ct->setSalesman_id($row['seller_id']);
+            $ct->setQuantity($row['amount']);
+            $arr[]= $ct ;
+        }
+        $db->CloseConnect();
+        return $arr ;
+    }
+
+    //Note : this function used to all item
+    public function delete($custId) {
+        $connection = new DBMangement();
+        $connection ->ConnectStart();
+        $query = "Delete from book_transaction where buyer_id = ".$custId;
+        $result = $connection ->executequery($query);
+        $connection ->CloseConnect();
+        if($result !=1){
+            $this->function_alert("Not Deleted");
+        }
+    }
+
+}

@@ -1,10 +1,11 @@
 <?php
 
-include_once '../Services/BookService.php';
-    $book=new BookService();
-    $ret=$book->getBookById($_GET['book']);
+include_once '../Services/FundamentalFactory.php';
+    $temp=new FundamentalFactory();
+    $ret=$temp->getType("book")->getAllItemsByID($_GET['book']);
 
 
 class bookInfoController {
     //put your code here
+    
 }

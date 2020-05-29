@@ -15,14 +15,14 @@ if($_SESSION['usType']!=1)
 {
     header("Location:http://localhost/BookStore/FronEnd/index.php");
 }
-require_once '../Services/CustomerService.php';
+require_once '../Services/FundamentalFactory.php';
 
 class userController {
     //put your code here
     function getUsers()
     {
-        $cs=new CustomerService();
-        $carr=$cs->getCustomer();
+        $temp=new FundamentalFactory();
+        $carr=$temp->getType("user")->getAllItems();
         for($i=0;$i<count($carr);$i++)
                     {
                         echo '<div class="col-md-4">

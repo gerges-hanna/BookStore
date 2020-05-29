@@ -4,10 +4,11 @@ require_once '../Services/OrderService.php';
     require_once '../Services/BookService.php';
     require_once '../Services/CustomerService.php';
     require_once '../Services/AddressService.php';
+    require_once '../PagesController/CategoryController.php';
    
     $book=new BookService();
     $bArr=$book->getBookBySeller($_SESSION['usId']);
-       require_once '../PagesController/CategoryController.php';
+       
     $cat=new CategoryController();
     $rowCat=$cat->getCategoreyByID($bArr[0]->getCategory());
     $count=0;

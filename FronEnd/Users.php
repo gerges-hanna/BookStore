@@ -1,12 +1,13 @@
 <?php 
     require_once '../PagesController/LoginCheck.php';
     require_once '../PagesController/userController.php';
+    require_once '../Services/FundamentalFactory.php';
     $us=new userController();
-    $cs=new CustomerService();
+    $temp=new FundamentalFactory();
     
     if(isset($_POST['trash']))
     {
-        $cs->deletCustomer($_POST['trash']);
+        $temp->getType("user")->delete($_POST['trash']);
     }
     
     

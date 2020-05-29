@@ -1,6 +1,7 @@
 <?php 
 
     require_once '../PagesController/LoginCheck.php';
+    
     if(isset($_GET['submit']))
     {
         if($_GET['quaAllow']>=$_GET['qua'])
@@ -13,12 +14,14 @@
       
         
     }
-    
+    require_once '../Services/FundamentalFactory.php';
     require_once '../PagesController/bookInfoController.php';
     require_once '../PagesController/CategoryController.php';
+    
+    
     $cat=new CategoryController();
     $rowCat=$cat->getCategoreyByID($ret[0]->getCategory());
-    
+    $temp=new FundamentalFactory();
     
 ?>
 
@@ -63,9 +66,8 @@
 		<div class="heading">
 		 
                     <li class="userli" style="display: inline-block;">     <b>Seller:</b> <?php
-                        require_once '../Services/CustomerService.php';
-                                            $cs=new CustomerService();
-                                            $carr=$cs->getCustomerById($ret[0]->getCustomer_id());
+                        
+                                            $carr=$temp->getType("user")->getAllItemsByID($ret[0]->getCustomer_id());
                                             echo $carr[0]->getName();
                     
                     ?></li>

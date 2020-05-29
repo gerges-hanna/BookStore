@@ -2,6 +2,7 @@
 
 include_once  '../Services/DBMangement.php';
 include_once  '../NormalClasses/Book.php';
+include_once '../Services/CommonFundamentalMethod.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,7 +14,7 @@ include_once  '../NormalClasses/Book.php';
  *
  * @author Gerges hanna FCI-H
  */
-class BookService {
+class BookService implements CommonFundamentalMethod {
     //put your code here
     private $query;
     function function_alert($message) { 
@@ -22,20 +23,6 @@ class BookService {
     echo "<script>alert('$message');</script>"; 
     } 
     
-    Function DeleteBook($id)
-    {
-        $this->query="DELETE FROM book WHERE id=".$id;
-        $connect=new DBMangement();
-        $connect->ConnectStart();
-        $res=$connect->executequery($this->query);
-        $connect->CloseConnect();
-        if($res!=1)
-        {
-            $this->function_alert("Error");
-        }  
-        
-                
-    }
     
     Function UpdateBook(Book $book)
     {
@@ -102,60 +89,7 @@ class BookService {
         return $ret;
         
     }
-    Function getBooks()
-    {
-        $connect=new DBMangement();
-        $connect->ConnectStart();
-        $this->query = 'select * from book ORDER BY id DESC;';
-        $res=$connect->executequery($this->query);
-        $array = array();
-        while ($row=  mysqli_fetch_assoc($res))
-            {
-                $book=new Book();
-                $book->setId($row['id']);
-                $book->setCustomer_id($row['customer_id']);
-                $book->setName($row['name']);
-                $book->setAuthor($row['autho_name']);
-                $book->setPrice($row['price']);
-                $book->setStock($row['quantity']);
-                $book->setDescription($row['description']);
-                $book->setCategory($row['category_id']);
-                $book->setImage($row['image_url']);
-                $book->setIsbn($row['isbn']);
-                $book->setCondition($row['book_condition']);
-                $book->setStatus($row['status']);
-                $array[] = $book ;
-            }
-        $connect->CloseConnect();
-        return $array ;
-    }
-    Function getBookById($id)
-    {
-        $connect=new DBMangement();
-        $connect->ConnectStart();
-        $this->query = 'select * from book where id = ' . $id.' ORDER BY id DESC;';
-        $res=$connect->executequery($this->query);
-        $array = array();
-        while ($row=  mysqli_fetch_assoc($res))
-            {
-                $book=new Book();
-                $book->setId($row['id']);
-                $book->setCustomer_id($row['customer_id']);
-                $book->setName($row['name']);
-                $book->setAuthor($row['autho_name']);
-                $book->setPrice($row['price']);
-                $book->setStock($row['quantity']);
-                $book->setDescription($row['description']);
-                $book->setCategory($row['category_id']);
-                $book->setImage($row['image_url']);
-                $book->setIsbn($row['isbn']);
-                $book->setCondition($row['book_condition']);
-                $book->setStatus($row['status']);
-                $array[] = $book ;
-            }
-        $connect->CloseConnect();
-        return $array;
-    }
+    
     Function getBookBySeller($id)
     {
         $connect=new DBMangement();
@@ -272,6 +206,73 @@ class BookService {
         $connect->CloseConnect();
         return $array;
     }
+
+    public function delete($id) {
+        $this->query="DELETE FROM book WHERE id=".$id;
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $res=$connect->executequery($this->query);
+        $connect->CloseConnect();
+        if($res!=1)
+        {
+            $this->function_alert("Error");
+        }
+    }
+
+    public function getAllItems() {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book ORDER BY id DESC;';
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array ;
+    }
+
+    public function getAllItemsByID($id) {
+        $connect=new DBMangement();
+        $connect->ConnectStart();
+        $this->query = 'select * from book where id = ' . $id.' ORDER BY id DESC;';
+        $res=$connect->executequery($this->query);
+        $array = array();
+        while ($row=  mysqli_fetch_assoc($res))
+            {
+                $book=new Book();
+                $book->setId($row['id']);
+                $book->setCustomer_id($row['customer_id']);
+                $book->setName($row['name']);
+                $book->setAuthor($row['autho_name']);
+                $book->setPrice($row['price']);
+                $book->setStock($row['quantity']);
+                $book->setDescription($row['description']);
+                $book->setCategory($row['category_id']);
+                $book->setImage($row['image_url']);
+                $book->setIsbn($row['isbn']);
+                $book->setCondition($row['book_condition']);
+                $book->setStatus($row['status']);
+                $array[] = $book ;
+            }
+        $connect->CloseConnect();
+        return $array;
+    }
+
 }
 
 

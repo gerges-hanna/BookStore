@@ -1,28 +1,30 @@
 <?php
 
-    require_once '../Services/OrderService.php';
+    require_once '../Services/FundamentalFactory.php';
     require_once '../Services/BookService.php';
     require_once '../Services/CustomerService.php';
     require_once '../Services/AddressService.php';
+    
+    $temp=new FundamentalFactory();
     $or=new OrderService();
     $book=new BookService();
     $address=new AddressService();
     $cs=new CustomerService();
     if($_SESSION['usType']==0)
     {
-        $OrArr=$or->getOrderById($_SESSION['usId']);
+        $OrArr=$temp->getType("order")->getAllItemsByID($_SESSION['usId']);
     }  else if($_SESSION['usType']==1) {
-        $OrArr=$or->getOrders();
+        $OrArr=$temp->getType("order")->getAllItems();
     }
 
     $count=0;
     for($i=0;$i<count($OrArr);$i++)
     {
                     $count=$count+$OrArr[$i]->getTotal();
-                    $boArr=$book->getBookById($OrArr[$i]->getBook_id());
+                    $boArr=$temp->getType("book")->getAllItemsByID($OrArr[$i]->getBook_id());
                     $adArr=$address->getAddressById($OrArr[$i]->getAddressID());
-                    $csArr=$cs->getCustomerById($boArr[0]->getCustomer_id());
-                    $csArr2=$cs->getCustomerById($OrArr[0]->getCustomerID());
+                    $csArr=$temp->getType("user")->getAllItemsByID($boArr[0]->getCustomer_id());
+                    $csArr2=$temp->getType("user")->getAllItemsByID($OrArr[0]->getCustomerID());
                     
                     echo
                     '<div class="layout-inline row row-bg2">

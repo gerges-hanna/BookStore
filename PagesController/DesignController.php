@@ -38,25 +38,9 @@
                       </li>
                       
                       <?php
-                        
-                        if($_SESSION['usType']==0)
-                        {
-                            echo 
-                            '<li class="nav-item">
-                              <a class="nav-link" href="purchase.php" style="color: white;"><i class="fas fa-list" style="font-size:25px "></i> my purchase</a>
-                            </li>
-                            <li class="nav-item">
-                        <a class="nav-link" href="MyBooks.php" style="color: white;" ><i class="fas fa-book-reader" style="font-size:25px "></i> My Books</a>
-                      </li>';
-                        }  else if($_SESSION['usType']==1) {
-                            echo 
-                            '<li class="nav-item">
-                              <a class="nav-link" href="purchase.php" style="color: white;"><i class="fas fa-clipboard-list" style="font-size:25px" ></i>Transactions</a>
-                            </li>
-                            <li class="nav-item">
-                        <a class="nav-link" href="Users.php" style="color: white;" ><i class="fas fa-user" style="font-size:25px" ></i>Users</a>
-                      </li>';
-                        }
+                        require_once '../PagesController/StateConfigurations.php';
+                        $ob=new StateConfigurations($_SESSION['usType']);
+                        $ob->showNavBar();
                         echo '<li class="nav-item">
                         <a class="nav-link" href="Supp.php"  style="color: white;"><i class="fas fa-book" style="font-size:25px" ></i> book Categories</a>
                       </li>';

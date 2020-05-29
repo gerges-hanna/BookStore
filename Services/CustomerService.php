@@ -1,7 +1,8 @@
 <?php
 require_once '../Services/DBMangement.php';
 require_once  '../NormalClasses/User.php';
-class CustomerService {
+require_once '../Services/CommonFundamentalMethod.php';
+class CustomerService implements CommonFundamentalMethod {
   
     function function_alert($message) { 
       
@@ -31,73 +32,7 @@ class CustomerService {
 //     //return all data of all customers
 //   }
    
-    public function getCustomer(){
-
-      $db = new  DBMangement();
-      $db->ConnectStart();
-      $query = "SELECT * FROM user  ";
-      $res = $db->executequery($query);
-       $arr = array() ;
-      
-         while ($row=  mysqli_fetch_assoc($res))
-            {
-         
-                $cu=new User();
-                $cu->setID($row['id']);
-                $cu->setName($row['name']);
-                $cu->setEmail($row['email']);
-                $cu->setPassword($row['password']);
-                $cu->setPhone($row['phone']);
-                $cu->setUserType($row['user_type']);
-                $cu->setCan_read($row['can_read']);
-                $cu->setCan_write($row['can_write']);
-                $cu->setCan_update($row['can_update']);
-                $cu->setCan_delete($row['can_delete']);
-                $arr[] = $cu ;
-        
-            }
-      $db->CloseConnect();
-      return $arr;//return data of one customer  
-   }
-   
-    public function getCustomerById($id){
-
-      $db = new  DBMangement();
-      $db->ConnectStart();
-      $query = "SELECT * FROM user WHERE id = $id ";
-      $res = $db->executequery($query);
-       $arr = array() ;
-      
-         while ($row=  mysqli_fetch_assoc($res))
-            {
-         
-                $cu=new User();
-                $cu->setID($row['id']);
-                $cu->setName($row['name']);
-                $cu->setEmail($row['email']);
-                $cu->setPassword($row['password']);
-                $cu->setPhone($row['phone']);
-                $cu->setUserType($row['user_type']);
-                $cu->setCan_read($row['can_read']);
-                $cu->setCan_write($row['can_write']);
-                $cu->setCan_update($row['can_update']);
-                $cu->setCan_delete($row['can_delete']);
-                $arr[] = $cu ;
-        
-            }
-      $db->CloseConnect();
-      return $arr;//return data of one customer  
-   }
-   
-    public function deletCustomer($id){
-
-      $db = new  DBMangement();
-      $db->ConnectStart();
-      $query = "DELETE FROM user WHERE id = $id ";
-      $res = $db->executequery($query);
-      $db->CloseConnect();
-      return $res;//this return bool 
-   }
+    
    
    
    
@@ -144,5 +79,71 @@ class CustomerService {
         $connection->CloseConnect();
         return $arr;
    }
-       
+
+    public function delete($id) {
+        $db = new  DBMangement();
+      $db->ConnectStart();
+      $query = "DELETE FROM user WHERE id = $id ";
+      $res = $db->executequery($query);
+      $db->CloseConnect();
+      return $res;//this return bool 
+    }
+
+    public function getAllItems() {
+        $db = new  DBMangement();
+      $db->ConnectStart();
+      $query = "SELECT * FROM user  ";
+      $res = $db->executequery($query);
+       $arr = array() ;
+      
+         while ($row=  mysqli_fetch_assoc($res))
+            {
+         
+                $cu=new User();
+                $cu->setID($row['id']);
+                $cu->setName($row['name']);
+                $cu->setEmail($row['email']);
+                $cu->setPassword($row['password']);
+                $cu->setPhone($row['phone']);
+                $cu->setUserType($row['user_type']);
+                $cu->setCan_read($row['can_read']);
+                $cu->setCan_write($row['can_write']);
+                $cu->setCan_update($row['can_update']);
+                $cu->setCan_delete($row['can_delete']);
+                $arr[] = $cu ;
+        
+            }
+            $db->CloseConnect();
+      return $arr;//return data of one customer
+    }
+
+    public function getAllItemsByID($id) {
+        
+      $db = new  DBMangement();
+      $db->ConnectStart();
+      $query = "SELECT * FROM user WHERE id = $id ";
+      $res = $db->executequery($query);
+       $arr = array() ;
+      
+         while ($row=  mysqli_fetch_assoc($res))
+            {
+         
+                $cu=new User();
+                $cu->setID($row['id']);
+                $cu->setName($row['name']);
+                $cu->setEmail($row['email']);
+                $cu->setPassword($row['password']);
+                $cu->setPhone($row['phone']);
+                $cu->setUserType($row['user_type']);
+                $cu->setCan_read($row['can_read']);
+                $cu->setCan_write($row['can_write']);
+                $cu->setCan_update($row['can_update']);
+                $cu->setCan_delete($row['can_delete']);
+                $arr[] = $cu ;
+        
+            }
+      $db->CloseConnect();
+      return $arr;//return data of one customer
+    }
+
 }
