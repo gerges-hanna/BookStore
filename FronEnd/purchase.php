@@ -62,8 +62,9 @@
 				<div class="row layout-inline">
 				 <div class="col">
                                      <p>Total : $<?php echo $count; ?></p>
-                                      <button onclick="document.location = 'PDF.php'">PDF</button>
+                                     
 				 </div>
+                                    <button onclick="window.open('PDF.php')" target="_blank" style="font-size: 16px; height:20px; margin-top: 10px; ">Generate Report</button>
 				 <div class="col"></div>
 			   </div>
 			 </div>  
