@@ -62,7 +62,7 @@
 				<div class="row layout-inline">
 				 <div class="col">
                                      <p>Total : $<?php echo $count; ?></p>
-                                      <button onclick="document.location = 'TestPDF.php'">PDF</button>
+                                      <button onclick="document.location = 'PDF.php'">PDF</button>
 				 </div>
 				 <div class="col"></div>
 			   </div>

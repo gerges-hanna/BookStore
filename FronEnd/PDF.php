@@ -4,6 +4,7 @@ require_once '../fpdf182/fpdf.php';
 require_once '../Services/OrderService.php';
 require_once '../Services/BookService.php';
 require_once '../Services/CustomerService.php';
+require_once '../Services/FundamentalFactory.php';
 class TestPDF extends FPDF{
     function header() {
         $this->Image('logo.png',80,3);
@@ -47,11 +48,14 @@ class TestPDF extends FPDF{
         $ord=new OrderService();
         $book=new BookService();
         $cs=new CustomerService();
+        $temp=new FundamentalFactory();
         if($_SESSION['usType']==0)
         {
-            $OrArr=$ord->getOrderById($_SESSION['usId']);
+            $OrArr=$temp->getType("order")->getAllItemsByID($_SESSION['usId']);
+            //$OrArr=$ord->getOrderById($_SESSION['usId']);
         }  else if($_SESSION['usType']==1) {
-            $OrArr=$ord->getOrders();
+            //$OrArr=$ord->getOrders();
+             $OrArr=$temp->getType("order")->getAllItems();
         }
         $pdf=new TestPDF();
         $pdf->AliasNbPages();
@@ -60,8 +64,10 @@ class TestPDF extends FPDF{
         for($i=0;$i<  count($OrArr);$i++)
         {
             
-            $boArr=$book->getBookById($OrArr[$i]->getBook_id());
-            $csArr=$cs->getCustomerById($boArr[0]->getCustomer_id());
+            $boArr= $temp->getType("book")->getAllItemsByID($OrArr[$i]->getBook_id());
+                    //$book->getBookById($OrArr[$i]->getBook_id());
+            $csArr=$temp->getType("user")->getAllItemsByID($boArr[0]->getCustomer_id());
+                   // $cs->getCustomerById($boArr[0]->getCustomer_id());
             $pdf->viewTable($OrArr[$i]->getID(),$boArr[0]->getName(),$OrArr[$i]->getQuantity()
                     ,$OrArr[$i]->getPayment_method(),$csArr[0]->getName(),$OrArr[$i]->getTotal());
         }
