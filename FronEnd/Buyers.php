@@ -26,6 +26,10 @@ require_once '../Services/CustomerService.php';
         ?>
 	<!--end navbar -->
 	<!--Card --><!--Card -->
+        <div class="users">
+                                    <div class="container">
+                    <div class="row">
+    		
 
         <?php
                                 $or=new OrderService();
@@ -34,10 +38,7 @@ require_once '../Services/CustomerService.php';
                                 {
                                     $cs=new CustomerService();
                                     $csArr=$cs->getAllItemsByID($orArr[$i]->getCustomerID());
-                                    echo '<div class="users">
-	<div class="container">
-    	<div class="row">
-    		
+                                    echo '
     		<div class="col-md-4">
     		    <div class="card profile-card-3">
     		        <div class="background-block">
@@ -58,11 +59,12 @@ require_once '../Services/CustomerService.php';
                     </div>
             </div>
 		</div>
-	</div>
-</div>
-	</div>';   
+	';   
                                 }
                             ?>
+                        </div>
+</div>
+	</div>
 	<!--Card --><!--Card -->
     <!--Footer-->
     <div id="footer">
