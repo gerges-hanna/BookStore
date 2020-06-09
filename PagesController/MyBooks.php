@@ -29,7 +29,7 @@ require_once '../Services/OrderService.php';
 			 <h6>Publisher: <p style="display: inline;font-size: 15px;">'.$bArr[$i]->getAuthor().'</p></h6> 
 			 <h6>ISBN: <p style="display: inline;font-size: 15px;">'.$bArr[$i]->getIsbn().'</p></h6> 
                          <h6>Condition: <p style="display: inline;font-size: 15px;">'.$bArr[$i]->getCondition().'</p></h6>
-                             <a href="Buyers.php" class="btn btn-update">View Buyers</a>
+                             <a href="Buyers.php?book='.$bArr[$i]->getId().'" class="btn btn-update">View Buyers</a>
 			</div>
 	  </div>
 

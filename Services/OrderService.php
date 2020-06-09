@@ -29,6 +29,28 @@ class OrderService implements CommonFundamentalMethod {
        }
        $con->CloseConnect();
    }
+     function getOrderbyBookId($bookId){
+       
+       $con =new DBMangement();
+       $con->ConnectStart();
+       $query = 'SELECT * FROM purchase WHERE book_id= "'.$bookId.'" ORDER BY id DESC; ';
+       $res = $con->executequery($query);
+       $ar=array();
+       
+       while ($row = mysqli_fetch_assoc($res)){
+           
+           $or =new Order();
+           $or->setID($row['id']);
+           $or->setCustomerID($row['customer_id']);
+           $or->setQuantity($row['quantity']);
+           $or->setAddressId($row['address_id']);
+           $or->setTotal($row['total']);
+           $or->setOrderDate($row['date']);
+           $ar[]=$or;
+       }
+       $con->CloseConnect();
+       return $ar;
+   }
    
    
    function createOrder(Order $order)

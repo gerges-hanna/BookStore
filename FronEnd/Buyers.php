@@ -1,5 +1,7 @@
     <?php 
 require_once '../PagesController/LoginCheck.php';
+require_once '../Services/OrderService.php';
+require_once '../Services/CustomerService.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +26,15 @@ require_once '../PagesController/LoginCheck.php';
         ?>
 	<!--end navbar -->
 	<!--Card --><!--Card -->
-<div class="users">
+
+        <?php
+                                $or=new OrderService();
+                                $orArr=$or->getOrderbyBookId($_GET['book']);
+                                for($i=0;$i<count($orArr);$i++)
+                                {
+                                    $cs=new CustomerService();
+                                    $csArr=$cs->getAllItemsByID($orArr[$i]->getCustomerID());
+                                    echo '<div class="users">
 	<div class="container">
     	<div class="row">
     		
@@ -37,10 +47,11 @@ require_once '../PagesController/LoginCheck.php';
     		            <img src="img/defuserimg.png" alt="profile-image" class="profile"/>
     		        </div>
     		        <div class="card-content">
-					<h2>rtret<small>Email : gerges@yahoo.com </small></h2>
-						<span>Phone : 984247234</span>
-                                                <h6><small>Quantity : 50 Book </small></h6>
-					<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:'.$carr[$i]->getPhone().'"> <i class="fas fa-phone"></i></a>
+                            
+					<h2>'.$csArr[0]->getName().'<small>Email : '.$csArr[0]->getEmail().' </small></h2>
+						<span>Phone : '.$csArr[0]->getPhone().'</span>
+                                                <h6><small>Quantity : '.$orArr[$i]->getQuantity().' </small></h6>
+					<div class="icon-block"><a href="#"><i class="fas fa-envelope"></i></a><a href="tel:'.$csArr[0]->getPhone().'"> <i class="fas fa-phone"></i></a>
 						<form  method="POST">
 					</form>
 					</div>
@@ -49,7 +60,9 @@ require_once '../PagesController/LoginCheck.php';
 		</div>
 	</div>
 </div>
-	</div>
+	</div>';   
+                                }
+                            ?>
 	<!--Card --><!--Card -->
     <!--Footer-->
     <div id="footer">

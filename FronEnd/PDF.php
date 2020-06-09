@@ -76,6 +76,6 @@ class TestPDF extends FPDF{
 }
 
 
-
+// this is to run the function and execute the pdf
 $q=new TestPDF();
 $q->RunPDF();

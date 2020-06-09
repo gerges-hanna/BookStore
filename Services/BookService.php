@@ -39,8 +39,7 @@ class BookService implements CommonFundamentalMethod {
                 . 'status="'.$book->getStatus().'",'
                 . 'category_id='.$book->getCategory().''
                 . ' WHERE id = '.$book->getId().';';
-//'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
-        $connect=new DBMangement();
+       $connect=new DBMangement();
         $connect->ConnectStart();
         $res=$connect->executequery($this->query);
         $connect->CloseConnect();
@@ -55,7 +54,6 @@ class BookService implements CommonFundamentalMethod {
     Function UpdateBookQuantity(Book $book)
     {
         $this->query='UPDATE book SET quantity=quantity+'.$book->getStock().' WHERE id = '.$book->getId().';';
-//'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
         $connect=new DBMangement();
         $connect->ConnectStart();
         $res=$connect->executequery($this->query);
@@ -74,8 +72,8 @@ class BookService implements CommonFundamentalMethod {
         }
         $ret="Something is wrong please try agian";
         $this->query='INSERT INTO book (name, description, price, quantity, isbn, autho_name, status, category_id, customer_id, image_url, book_condition) '
-                . 'VALUES ("'.$book->getName().'","'.$book->getDescription().'",'.$book->getPrice().','.$book->getStock().','.$book->getIsbn().',"'.$book->getAuthor().'","'.$book->getStatus().'",'.$book->getCategory().','.$book->getCustomer_id().',"'.$book->getImage().'","'.$book->getCondition().'")';
-        //'.$book->getId().','.$book->getName().','.$book->getDescription().','.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','.$book->getImage().','.$book->getAuthor().','.$book->getCondition().','.$book->getCustomer_id().','.$book->getStatus().','.$book->getCategory().'
+                . 'VALUES ("'.$book->getName().'","'.$book->getDescription().'",'.$book->getPrice().','.$book->getStock().','.$book->getIsbn().','
+                . '"'.$book->getAuthor().'","'.$book->getStatus().'",'.$book->getCategory().','.$book->getCustomer_id().',"'.$book->getImage().'","'.$book->getCondition().'")';
         $connect=new DBMangement();
         $connect->ConnectStart();
         $res=$connect->executequery($this->query);

@@ -16,7 +16,7 @@
 class CartController {
     public $tax=2.99;
    
-            function checkIsSet()
+    function checkIsSet()
     {
         $temp=new FundamentalFactory();
         if(isset($_GET['bookid']))

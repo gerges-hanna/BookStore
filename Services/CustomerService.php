@@ -40,7 +40,10 @@ class CustomerService implements CommonFundamentalMethod {
    function updateCustomer(User $user){
        $con= new DBMangement();
        $con->ConnectStart();
-       $query='UPDATE user SET name= "'.$user->getName().'" ,email= "'.$user->getEmail().'" ,password= "'.$user->getPassword().'" ,phone= "'.$user->getPhone().'" ,user_type= "'.$user->getUserType().'" ,can_read= "'.$user->getCan_read().'" ,can_write= "'.$user->getCan_write().'" ,can_update= "'.$user->getCan_update().'" ,can_delete= "'.$user->getCan_delete().'" where id= "'.$user->getID().'" ';
+       $query='UPDATE user SET name= "'.$user->getName().'" ,email= "'.$user->getEmail().'"'
+               . ' ,password= "'.$user->getPassword().'" ,phone= "'.$user->getPhone().'" ,user_type= "'.$user->getUserType().'" '
+               . ',can_read= "'.$user->getCan_read().'" ,can_write= "'.$user->getCan_write().'" '
+               . ',can_update= "'.$user->getCan_update().'" ,can_delete= "'.$user->getCan_delete().'" where id= "'.$user->getID().'" ';
        $res= $con->executequery($query);
        $con->CloseConnect();
        if($res!=1)
@@ -53,7 +56,9 @@ class CustomerService implements CommonFundamentalMethod {
    {
        $con= new DBMangement();
        $con->ConnectStart();
-       $query='INSERT INTO user( name, email, password, phone, user_type, can_read, can_write, can_update, can_delete) VALUES(  "'.$user->getName().'","'.$user->getEmail().'","'.$user->getPassword().'","'.$user->getPhone().'" ,"'.$user->getUserType().'","'.$user->getCan_read().'", "'.$user->getCan_write().'" ,"'.$user->getCan_update().'" ,"'.$user->getCan_delete().'")';
+       $query='INSERT INTO user( name, email, password, phone, user_type, can_read, can_write, can_update, can_delete) VALUES(  "'.$user->getName().'","'.$user->getEmail().'"'
+               . ',"'.$user->getPassword().'","'.$user->getPhone().'" ,"'.$user->getUserType().'","'.$user->getCan_read().'", "'.$user->getCan_write().'"'
+               . ' ,"'.$user->getCan_update().'" ,"'.$user->getCan_delete().'")';
        $res= $con->executequery($query);
        $con->CloseConnect();
        if($res!=1)
@@ -89,6 +94,7 @@ class CustomerService implements CommonFundamentalMethod {
       return $res;//this return bool 
     }
 
+    //list all users
     public function getAllItems() {
         $db = new  DBMangement();
       $db->ConnectStart();
@@ -117,6 +123,7 @@ class CustomerService implements CommonFundamentalMethod {
       return $arr;//return data of one customer
     }
 
+    // to search about users
     public function getAllItemsByID($id) {
         
       $db = new  DBMangement();
